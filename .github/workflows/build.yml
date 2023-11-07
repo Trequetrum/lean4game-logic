@@ -1,0 +1,23 @@
+name: Build
+run-name: Build the game and save artifact
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: build docker image
+        run: docker build . --file Dockerfile --tag game:latest
+
+      - name: Store docker container as an artifact
+        uses: ishworkh/docker-image-artifact-upload@v1
+        with:
+          image: "game:latest"
+
+      - name: What next?
+        run: echo "To export the game to the Game Server, open https://adam.math.hhu.de/import/trigger/${GITHUB_REPOSITORY,,} \n Afterwards, you can play the game at https://adam.math.hhu.de/#/g/${GITHUB_REPOSITORY,,}"
