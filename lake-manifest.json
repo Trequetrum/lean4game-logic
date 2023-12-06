@@ -4,13 +4,13 @@
  [{"git":
    {"url": "https://github.com/leanprover-community/lean4game.git",
     "subDir?": "server",
-    "rev": "8e4c993bd7113d86452df98142e67529f19c24a9",
+    "rev": "3d97cff0f42a86e4c3eb137e5aeebf6119f8c335",
     "opts": {},
     "name": "GameServer",
-    "inputRev?": "main",
+    "inputRev?": "v4.1.0",
     "inherited": false}},
   {"git":
-   {"url": "https://github.com/leanprover-community/mathlib4",
+   {"url": "https://github.com/leanprover-community/mathlib4.git",
     "subDir?": null,
     "rev": "f203f2e0caf1d9ea25b7f2e4b8c2afebd2c6967b",
     "opts": {},

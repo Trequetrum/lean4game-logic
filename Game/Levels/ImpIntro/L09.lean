@@ -1,0 +1,40 @@
+import Game.Metadata
+
+World "ImpIntro"
+Level 9
+Title "Uncertain Snacks"
+
+Introduction "
+# BOSS LEVEL!!!
+# Uncertain Snacks
+Sarah wants to know whether Robbie will still bring a snack, regardless of whether she brings one herself or not.\\
+\\
+She's asked you for evidence that:
+- **If** Robbie is bringing a snack **then**
+  1. Her bringing a snack **implies** Robbie is bringing a snack
+  2. Her not bringing a snack **implies** Robbie is bringing a snack
+
+That's a bit convoluted, but you should be able to produce some evidence of this!
+# Proposition Key:
+- `R` — Robbie is bringing a snack
+- `S` — Sarah is bringing a snack
+"
+
+/-- Write the nessesary nested function(s)! --/
+Statement (R S : Prop) : R → (S → R) ∧ (¬S → R) := by
+  exact λr ↦ ⟨λ_ ↦ r, λ_ ↦ r⟩
+
+Conclusion "
+You're very convincing, and now Sarah can see that if Robbie is bringing a snack, he'll be bringing it regardless of what she does.\\
+\\
+On to the next world!
+
+----
+# Hint
+If you're not going to use some evidence, then you don't need to name it. You can write an underscore as a placeholder. For example, my solution looked like this:
+```
+exact λ r : R ↦ ⟨λ _ : S ↦ r, λ _ : ¬ S ↦ r⟩
+-- which can be abbreviated
+exact λr ↦ ⟨λ_ ↦ r, λ_ ↦ r⟩
+```
+"
