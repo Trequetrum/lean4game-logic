@@ -15,7 +15,7 @@ Dependency ImpIntro → NotIntro
 
 
 -- Here's what we'll put on the title screen
-Title "A Lean intro to logic"
+Title "A Lean Intro to Logic"
 Introduction
 "
 # An Introduction to Constructive Logic
@@ -116,7 +116,12 @@ Click on the first world — **Party Invites** — to get started.
 Info "
 *Game version: 0.1.0*
 
+# Discussion
 
+This game is currently in its initial development phase, designed to be largely self-contained and accessible without requiring a programming or math background to navigate. Feedback about meeting that goal is welcome!
+
+Please feel encouraged to visit the game's GitHub repository and initiate a discussion on any topic regarding this game by opening an issue.
+Github: [A Lean Intro to Logic](https://github.com/Trequetrum/lean4game-logic)
 
 ## Progress saving
 

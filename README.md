@@ -1,14 +1,5 @@
-# Lean 4 Logic Game
+# A Lean Intro to Logic
 
-## Getting Started
+Highschool math and zero programming background? Not a problem, the idea of this game is to be extremely approachable. This is a work in progress, so feel free to open an issue to leave feedback of any sort.
 
-There are multiple ways to run the game while developing it:
-
-### Local setup
-
-The full instructions are at [Running games locally](https://github.com/leanprover-community/lean4game/blob/main/DOCUMENTATION.md#running-games-locally).
-In particular, the recommended setup is to have `docker` installed on your computer
-and then click on the pop-up "Reopen in Container" which is shown when
-opening this project in VSCode.
-
-The game is then accessible at [localhost:3000/#/g/local/game](http://localhost:3000/#/g/local/game).
+Here looking for answers to any of the levels? You can look under `Game/Levels/`. Each statement has a proof that uses only the tools the game has taught so far.
