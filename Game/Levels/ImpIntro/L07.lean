@@ -16,8 +16,8 @@ Therefore, if you've got chips and dip, then you've got a popular party snack!
 "
 
 /-- Conjunction interacting with implication --/
-Statement (P Q R: Prop) (h₁ : P → Q → R) : P ∧ Q → R := by
-  exact λ⟨p,q⟩ ↦ h₁ p q
+Statement (P Q R: Prop) (h : P → Q → R) : P ∧ Q → R := by
+  exact λ(pq: P ∧ Q) ↦ h pq.left pq.right
 
 Conclusion "
 Cool. Chips and Dip for sure!

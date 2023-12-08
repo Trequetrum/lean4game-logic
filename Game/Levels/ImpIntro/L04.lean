@@ -2,7 +2,7 @@ import Game.Metadata
 
 World "ImpIntro"
 Level 4
-Title "A Chain of Reasoning"
+Title "Chain Reasoning"
 
 NewLemma and_comm
 
@@ -22,9 +22,9 @@ With numbers, if `a` is less than `b` and `b` is less than `c`, then you can ded
 This is the transitiive property of `<`. You should be able to show that this same property holds for conditionals — \"`→`\"
 "
 
-/-- Show that → is transitive --/
+/-- Show that → is transitive -/
 Statement (C J S: Prop) (h₁ : C → J) (h₂ : J → S) : C → S := by
-  exact λc ↦ h₂ (h₁ c)
+  exact λ(c: C) ↦ h₂ (h₁ c)
 
 Conclusion "
 AH ha! Well done.

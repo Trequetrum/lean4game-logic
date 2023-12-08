@@ -4,32 +4,32 @@ def and_left {P Q : Prop} (h : P ∧ Q) : P := And.left h
 
 DefinitionDoc and_left as "∧-e left" "
 # ∧ Elimination Left
-### and_left : ∀P Q: Prop, P ∧ Q -> P`
+### and_left : P ∧ Q -> P`
 
-If `h` is a term with a type like `A ∧ B`
+If `h` is a term with a type like `AP∧ Q`
 
-`and_left h`, `h.left` or `h.1` are all expressions for denoting the left-hand side of the given evidence. In this case, the left side has a type of `A`.
+`and_left h`, `h.left` or `h.1` are all expressions for denoting the left-hand side of the given evidence. In this case, the left side has a type of `P`.
 "
 
 def and_right {P Q : Prop} (h : P ∧ Q) : Q := And.right h
 
 DefinitionDoc and_right as "∧-e right" "
 # ∧ Elimination Right
-### and_right : ∀P Q: Prop, P ∧ Q -> Q`
+### and_right : P ∧ Q -> Q`
 
-If `h` is a term with a type like `A ∧ B`
+If `h` is a term with a type like `P ∧ Q`
 
-`and_right h`, `h.right` or `h.2` are all expressions for denoting the right-hand side of the given evidence. In this case, the left side has a type of `B`.
+`and_right h`, `h.right` or `h.2` are all expressions for denoting the right-hand side of the given evidence. In this case, the left side has a type of `Q`.
 "
 
 def and_intro {P Q : Prop} (left : P) (right : Q) : P ∧ Q := And.intro left right
 
 DefinitionDoc and_intro as "∧ intro" "
 # and_intro
-### `and_intro : ∀P Q: Prop, P -> Q -> P ∧ Q`
-`and_intro` take two disparate pieces of evidence and combines them into a single piece of evidence. If e₁ and e₂ are evidence, then
+### `and_intro : P -> Q -> P ∧ Q`
+`and_intro` is a function with two parameters. It takes two disparate pieces of evidence and combines them into a single piece of evidence. If `(e₁ : P)` and `(e₂ : Q)` are evidence, then
 ```
-and_intro e₁ e₂
+have h : P ∧ Q := and_intro e₁ e₂
 ```
 ## Auxilliary:
 Since this is done so often, here are a whole handfull of ways to combine evidence. They all build the same conjunction in the end, so you can use whichever suits you.
@@ -53,17 +53,36 @@ have h₇ := (⟨p,q⟩ : P ∧ Q)
 
 DefinitionDoc FunElim as "→ elim" "
 # Function Application/Implication Elimination
-`A → B` is type given to functions from elements of `A` to elements of `B`. When `A` and `B` are propositions, then it can be seen as either a function from evidence of `A` to evidence of `B` or as the logical implication `A → B`.
-
-This is not an overloading of the → symbol, but rather a conflation. We've set up our logical system so that the rules of function application and the rules for → elim (Modus Ponens) are identicle.
-
+`P → Q` is propostion given to functions from evidence of `P` to evidence of `Q`.
+# Juxtaposition
+Juxtaposition just means \"to place next to each other,\" which is what we'll do to give a parameter to a function.
+### Example
+You should already be familiar with `and_intro`. It is a funtion that takes two parameters.
+```
+-- Assumptions
+e₁ : P
+e₂ : Q
+Goal:
+P ∧ Q
+```
+----
+```
+exact (and_intro e₁ e₂)
+```
+Takes `and_intro`, first applies e₂, then second applies e₂.
+### Example
 ```
 -- Assumptions
 a : A
 h₁ : A → B
--- Goal B
-exact h₁ a
+-- Goal
+B
 ```
+---
+```
+exact (h₁ a)
+```
+Takes `h₁` and applies `a` to it.
 "
 
 DefinitionDoc FunIntro as "→ intro" "
@@ -170,21 +189,54 @@ Here's a version where you can see it aligned
 def false_elim {P : Prop} (h : False) : P := h.rec
 
 DefinitionDoc false_elim as "false_elim" "
-TODO
+If
+```
+-- Assumptions
+h : False
+```
+then
+```
+have t : T := false_elim h
+```
+will allow you to write any well formed proposition in place of `T`. This makes `false_elim` the \"From `False`, anything goes\" function. **Ex falso quodlibet**.
 "
 
-def or_inl {P Q : Prop} (p : P) : Or P Q :=
-  Or.inl p
+def or_inl {P Q : Prop} (p : P) : Or P Q := Or.inl p
 
 DefinitionDoc or_inl as "or_inl" "
-TODO
+# Or Introduction Left
+Turns evidence for the lefthand of an `∨` proposition into a disjunction. The context must supply what the righthand side of the disjunction is.
+```
+-- Objects
+P Q : Prop
+-- Assumptions
+p : P
+```
+allows:
+```
+have h : P ∨ Q := or_inl p
+have h := (or_inl p : P ∨ Q)
+have h := show P ∨ Q from or_inl p
+```
 "
 
-def or_inr {P Q : Prop} (q : Q) : Or P Q :=
-  Or.inr q
+def or_inr {P Q : Prop} (q : Q) : Or P Q := Or.inr q
 
 DefinitionDoc or_inr as "or_inr" "
-TODO
+# Or Introduction Right
+Turns evidence for the righthand of an `∨` proposition into a disjunction. The context must supply what the lefthand side of the disjunction is.
+```
+-- Objects
+P Q : Prop
+-- Assumptions
+q : Q
+```
+allows:
+```
+have h : P ∨ Q := or_inr q
+have h := (or_inl q : P ∨ Q)
+have h := show P ∨ Q from or_inl q
+```
 "
 
 def or_elim
@@ -195,5 +247,24 @@ def or_elim
     Or.elim h left right
 
 DefinitionDoc or_elim as "or_elim" "
-TODO
+# Or Elimination
+If you can conclude something from `A` and you can conclude the same thing from `B`, then if you know `A ∨ B` it won't matter which of the two happens as you can still guarentee something.
+
+or_elim is also evidence:
+```
+or_elim : (P ∨ Q) → (P → R) → (Q → R) → R`
+```
+# Parameters
+`or_elim` has three parameters:
+1. takes evidence for a disjunction,
+2. evidence an implication on the left,
+3. evidence for an implication on the right.
+# Example
+`or_elim` is your first 3-paramater function.
+```
+pvq: P ∨ Q
+pr : P → R
+qr : Q → R
+have r : R := or_elim pvq pr qr
+```
 "

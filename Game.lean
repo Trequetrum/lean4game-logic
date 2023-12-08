@@ -25,6 +25,9 @@ To play this puzzler you'll need to learn some notation. Unlike learning how to 
 
 Below, you're provided with whirlwind tour of the notation at play as well as a bit of motivation for why the notation looks the way it does. This is all done through a single example. Many of the details will seem lacking; The concepts covered here will be addressed with more detail during the tutorial worlds of this game.
 
+# But first, a tip!
+This introduction as well as some of the tutotial levels can get a bit wordy. The three column panels — text on the left, game worlds in the middle, and your inventory on the right — can all be expanded or shrunk as nesesary. Every screen is different, so do feel encouraged to re-size these pannels.
+
 # Building some notation
 Consider the following argument stated in natural language:
 
@@ -45,13 +48,13 @@ If you take a moment to re-read them again, lines 5, 6, & 7 are all slightly dif
 - Line 6 is using the process of elimination on two options. This is the style of reasoning responsible for Sherlock Holmes' most famous quote — \"When you have eliminated the impossible, whatever remains, however improbable, must be the truth\". We'll give this a name too: **modus tollendo ponens**
 - Line 7 is the conclusion and is applying the \"if ... then ...\" statement on line 3. We'll call this one **modus ponens**.
 
-We won't always be denoting these with latin names, but the general process of being able to give some generically useful deductive reasoning a name is nice. It makes them easier to reference and during this game doing this will allow you to re-use old proofs in future levels. Thus you can avoid proving the same thing over and over again.
+We won't always be denoting these with latin names, but the general process of being able to give some generically useful deductive reasoning a name is nice. It makes them easier to reference. During the course of this game some of your proofs will be given names and correspondingly unlocked in your inventory. Thus names are a way to avoid proving the same thing over and over again.
 
 # Propositions
 If we separate out the 4 true/false statements required for our line of reasoning and introduce some connectives, we can see the exact same argument in a more concise form. The numbers 1 - 7 here are meant to match exactly with the natural language above.
 
 We're going to give our English connectives some symbols:
-- \"or\" — \"∨\"
+- \"and\" — \"∧\"
 - \"implies\" — \"→\"
 - \"not\" — \"¬\"
 - \"or\" — \"∨\"
@@ -75,7 +78,7 @@ These symbols let us write out the argument from above as follows:
 Take a moment to see if you can match up the propositions and their meanings with the natural language versions above. If it feels unnatural right now, don't worry too much. This will become more natural as you progress.
 
 # Evidence
-The argument above is pretty similar to a full formalization of the chain of reasoning. This game doesn't reference line numbers and instead gives relevant lines a name. The justification for introducing a new name will be an expression.
+The argument above is pretty similar to a full formalization of the chain of reasoning. This game doesn't reference line numbers and doesn't allow free-floating hypothesis. Instead everything is given a name. The justification for introducing a new name will be an expression.
 
 Here's how this example might be expressed in the language of this game. It's a little different, but see if you can match this up with the argument as expressed above:
 
@@ -120,7 +123,11 @@ Info "
 
 This game is currently in its initial development phase, designed to be largely self-contained and accessible without requiring a programming or math background to navigate. Feedback about meeting that goal is welcome!
 
-Please feel encouraged to visit the game's GitHub repository and initiate a discussion on any topic regarding this game by opening an issue.
+While self-contained; in many ways, this game is targeted more at programmers than mathematicians. It doesn't use classical reasoning, sticking instead to constructive logic.The emphasis for most of the theorem proving is on writting proof terms — rather than using tactics. In fact, logic proof automation is such that the tactic **`tauto`** can solve any propositional logic theorem (Though possible, that's an NP-Complete problem).
+
+The main thrust of this game is to create puzzles that are fun to think through on your own. I can write a simple algorithm that solves every proper Sudoku. Yet, when I spend a train-ride scribbling numbers into boxes in my sudoku book, I never lament how much faster my phone's CPU could do the job.
+
+Please feel encouraged to visit the game's GitHub repository and initiate a discussion on any topic regarding this game. Just open a new issue or comment on an existing one.
 Github: [A Lean Intro to Logic](https://github.com/Trequetrum/lean4game-logic)
 
 ## Progress saving
@@ -139,6 +146,14 @@ Warning: In most browsers, deleting cookies will also clear the local storage
 ## Resources
 
 * The [Lean Zulip chat](https://leanprover.zulipchat.com/) forum
+* Github: [A Lean Intro to Logic](https://github.com/Trequetrum/lean4game-logic)
 "
 
+/-! Information to be displayed on the servers landing page. -/
+Languages "English"
+CaptionShort "Lean intro to Logic"
+CaptionLong "Self-contained friendly introduction to constructive logic"
+-- CoverImage "images/cover.png"
+
+/-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame

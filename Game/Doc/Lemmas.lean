@@ -98,6 +98,7 @@ def not_not_not {P : Prop}: ¬¬¬P ↔ ¬P := ⟨
 
 LemmaDoc not_not_not as "not_not_not" in "↔" "
 # Negation is stable
+A nice result of this theorem is that any more than 2 negations can be simplified down to 1 or 2 negations.
 ```
 not_not_not : ¬¬¬P ↔ ¬P
 ```
@@ -112,5 +113,15 @@ Not Q.\\
 Therefore, not P.
 ```
 mt : (P → Q) → ¬Q → ¬P
+```
+"
+
+def identity {P : Prop}(p : P) : P := p
+
+LemmaDoc identity as "identity" in "→" "
+# Propositional Identity
+This is the \"I think therefore I am\" of propositional logic. Like `True` it is a simple tautology whose truth requires no premises or assumptions — only reason alone.
+```
+identity : P → P
 ```
 "

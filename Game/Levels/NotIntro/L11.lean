@@ -2,27 +2,19 @@ import Game.Metadata
 
 World "NotIntro"
 Level 11
-Title "World 3, Level Ten"
-
-NewLemma not_not_not
+Title "not_not_not"
 
 Introduction "
-# BOSS Level
-\"If this is the cake you bought, then it's gonna taste horrible\"\\
-\"There's no evidence for that!\"\\
-\"How do you know!?\"\\
-\"This is not not the cake I bought\"\\
-\\
-Huh?
+# Allergy: Triple Confusion
+Paul is allergic to avocado. You tell him you're not *not* **not** bringing avacado!!! Paul gives you a confused look, but after a moment of contemplation, he responds with, \"Ok, good to know.\"
 # Proposition Key:
-- `B` — You bought a cake
-- `C` — The cake tastes horrible
+- `A` — You're bringing avacado
 "
 
-/-- TODO. -/
-Statement (B C : Prop) (h : ¬(B → C)) : ¬¬B := by
-  exact λnb ↦ h (λb ↦ false_elim (nb b))
+/-- ¬A is stable. -/
+Statement (A : Prop)(h : ¬¬¬A) : ¬A := by
+  exact λa ↦ h λna ↦ na a
 
 Conclusion "
-That's a twist of logic, to be sure!
+Well reasoned
 "

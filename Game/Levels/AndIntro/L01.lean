@@ -19,7 +19,7 @@ You've made a todo list, so you've begun to plan your party. Exhibit evidence th
 On the one hand, you can think of `h` as a reference to the assumption `P`. On the other hand, given the flavour text above, you can imagine that `h` is the name you've give your todo list (because your todo list is evidence for the proposition that \"You're **P**lanning a party\")
 
 # The Exact Tactic
-The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to being using one of the premises directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\
+The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the premises directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\
 \\
 It's entered like this:
 ```

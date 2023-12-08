@@ -17,7 +17,8 @@ Introduction "
 
 /-- → distributes over ∧ --/
 Statement (R S : Prop) (h : (S → C) ∧ (S → D)) : S → C ∧ D := by
-  exact λs ↦ ⟨h.left s, h.right s⟩
+  exact λ(s : S) ↦ and_intro (h.left s) (h.right s)
+  --    λs ↦ ⟨h.left s, h.right s⟩
 
 Conclusion "
 You definitely have the knack of providing conditional arguements

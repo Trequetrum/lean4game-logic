@@ -32,8 +32,9 @@ The help-page has even more detail about creating conjunctions like this.
 Use the `exact` tactic to exhibit evidence for a goal
 "
 
-/-- Exhibit evidence that Paul is coming to the party. -/
+/-- Fill a box, label correctly -/
 Statement (P S : Prop)(p: P)(s : S) : P ∧ S := by
+  Hint (hidden := true) "exact and_intro p s"
   exact and_intro (left := p) (right := s)
 
 Conclusion "

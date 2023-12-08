@@ -2,20 +2,22 @@ import Game.Metadata
 
 World "NotIntro"
 Level 7
-Title "World 3, Level Six"
+Title "Negation"
 
 Introduction "
-# Definitely Not
-Your cake order definitely has sprinkles, which means it's **not** missing sprinkles and loaded with chocolate chips
+# The Power of negation
+\"Is it possible that if this is the cake you bought, then it's gonna taste horrible?\"\\
+\"I'm certain that's not possible.\"\\
+\"Oh, so what you're saying is that you have evidence that the cake is delicious!\"
 # Proposition Key:
-- `C` — The cake is loaded with chocolate chips
-- `S` — The cake is topped with sprinkles
+- `B` — You bought this cake
+- `C` — The cake tastes horrible
 "
 
-/-- Negation into conjuction. -/
-Statement (C S : Prop) (s: S) : ¬(¬S ∧ C) := by
-  exact λnsc ↦ nsc.left s
+/-- Nested `λ↦`s. -/
+Statement (B C : Prop) (h: ¬(B → C)) : ¬C := by
+  exact λ(c : C) ↦ h (λ(_ : B) ↦ c)
 
 Conclusion "
-Might it possibly still be filled with chocolate chips? That sounds absolutely delightful!
+Phew, that makes perfect sense now.
 "

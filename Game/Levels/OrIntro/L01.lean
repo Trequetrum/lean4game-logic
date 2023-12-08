@@ -2,7 +2,7 @@ import Game.Metadata
 
 World "OrIntro"
 Level 1
-Title "World 4, Level 1"
+Title "Left Evidence"
 
 NewDefinition or_inl
 
@@ -19,5 +19,5 @@ Statement (O S : Prop)(s : S) : S ∨ O := by
   exact or_inl s
 
 Conclusion "
-Concluded
+This says nothing about whether or not oranges are a vegetable. All we know is that at least one of `O` or `S` must be true.
 "

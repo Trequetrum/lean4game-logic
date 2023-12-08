@@ -27,7 +27,7 @@ Assumptions:
 p : P
 Goal: P ∨ Q
 ```
-Becuase the goal knows what is required, the following will work.
+Because the goal knows what is required, the following will work.
 ```
 exact or_inl p
 ```

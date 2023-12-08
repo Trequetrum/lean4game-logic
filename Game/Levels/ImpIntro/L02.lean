@@ -19,17 +19,19 @@ In this game, when you need to show an implication, you write a function. For th
 fun <name> : <Prop> => <expr>
 λ <name> : <Prop> ↦ <expr>
 ```
-In general, you can use whatever you like for the **name** and **property**. In this case, you want to show evidence that `C → C`. Below is a hint (just fill in the **expression**):
+In general, you can use whatever you like for the **name** and **proposition**. In this case, you want to show evidence that `C → C`. Below is a hint (just fill in the **expression**):
 ```
 -- Assuming h is evidence for C,
 -- write an expression for evidence of C
 λ h : C ↦ <expr>
 ```
+### Another reminder
+Exhibit evidence using the exact tactic.
 "
 
 /-- Common! Cake is Cake --/
 Statement (C: Prop) : C → C := by
-  exact λh ↦ h
+  exact λ(h: C) ↦ h
 
 Conclusion "
 Once you've gathered evidence confirming that the object is a cake, the game becomes straightforward. The show's appeal lies not in the simple truism that a cake is a cake but rather in the contestants' skill to compile credible evidence. Typically, the most compelling evidence is presented by the host when he cuts into the object, unveiling its contents.

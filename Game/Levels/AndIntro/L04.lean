@@ -29,8 +29,8 @@ Once you've done this, you're very close to level 1 again where the Goal is dire
 
 /-- Exhibit evidence that Paul is coming to the party. -/
 Statement (P S : Prop)(h: P ∧ S) : P := by
-  have hₗ := h.left
-  exact hₗ
+  have p := h.left
+  exact p
 
 Conclusion "
 You've got a proof that Paul is coming to the party! Lets see if Alan will attend as well.
@@ -38,8 +38,8 @@ You've got a proof that Paul is coming to the party! Lets see if Alan will atten
 ----
 Which proof did you use?
 ```lean
-have hₗ := h.left
-exact hₗ
+have p := h.left
+exact p
 ```
 or
 ```lean

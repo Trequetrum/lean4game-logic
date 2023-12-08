@@ -2,20 +2,20 @@ import Game.Metadata
 
 World "NotIntro"
 Level 8
-Title "World 3, Level Seven"
+Title "Negated Conjunction"
 
 Introduction "
-# Allergy #1
-Owing to his allergy, if Paul is present, there must be no avocado at the party. Which means that we cannot have both Paul and avacado at the party
+# Definitely Not
+Your cake order definitely has sprinkles, which means it's **not** missing sprinkles and loaded with chocolate chips
 # Proposition Key:
-- `A` — There's avacado at the party
-- `P` — Paul is attending the party
+- `C` — The cake is loaded with chocolate chips
+- `S` — The cake is topped with sprinkles
 "
 
-/-- Show ¬(P ∧ A) -/
-Statement (A P : Prop) (h : P → ¬A) : ¬(P ∧ A) := by
-  exact λpa ↦ h pa.left pa.right
+/-- Negation into conjuction. -/
+Statement (C S : Prop) (s: S) : ¬(¬S ∧ C) := by
+  exact λ(nsc : ¬S ∧ C) ↦ nsc.left s
 
 Conclusion "
-That's settled
+Might it possibly still be filled with chocolate chips? That sounds absolutely delightful!
 "

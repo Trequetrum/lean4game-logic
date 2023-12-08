@@ -2,23 +2,32 @@ import Game.Metadata
 
 World "NotIntro"
 Level 5
-Title "Jason"
-
-NewLemma mt
+Title "Modus Tollens"
 
 Introduction "
-# The Jason Effect
-You're delighted that Jason will be there.\\
-\\
-Remarkably, even in moments when Jason lacks humor, he manages to be amusing! His comedic charm persists, regardless of circumstances.
+# Modus Tollens
+If Bella comes to the party, she is certain to perform a bawdy song. You've assured Sarah that there will be no bawdy songs at the event. Sarah is disappointed to discover that Bella won't be joining.
 # Proposition Key:
-- `J` — Jason is humorless
+- `B` — Bella is attending the party
+- `S` — A bawdy song will be sung
 "
 
-/-- The premise is a bit silly, sure. -/
-Statement (J : Prop) (h: J → ¬J) : ¬J := by
-  exact λj ↦ h j j
+/-- Modus Tollens. -/
+Statement (B S : Prop)(h₁ : B → S)(h₂ : ¬S) : ¬B := by
+  exact imp_trans h₁ h₂
 
 Conclusion "
-You're uncertain about the coherence of this, yet it surely must make sense. Let's proceed.
+Congradulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the \"**→ Tutotial world, level 4**\" to show that implication is transitive.
+---
+Thinking of `h₂` as `Q → False`, you can actually use your imp_trans theorem here.
+```
+exact λp ↦ h₂ (h₁ p)
+```
+```
+exact imp_trans h₁ h₂
+```
+For the math-inclined, because the expression for an implication is a function, you can also use function composition.
+```
+exact h₂ ∘ h₁
+```
 "

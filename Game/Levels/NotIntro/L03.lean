@@ -1,20 +1,21 @@
+
 import Game.Metadata
 
 World "NotIntro"
 Level 3
-Title "Self Contradictory"
+Title "Double False!"
 
 Introduction "
-# Self Contradictory
-Jason claims Bert is coming and Alan claims Bert is not coming. They can't both be right.
+# The Ambiguous Celebration Response
+Your somewhat bothersome cousin just called and is asking if you're throwing your annual soirée this year. You don't want to outright lie, so you say \"I'm not not throwing the party.\"
 # Proposition Key:
-- `B` — Bert is attending the party
+- `P` — You're throwing a party'
 "
 
 /-- not not introduction. -/
-Statement (B : Prop) : ¬(B ∧ ¬B) := by
-  exact λh ↦ h.right h.left
+Statement (P : Prop)(p : P) : ¬¬P := by
+  exact λ(np : ¬P) ↦ np p
 
 Conclusion "
-Well Concluded!
+You've made use of the concept that \"false implies anything\".
 "

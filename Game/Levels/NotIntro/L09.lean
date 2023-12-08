@@ -2,28 +2,20 @@ import Game.Metadata
 
 World "NotIntro"
 Level 9
-Title "World 3, Level Eight"
+Title "Implies a Negation"
 
 Introduction "
-# Allergy #2
-We cannot have both Paul and avacado at the party. Which means that if Paul is attending, then there will not be any avacado.
+# Allergy #1
+Owing to his allergy, if Paul is present, there must be no avocado at the party. Which means that we cannot have both Paul and avacado at the party
 # Proposition Key:
 - `A` — There's avacado at the party
 - `P` — Paul is attending the party
 "
 
-/-- Show P → ¬A. -/
-Statement (A P : Prop) (h: ¬(P ∧ A)) : P → ¬A := by
-  exact λp a ↦ h ⟨p,a⟩
+/-- Show ¬(P ∧ A) -/
+Statement (A P : Prop) (h : P → ¬A) : ¬(P ∧ A) := by
+  exact λ(pa : P ∧ A) ↦ h pa.left pa.right
 
 Conclusion "
-Concluding text ???
-
-----
-Reminder that these are the same:
-```
-λp ↦ λa ↦ h ⟨p,a⟩
--- and
-λp a ↦ h ⟨p,a⟩
-```
+That's settled
 "

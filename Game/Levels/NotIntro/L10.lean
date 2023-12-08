@@ -2,19 +2,28 @@ import Game.Metadata
 
 World "NotIntro"
 Level 10
-Title "not_not_not"
+Title "Conjunction Implicaiton"
 
 Introduction "
-# Allergy: Triple Confusion
-Paul is allergic to avocado. You tell him you're not *not* **not** bringing avacado!!! Paul gives you a confused look,  but after a moment of contemplation, he responds with, \"Ok, good to know.\"
+# Allergy #2
+We cannot have both Paul and avacado at the party. Which means that if Paul is attending, then there will not be any avacado.
 # Proposition Key:
-- `A` — You're bringing avacado
+- `A` — There's avacado at the party
+- `P` — Paul is attending the party
 "
 
-/-- ¬A is stable. -/
-Statement (A : Prop)(h : ¬¬¬A) : ¬A := by
-  exact λa ↦ h (λna ↦ na a)
+/-- Show P → ¬A. -/
+Statement (A P : Prop) (h: ¬(P ∧ A)) : P → ¬A := by
+  exact λ(p: P)(a : A) ↦ h (and_intro p a)
 
 Conclusion "
-Well reasoned
+That's settled... again!
+
+----
+Reminder that these are the same:
+```
+λp ↦ λa ↦ h ⟨p,a⟩
+-- and
+λp a ↦ h ⟨p,a⟩
+```
 "

@@ -19,6 +19,8 @@ Nesting boxes like this is a way to get around the \"two items per box\" rule. E
 - I — Ja**i**me is invited to the party
 - O — J**o**rdan is invited to the party
 - U — J**u**stin is invited to the party
+
+
 # The `have` Tactic
 You can complete this level with your knowledge from the previous level without using this new tactic. For example, any of these would work:
 ```

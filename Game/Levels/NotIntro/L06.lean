@@ -2,23 +2,23 @@ import Game.Metadata
 
 World "NotIntro"
 Level 6
-Title "Negation"
+Title "Jason"
+
+NewLemma mt
 
 Introduction "
-# The Power of negation
-\"If this is the cake you bought, then it's gonna taste horrible\"\\
-\"There's no evidence for that!\"\\
-\"How do you know!?\"\\
-\"The website says the cake is delicious!\"
+# The Jason Effect
+You're delighted that Jason will be there.\\
+\\
+Remarkably, even in moments when Jason lacks humor, he manages to be amusing! His comedic charm persists, regardless of circumstances.
 # Proposition Key:
-- `B` — You bought a cake
-- `C` — The cake tastes horrible
+- `J` — Jason is humorless
 "
 
-/-- Nested `λ↦`s. -/
-Statement (B C : Prop) (h: ¬(B → C)) : ¬C := by
-  exact λc ↦ h (λ_ ↦ c)
+/-- Remember `h : J → J → False` -/
+Statement (J : Prop) (h: J → ¬J) : ¬J := by
+  exact λ(j : J) ↦ h j j
 
 Conclusion "
-Phew, that makes perfect sense now.
+You're uncertain about the coherence of this, yet it surely must make sense. Let's proceed.
 "

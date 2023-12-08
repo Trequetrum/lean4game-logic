@@ -2,7 +2,7 @@ import Game.Metadata
 
 World "OrIntro"
 Level 2
-Title "World 4, Level 2"
+Title "Right Evidence"
 
 NewDefinition or_inr
 
@@ -19,5 +19,5 @@ Statement (O S : Prop)(s : S) : K ∨ S := by
   exact or_inr s
 
 Conclusion "
-Concluded
+Almost a repeat of level 1. That was fast.
 "

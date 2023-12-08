@@ -1,29 +1,35 @@
-
 import Game.Metadata
 
 World "NotIntro"
 Level 1
-Title "False implies anything"
-
-NewDefinition false_elim
+Title "Not False"
 
 Introduction "
-# Sarah's Punctuality
-Sarah is never on time. Despite her assurances that she'll grace the party with her timely presence, past experiences have proven otherwise. It's almost become a running joke, so much so that you playfully quip, \"Yeah, if you arrive on time, then I'll eat my boots.\"
-# Proposition Key:
-- `B` — You eat your boots
-- `S` — Sarah is on time
-# `false_elim`
-You've unlocked the \"false implies anything\" function. `false_elim` will take evidence for `False` and produce evidence for **anything**.
-# A Tip
-Remember you can think of `h` as evidence for `S → False`
+# Proof State
+The proof state in the level is as short as you've seen so far. There are no **Objects** or **Assumptions** listed.\\
+\\
+In other levels, you get a proposition key and in the proof state — under **Objects** — you'd see something like `P Q : Prop`. When you see `P` in a level, it's a variable standing in for whatever proposition is in the proposition key. The game freely re-uses these letters in other levels as they can stand in for anything.\\
+\\
+You won't see `False` listed under objects, just as you won't see **Theorems** or **Definitions** listed under assumptions. This just means that `False` never changes from level to level. It's never a stand-in for anything else. It's a fully defined and always available proposition.
+## Not False
+Inuitively, it should be very simple to provide evidence for \"not false\". Since `¬P` is shorthand for `P → False`, you should think of `¬False` as shorthand for `False → False`. To drive home the fact that `False` is a proposition, this has the same proof as `P → P` (Which you solved in \"**→ Tutorial, level 2**\").
 "
 
-/-- ¬S is enough to show S → B -/
-Statement (B S : Prop)(h : ¬S) : S → B := by
-  Hint (hidden := true) "λs ↦ false_elim (h s)"
-  exact λs ↦ false_elim (h s)
+/-- `identity` -/
+Statement: ¬False := by
+  exact identity
+
+example: ¬False := by
+  exact λ(f : False) ↦ f
 
 Conclusion "
-You've made use of the concept that \"false implies anything\".
+You'll never **actually** find evidence for `False`, but evidence for `¬False` is a very simple tautology, as you would expect.
+
+----
+Which Proof did you use?
+```
+exact identity
+exact λ(f : False) ↦ f
+exact λf ↦ f
+```
 "

@@ -2,7 +2,7 @@ import Game.Metadata
 
 World "ImpIntro"
 Level 5
-Title "More Snacks!"
+Title "Robbie Snacks"
 
 NewLemma imp_trans
 
@@ -47,7 +47,6 @@ Statement (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : 
   have hpt := imp_trans h₁ h₃
   have hpu := imp_trans hpt h₅
   exact hpu p
-  --exact h₅ (h₃ (h₁ p))
 
 Conclusion "
 Amazing! He is bringing a snack and you have evidence to prove it too!
@@ -64,7 +63,7 @@ or nest them together:
 ```
 exact h₅ (h₃ (h₁ p))
 ```
-or use the `imp_trans` theorem from the last level:
+or use the `imp_trans` theorem from the previous world:
 ```
 have hpt := imp_trans h₁ h₃
 have hpu := imp_trans hpt h₅
