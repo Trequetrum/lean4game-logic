@@ -2,16 +2,27 @@ import Game.Metadata
 
 World "OrIntro"
 Level 4
-Title "World 4, Level 4"
+Title "Or is Commutative"
 
 Introduction "
-# Level 4
+# Either way.
+Chocolate chip oatmeal cookies, which ingredient goes first?
+1. Oatmeal or chocolate chips?
+2. Chocolate chips or oatmeal?
+# Proposition Key:
+C — Chocolate chips
+O — Oatmeal
 "
 
-/-- ¬S is enough to show S → B -/
-Statement (P Q : Prop)(p : P) : P ∨ Q := by
-  exact or_inl p
+/-- Commutativity of "`∨`" -/
+Statement (C O : Prop)(h : C ∨ O) : O ∨ C := by
+  exact or_elim h or_inr or_inl
 
 Conclusion "
-Concluded
+Well, done.
+---
+This one is nice becuase the `→`s you need already have names!
+```
+exact or_elim h or_inr or_inl
+```
 "

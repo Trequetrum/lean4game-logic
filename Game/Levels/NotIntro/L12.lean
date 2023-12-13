@@ -18,7 +18,7 @@ Introduction "
 
 /-- ¬¬\"You bought this cake" -/
 Statement (B C : Prop) (h : ¬(B → C)) : ¬¬B := by
-  exact λnb ↦ h (λb ↦ false_elim (nb b))
+  exact λnb ↦ h (imp_trans nb false_elim)
 
 Conclusion "
 These unintuitive statements highlight the inherent challenge in contemplating the *potential* existence (or definite non-existance) of implications.

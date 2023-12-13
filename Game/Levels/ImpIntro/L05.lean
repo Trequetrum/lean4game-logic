@@ -28,7 +28,7 @@ You still have your todo list as evidence that you're planning a party. Will it 
 - `T` — It's **T**ime to get serious
 - `U` — Robbie is bringing a **U**nicorn snack
 # Evidence
-Sometimes visuals can make a logical arguement much easier to digest. Here is a diagram you've drawn depicting Robbie's notes so far.
+Sometimes visuals can make a logical argument much easier to digest. Here is a diagram you've drawn depicting Robbie's notes so far.
 $$
 \\begin{CD}
   P  @>{h₁}>> Q       @>{h₂}>> R \\\\
@@ -44,9 +44,33 @@ The Precedence definition page explains that function application is left-associ
 
 /-- Robbie is bringing a unicorn snack -/
 Statement (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
+  exact (h₁ ≫ h₃ ≫ h₅) p
+
+-- One application at a time
+example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
+  have q := h₁ p
+  have t := h₃ q
+  have u := h₅ t
+  exact u
+
+-- Standard nested function application
+example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
+  exact h₅ (h₃ (h₁ p))
+
+-- Use the fact that implication is transitive
+example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
   have hpt := imp_trans h₁ h₃
   have hpu := imp_trans hpt h₅
   exact hpu p
+
+-- Use the infix operator for implication transitivity
+example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
+  have hpu := h₁ ≫ h₃ ≫ h₅
+  exact hpu p
+
+-- Use swapped function application to create a linux-style pipe
+example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
+  exact p |> h₁ |> h₃ |> h₅
 
 Conclusion "
 Amazing! He is bringing a snack and you have evidence to prove it too!
@@ -67,6 +91,12 @@ or use the `imp_trans` theorem from the previous world:
 ```
 have hpt := imp_trans h₁ h₃
 have hpu := imp_trans hpt h₅
+exact hpu p
+```
+or if you've seen the infix operator for `imp_trans`:
+```
+have hpt := h₁ ≫ h₃
+have hpu := hpt ≫ h₅
 exact hpu p
 ```
 "

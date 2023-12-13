@@ -19,7 +19,17 @@ have h : A ∧ B := and_intro a b
 have h : A ∧ B := modus_ponens (modus_ponens and_intro a) b
 ```
 
-You should never use this lemma and just use function application instead as that will generally be clearer.
+You should never use this style of prefix `modus_ponens` and just use function application instead as that will generally be clearer.
+
+----
+# Infix Modus Ponens
+There is are infix operators for function application; they look like `|>` and `<|`. `f <| x`, and `x |> f` means the same as the same as `f x`.
+
+`<|` parses `x` with lower precedence, which means that `f <| g $ <|` is interpreted as `(f (g x))` rather than `((f g) x)`.
+
+It's twin, `|>` chains such that x |> f |> g is interpreted as g (f x).
+
+What makes the infix operators usefull is that they can often replace a pair of brackets `(...)` making expressions easier to read.
 "
 
 def and_comm {P Q : Prop}: P ∧ Q ↔ Q ∧ P :=
@@ -83,13 +93,25 @@ example {P Q R : Prop}: P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R := by
   exact ⟨mp,mpr⟩
 
 def imp_trans {P Q R : Prop} (hpq : P → Q) (hqr : Q → R) (p : P): R := hqr (hpq p)
+
 LemmaDoc imp_trans as "imp_trans" in "→" "
 # → is transitive
 `P → Q` and `Q → R` implies `P → R`
 ```
 imp_trans : (P → Q) → (Q → R) → P → R
 ```
+
+Of course, because of `and_comm`, you know you can flip this around too.
+`Q → R` and `P → Q` implies `P → R` has a near-identical proof.
+
+### Infix Operator:
+`imp_trans` has an infix operator. This looks like `≫` (which is written as “`\\gg`”).
+
+For the math-inclined, because the expression for an implication is a function, you can also use function composition for the same purpose (`∘` is written as “`\\o`”). Just remember that `∘` has the parameters swapped from the way `imp_trans` is defined.
 "
+
+infixl:85 " ≫ " => λa b ↦ Function.comp b a -- type as \gg
+
 
 def not_not_not {P : Prop}: ¬¬¬P ↔ ¬P := ⟨
   (λh p ↦ h (λnp ↦ np p)),
@@ -114,6 +136,9 @@ Therefore, not P.
 ```
 mt : (P → Q) → ¬Q → ¬P
 ```
+
+### Infix Operator:
+`mt` is a specialized version of `imp_trans`, which makes it possible to use `≫` as an infix operator for `mt`.
 "
 
 def identity {P : Prop}(p : P) : P := p

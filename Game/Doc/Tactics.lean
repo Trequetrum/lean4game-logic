@@ -2,9 +2,9 @@ import GameServer.Commands
 
 TacticDoc exact "
 # Summary
-The `exact` tactic is a means through which you give the game your answer. Many levels can be done in multiple steps. You'll use the `have` tactic when you're ready to create the final expression. It will be evaluated to see weather it matches the goal.
+The `exact` tactic is a means through which you give the game your answer. Many levels can be done in multiple steps. You'll use the `exact` tactic when you're ready to create the final expression. It will be evaluated to see weather it matches the goal.
 
-`exact` will work with any expression and attempt to unify it with the current goal. The simplest such expression is just a name that — `:` — \"is evidence for\" the goal. More complicated expressions often make use of unlocked definitions and theorems as well as function abstraction and application.
+`exact` will work with any expression and attempt to unify it with the current goal. The simplest such expression is just a name that — `:` — “is evidence for” the goal. More complicated expressions often make use of unlocked definitions and theorems as well as function abstraction and application.
 
 # Errors
 Because most of the starting levels use only the `exact` tactic and an expression, it's common to forget to specify the tactic. Sometimes this raises the error:

@@ -29,8 +29,7 @@ In this level, as your goal is `I ∧ S → S ∧ I`, the game automatically rec
 ```
 fun h => and_intro (and_right h) (and_left h)
 fun h => and_intro h.right h.left
--- or with unicode
+-- or with Unicode
 λh ↦ ⟨h.right, h.left⟩
 ```
-
 "

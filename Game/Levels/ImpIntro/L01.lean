@@ -10,19 +10,19 @@ NewLemma modus_ponens
 
 Introduction "
 # Let there be cake!
-You've found an online bakery service. Their websight details how the cake delivery service works.\\
+You've found an online bakery service. Their website details how the cake delivery service works.\\
 \\
-If you send them evidence of payment, then you'll receive an email detailing the cake that was paid for and how it will be delivered. The system is automated for you, so you can send it evidence of payment as often as you like and it'll always instantly return the same evidence that the cake will be delivered.
+If you send them evidence of payment, then you'll receive an email detailing when the cake will be delivered. The system is automated for you, so you can send it evidence of payment as often as you like and it'll always instantly return the same evidence that the cake will be delivered.
 # Proposition Key:
 - `P` — You've **P**aid for the cake
-- `C` — **C**ake will be delivered
+- `C` — The **C**ake will be delivered
 # Implication \" → \"
-You use an implication the same way you've been using `and_intro`, `and_left`, and `and_right`. You write out the name of the implication and then write the name of the evidence required for the left side of the \" → \" next to it.
+You use an implication the same way you've been using `and_intro`, `and_left`, and `and_right`. You write out the name of the implication and then write the name of the evidence required for the left side of the \" → \" next to it. Juxtaposition just means “to place next to each other,” which is what this is style of function application is called.
 - assumption `a : A`
 - assumption `h₁ : A → B`
 - have `b : B := h₁ a`
 
-You can read `h₁ a` as modus ponens. In fact, you've unlocked a theorem called modus_ponens that you could use here. Since modus ponens is implemanted as function application, you can — and should — always just use function application directly.
+You can read `h₁ a` as modus ponens. In fact, you've unlocked a theorem called modus_ponens that you could use here. Since modus ponens is implemented as function application, you can — and should — always just Juxtapose instead.
 # A retrospective
 You've already been using functions. When you wrote `and_intro p s` in **World 1, Level 2**, you gave the the function `and_intro` two parameters `p : P` and `s : S` and then it returned evidence for `P ∧ S`. \\
 \\

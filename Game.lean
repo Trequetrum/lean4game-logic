@@ -8,11 +8,13 @@ import Game.Levels.AndIntro
 import Game.Levels.ImpIntro
 import Game.Levels.NotIntro
 import Game.Levels.OrIntro
+import Game.Levels.IffIntro
 
 -- Here's where we show how to glue the worlds together
 Dependency AndIntro → ImpIntro
 Dependency ImpIntro → NotIntro
-
+Dependency ImpIntro → OrIntro
+Dependency ImpIntro → IffIntro
 
 -- Here's what we'll put on the title screen
 Title "A Lean Intro to Logic"
@@ -26,16 +28,16 @@ To play this puzzler you'll need to learn some notation. Unlike learning how to 
 Below, you're provided with whirlwind tour of the notation at play as well as a bit of motivation for why the notation looks the way it does. This is all done through a single example. Many of the details will seem lacking; The concepts covered here will be addressed with more detail during the tutorial worlds of this game.
 
 # But first, a tip!
-This introduction as well as some of the tutotial levels can get a bit wordy. The three column panels — text on the left, game worlds in the middle, and your inventory on the right — can all be expanded or shrunk as nesesary. Every screen is different, so do feel encouraged to re-size these pannels.
+This introduction as well as some of the tutorial levels can get a bit wordy. The three column panels — text on the left, game worlds in the middle, and your inventory on the right — can all be expanded or shrunk as necessary. Every screen is different, so do feel encouraged to re-size these panels.
 
 # Building some notation
 Consider the following argument stated in natural language:
 
-\"Either cat fur or dog fur was found at the scene of the crime. If dog fur was found at the scene of the crime, officer Thompson had an allergy attack. If cat fur was found at the scene of the crime, then Macavity is responsible for the crime. But officer Thompson didn’t have an allergy attack, and so therefore Macavity must be responsible for the crime.\"
+“Either cat fur or dog fur was found at the scene of the crime. If dog fur was found at the scene of the crime, Officer Thompson had an allergy attack. If cat fur was found at the scene of the crime, then Macavity is responsible for the crime. But Officer Thompson didn’t have an allergy attack, and so therefore Macavity must be responsible for the crime.” [¹]
 
 Does this argument convince you? The validity of this argument can be made more obvious by representing the chain of reasoning leading from the premises to the conclusion:
 1. Either cat fur was found at the scene of the crime, or dog fur was found at the scene of the crime. (Premise)
-2. If dog fur was found at the scene of the crime, then officer Thompson had an allergy attack. (Premise)
+2. If dog fur was found at the scene of the crime, then Officer Thompson had an allergy attack. (Premise)
 3. If cat fur was found at the scene of the crime, then Macavity is responsible for the crime. (Premise)
 4. Officer Thompson did not have an allergy attack. (Premise)
 5. Dog fur was not found at the scene of the crime. (Follows from 2 and 4)
@@ -48,7 +50,7 @@ If you take a moment to re-read them again, lines 5, 6, & 7 are all slightly dif
 - Line 6 is using the process of elimination on two options. This is the style of reasoning responsible for Sherlock Holmes' most famous quote — \"When you have eliminated the impossible, whatever remains, however improbable, must be the truth\". We'll give this a name too: **modus tollendo ponens**
 - Line 7 is the conclusion and is applying the \"if ... then ...\" statement on line 3. We'll call this one **modus ponens**.
 
-We won't always be denoting these with latin names, but the general process of being able to give some generically useful deductive reasoning a name is nice. It makes them easier to reference. During the course of this game some of your proofs will be given names and correspondingly unlocked in your inventory. Thus names are a way to avoid proving the same thing over and over again.
+We won't always be denoting these with Latin names, but the general process of being able to give some generically useful deductive reasoning a name is nice. It makes them easier to reference. During the course of this game some of your proofs will be given names and correspondingly unlocked in your inventory. Thus names are a way to avoid proving the same thing over and over again.
 
 # Propositions
 If we separate out the 4 true/false statements required for our line of reasoning and introduce some connectives, we can see the exact same argument in a more concise form. The numbers 1 - 7 here are meant to match exactly with the natural language above.
@@ -114,6 +116,10 @@ To introduce new evidence — such as `h₅` — you need to write out an expres
 In this game, each level will ask you to provide evidence of some proposition. This will often involve using the evidence you already have in some way.
 
 Click on the first world — **Party Invites** — to get started.
+
+----
+
+[¹]Logic example taken from [IEP](https://iep.utm.edu/propositional-logic-sentential-logic/#H5) entry: *Propositional Logic*.
 "
 
 Info "
@@ -123,9 +129,9 @@ Info "
 
 This game is currently in its initial development phase, designed to be largely self-contained and accessible without requiring a programming or math background to navigate. Feedback about meeting that goal is welcome!
 
-While self-contained; in many ways, this game is targeted more at programmers than mathematicians. It doesn't use classical reasoning, sticking instead to constructive logic.The emphasis for most of the theorem proving is on writting proof terms — rather than using tactics. In fact, logic proof automation is such that the tactic **`tauto`** can solve any propositional logic theorem (Though possible, that's an NP-Complete problem).
+While self-contained; in many ways, this game is targeted more at programmers than mathematicians. It doesn't use classical reasoning, sticking instead to constructive logic. The emphasis for most of the theorem proving is on writing proof terms — rather than using tactics. In fact, logic proof automation is such that if you use the tactic **`tauto`**, you can prove any propositional logic theorem.
 
-The main thrust of this game is to create puzzles that are fun to think through on your own. I can write a simple algorithm that solves every proper Sudoku. Yet, when I spend a train-ride scribbling numbers into boxes in my sudoku book, I never lament how much faster my phone's CPU could do the job.
+Constructive propositional logic is effectively decidable, in the sense that a finite constructive process applies uniformly to every propositional formula, either producing a proof of the formula or demonstrating that no such proof can exist. The fun is in thinking your way through a puzzle with the tools made available to you.
 
 Please feel encouraged to visit the game's GitHub repository and initiate a discussion on any topic regarding this game. Just open a new issue or comment on an existing one.
 Github: [A Lean Intro to Logic](https://github.com/Trequetrum/lean4game-logic)

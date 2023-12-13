@@ -46,6 +46,7 @@ have h₃ : P ∧ Q := {left := p, right := q}
 have h₄ := ({left := p, right := q} : P ∧ Q)
 have h₅ := {left := p, right := q : P ∧ Q}
 -- Implicit Constructuer, annotations based on context
+-- Type these angle brackets with “\\<” and “\\>”
 have h₆ : P ∧ Q := ⟨p,q⟩
 have h₇ := (⟨p,q⟩ : P ∧ Q)
 ```
@@ -55,7 +56,7 @@ DefinitionDoc FunElim as "→ elim" "
 # Function Application/Implication Elimination
 `P → Q` is propostion given to functions from evidence of `P` to evidence of `Q`.
 # Juxtaposition
-Juxtaposition just means \"to place next to each other,\" which is what we'll do to give a parameter to a function.
+Juxtaposition just means “to place next to each other,” which is what we'll do to give a parameter to a function.
 ### Example
 You should already be familiar with `and_intro`. It is a funtion that takes two parameters.
 ```

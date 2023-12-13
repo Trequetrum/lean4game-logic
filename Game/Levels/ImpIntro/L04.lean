@@ -19,12 +19,16 @@ With numbers, if `a` is less than `b` and `b` is less than `c`, then you can ded
 ```
 (a < b) ∧ (b < c) → (a < c)
 ```
-This is the transitiive property of `<`. You should be able to show that this same property holds for conditionals — \"`→`\"
+This is the transitive property of `<`. You should be able to show that this same property holds for conditionals — \"`→`\"
 "
 
 /-- Show that → is transitive -/
 Statement (C J S: Prop) (h₁ : C → J) (h₂ : J → S) : C → S := by
   exact λ(c: C) ↦ h₂ (h₁ c)
+
+-- Example using infix application to drop a pair of brackets.
+example (C J S: Prop) (h₁ : C → J) (h₂ : J → S) : C → S := by
+  exact λc ↦ h₂ <| h₁ c
 
 Conclusion "
 AH ha! Well done.

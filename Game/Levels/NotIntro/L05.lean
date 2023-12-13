@@ -18,6 +18,7 @@ Statement (B S : Prop)(h₁ : B → S)(h₂ : ¬S) : ¬B := by
 
 Conclusion "
 Congradulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the \"**→ Tutotial world, level 4**\" to show that implication is transitive.
+
 ---
 Thinking of `h₂` as `Q → False`, you can actually use your imp_trans theorem here.
 ```

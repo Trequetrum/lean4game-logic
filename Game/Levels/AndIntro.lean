@@ -17,7 +17,7 @@ You're hosting your yearly soirée, and it's time to start planning! Last year y
 \\
 This year will be different‼ This year, if you want to be sure that there will be fancy cheeses, you had better have evidence that somebody is bringing the cheese platter.
 
-World 1: **Party Invites** is a tutorial world that is meant to introduce you to conjunction — the logical \"and\". The symbol used to denote an \"and\" looks like \"`∧`\". You'll learn to how to use evidence to create an `∧` and how also how to get evidence out when it's been `∧`ed together.\\
+World 1: **Party Invites** is a tutorial world that is meant to introduce you to conjunction — the logical “and”. The symbol used to denote an “and” looks like “`∧`”. You'll learn to how to use evidence to create an `∧` and how also how to get evidence out when it's been `∧`ed together.\\
 \\
 The real-world analogues for evidence of `A ∧ B` might be a box with evidence for `A` and evidence for `B`, an audio recording with both pieces of evidence, or a tree with evidence in its branches.\\
 \\

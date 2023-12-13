@@ -12,6 +12,8 @@ You know that skittles are super colourful. Which means that either skittles are
 # Proposition Key:
 - `O` — Oranges are a vegetable
 - `S` — skittles are super colourful
+# New unlock
+You've just unlocked `or_inl`. It turns evidence for the lefthand of an `∨` proposition into a disjunction.
 "
 
 /-- Or Introduction Left -/

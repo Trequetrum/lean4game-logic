@@ -12,9 +12,11 @@ You know that skittles are super colourful. Which means that either sprinkles ar
 # Proposition Key:
 - `K` — sprinkles are are colourful
 - `S` — skittles are super colourful
+# New unlock
+You've just unlocked `or_inr`. It turns evidence for the righthand of an `∨` proposition into a disjunction.
 "
 
-/-- Or Introduction Left -/
+/-- Or Introduction Right -/
 Statement (O S : Prop)(s : S) : K ∨ S := by
   exact or_inr s
 

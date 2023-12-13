@@ -8,7 +8,7 @@ NewDefinition and_left
 
 Introduction "
 # Using Only What Is Needed
-Sarah has left a voicemail on your answering machine. In it she says \"Hello, it's Sarah, I'm calling to confirm that Paul is coming to the party and I am also coming to the party! See you then!\"\\
+Sarah has left a voicemail on your answering machine. In it she says “Hello, it's Sarah, I'm calling to confirm that Paul is coming to the party and I am also coming to the party! See you then!”\\
 \\
 You'd like to convince Alan to join the party. You know that Alan is good friends with Paul. Constructing evidence that Paul is attending the party might just be the key to convincing Alan to join as well.
 # Proposition Key:

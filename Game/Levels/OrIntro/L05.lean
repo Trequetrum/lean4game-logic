@@ -2,15 +2,20 @@ import Game.Metadata
 
 World "OrIntro"
 Level 5
-Title "World 4, Level 5"
+Title "Carry On Effects"
 
 Introduction "
-# Level 5
+# Carry On Effects
+If the cake arrives, then everybody will rejoice. Either the cake arrives or you get a refund. Therefore, either everybody will rejoice or you get a refund! That's a win-win situation.
+# Proposition Key:
+C — The cake arrives
+J — Everybody is joyfull
+R — You get a refund
 "
 
-/-- ¬S is enough to show S → B -/
-Statement (P Q : Prop)(p : P) : P ∨ Q := by
-  exact or_inl p
+/-- Implication across ∨ -/
+Statement (C J R : Prop)(h₁ : C → J)(h₂ : C ∨ R) : J ∨ R := by
+  exact or_elim h₂ (h₁ ≫ or_inl) or_inr
 
 Conclusion "
 Concluded

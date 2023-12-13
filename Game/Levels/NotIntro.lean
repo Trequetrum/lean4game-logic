@@ -16,21 +16,21 @@ Title "¬ Tutorial: Falsification"
 
 Introduction "
 # In this world
-In this world, you'll be introduced to negation — which is written with the \"`¬`\" symbol.\\
+In this world, you'll be introduced to negation — which is written with the “`¬`” symbol.\\
 \\
 This operator is really just syntactic sugar. `¬P` means `P → False`. It seamlessly integrates into all the scenarios where implications are used. It's also constructed using functions (`λ...↦...`) just like any other implication.\\
 \\
 The new interesting element for this world is `False`. What is `False`? It's a proposition — part of the set of statements that can be either true or false. Importantly, however it's defined as a proposition which always happens to be false. By sheer force of definition — there can never exist any evidence supporting the veracity of `False`.\\
 \\
-Consider a real-world analogue like \"Tom is an experienced beginner\" or \"Tom is a married bachelor\", neither can ever be true. For there to exist evidence of either, you need to throw out definitions of the words themselves.\\
+Consider a real-world analogue like “Tom is an experienced beginner” or “Tom is a married bachelor”, neither can ever be true. For there to exist evidence of either, you need to throw out definitions of the words themselves.\\
 \\
 An interesting corollary arises: from the premise of `False`, any proposition becomes permissible. If you're allowed to speak in gobbledygook, then you can say anything!\\
 ### Garbage In, Garbage out
-Imagine you're signing a contract of utmost importance. The terms stipulate: \"Once per day, you will be given a whole number greater than 0. If the number falls below 100, you must gracefully wave your left hand; if it exceeds 90, your right hand should elegantly sway. Lastly, if the number plunges below 0, you must transform into a cucumber.\"\\
+Imagine you're signing a contract of utmost importance. The terms stipulate: “Once per day, you will be given a whole number greater than 0. If the number falls below 100, you must gracefully wave your left hand; if it exceeds 90, your right hand should elegantly sway. Lastly, if the number plunges below 0, you must transform into a cucumber.”\\
 \\
 On casual scrutiny, one might naively conclude that adhering to this contract may involve turning into a cucumber. While that may seem impossible, a subtle loophole exists. By astutely arguing that the contract will never demand the impossible act of becoming a cucumber, you can effectively assure your compliance.\\
 \\
-By signing the contract, you're agreeing that \"If there appears a number that is both greater than 0 and less 0, then I will transform into a cucumber.\" Your grandiose claims remain secure as they hinge on an eventuality that defies logical possibility.\\
+By signing the contract, you're agreeing that “If there appears a number that is both greater than 0 and less 0, then I will transform into a cucumber.” Your grandiose claims remain secure as they hinge on an eventuality that defies logical possibility.\\
 "
 -- This is a second double not elim
 example {P : Prop} : ¬¬¬¬P ↔ ¬¬P := ⟨

@@ -18,7 +18,12 @@ Introduction "
 /-- → distributes over ∧ --/
 Statement (R S : Prop) (h : (S → C) ∧ (S → D)) : S → C ∧ D := by
   exact λ(s : S) ↦ and_intro (h.left s) (h.right s)
-  --    λs ↦ ⟨h.left s, h.right s⟩
+
+-- Should this game try to teach destructuring? It's trying
+-- to accomplish so much already.
+example (R S : Prop) (h : (S → C) ∧ (S → D)) : S → C ∧ D := by
+  have ⟨l,r⟩ := h
+  exact λs ↦ ⟨l s, r s⟩
 
 Conclusion "
 You definitely have the knack of providing conditional arguements

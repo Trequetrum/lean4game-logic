@@ -2,7 +2,7 @@ import Game.Metadata
 
 World "OrIntro"
 Level 3
-Title "World 4, Level 3"
+Title "Or Elimination"
 
 NewDefinition or_elim
 

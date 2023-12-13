@@ -6,7 +6,7 @@ Title "Mix and Match"
 
 Introduction "
 # Mixed Up Conjunctions
-Recall when you placed the invites for Jason, Justin, Jaime, and Jordan in separate boxes. there was a mix-up in the arrangement. Can you fix it so that Jason's and Justine's invites are together?
+Recall when you placed the invites for Jason, Justin, Jaime, and Jordan in separate boxes. There was a mix-up in the arrangement. Can you fix it so that Jason and Justin's invites are together?
 # Proposition Key:
 - A — J**a**son is invited to the party
 - I — Ja**i**me is invited to the party

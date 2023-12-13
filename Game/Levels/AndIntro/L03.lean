@@ -13,7 +13,7 @@ You have invites for Jason, Justin, Jaime, and Jordan who all live together. Unf
 2. You'll put Jordan's and Justin's invites in another box.
 3. You'll put both boxes in a final box.
 ### Nested Boxes!
-Nesting boxes like this is a way to get around the \"two items per box\" rule. Ensure that everything is correctly labeled to guarantee each invite reaches the correct recipient.
+Nesting boxes like this is a way to get around the “two items per box” rule. Ensure that everything is correctly labelled to guarantee each invite reaches the correct recipient.
 # Proposition Key:
 - A — J**a**son is invited to the party
 - I — Ja**i**me is invited to the party
@@ -28,18 +28,29 @@ exact and_intro (and_intro a i) (and_intro o u)
 exact {left := {left := a, right := i}, right := {left := o, right := u}}
 exact ⟨⟨a,i⟩,⟨o,u⟩⟩
 ```
-Instead of nesting this way, you can break the process down into steps using the `have` tactic. Enter \"`have h₁ := and_intro a i`\" to create your first box. After it's entered, it will appear under assumptions in the proof state. Now enter \"`have h₂ := and_intro o u`\" to create the second box.\\
+Instead of nesting this way, you can break the process down into steps using the `have` tactic. Enter “`have ai := and_intro a i`” to create your first box. After it's entered, it will appear under assumptions in the proof state. Now enter “`have ou := and_intro o u`” to create the second box.\\
 \\
-Finally, now you can place these two boxes into a third box and submit your answer using the `exact` tactic.
+Your proof state should now have the following assumptions:
+```
+Assumptions:
+a: A
+i: I
+o: O
+u: U
+ai: A ∧ I
+ou: O ∧ U
+```
+\\
+Finally, now you can place these two boxes — `ai` and `ou` — into a third box and submit your answer using the `exact` tactic.
 "
 
 NewTactic «have»
 
 /-- Three × and_intro. -/
 Statement (A I O U : Prop)(a : A)(i : I)(o : O)(u : U) : (A ∧ I) ∧ O ∧ U := by
-  have h₁ := and_intro a i
-  have h₂ := and_intro o u
-  exact and_intro h₁ h₂
+  have ai := and_intro a i
+  have ou := and_intro o u
+  exact and_intro ai ou
 
 
 Conclusion "

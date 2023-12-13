@@ -12,9 +12,9 @@ There's a show on TV about cake. It asks bakers to distinguish between every-day
 # Proposition Key:
 - `C` — This object is a Cake
 # Implication \" → \"
-You'll notice that this time you don't have any assumptions. Fortunatly, `C → C` is a tautology which means you can create an expression for the goal without any assumptions.\\
+You'll notice that this time you don't have any assumptions. Fortunately, `C → C` is a tautology which means you can create an expression for the goal without any assumptions.\\
 \\
-In this game, when you need to show an implication, you write a function. For the function, you can assume the lefthand side of the implication and then potentially use that assumption to show the righthand side.
+In this game, when you need to show an implication, you write a function. For the function, you can assume the left-hand side of the implication and then potentially use that assumption to exhibit the right-hand side.
 ```
 fun <name> : <Prop> => <expr>
 λ <name> : <Prop> ↦ <expr>
@@ -40,6 +40,8 @@ Once you've gathered evidence confirming that the object is a cake, the game bec
 # A Tip
 Moreover, since the goal already specifies the expected type of evidence, you can streamline your function without explicitly writing out the assumed proposition.
 ```
+exact λ(h : C) ↦ h
+-- can be written
 exact λh ↦ h
 ```
 "
