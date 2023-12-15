@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "NotIntro"
 Level 2
 Title "False implies anything"
 
-NewDefinition false_elim
+NewDefinition GameLogic.false_elim
 
 Introduction "
 # Sarah's Punctuality

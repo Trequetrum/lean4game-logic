@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "ImpIntro"
 Level 4
 Title "Chain Reasoning"
 
-NewLemma and_comm
+NewLemma GameLogic.and_comm
 
 Introduction "
 # A Chain of Reasoning

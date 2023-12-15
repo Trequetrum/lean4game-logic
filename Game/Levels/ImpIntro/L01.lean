@@ -1,12 +1,13 @@
 import Game.Metadata
 
+open GameLogic
+
 World "ImpIntro"
 Level 1
 Title "Cake Delivery Service"
 
-NewDefinition FunElim
-
-NewLemma modus_ponens
+NewDefinition GameLogic.FunElim
+NewLemma GameLogic.modus_ponens
 
 Introduction "
 # Let there be cake!
@@ -51,6 +52,12 @@ Exhibit evidence for the goal using the `exact` tactic.
 Statement (P C: Prop)(p: P)(bakery_service : P → C) : C := by
   have c := bakery_service p
   exact c
+
+example (P C: Prop)(p: P)(bakery_service : P → C) : C := by
+  exact bakery_service p
+
+example (P C: Prop)(p: P)(bakery_service : P → C) : C := by
+  exact modus_ponens bakery_service p
 
 Conclusion "
 Congratulations. You have evidence that your party will have cake!

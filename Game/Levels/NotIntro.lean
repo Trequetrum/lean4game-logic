@@ -32,15 +32,3 @@ On casual scrutiny, one might naively conclude that adhering to this contract ma
 \\
 By signing the contract, you're agreeing that “If there appears a number that is both greater than 0 and less 0, then I will transform into a cucumber.” Your grandiose claims remain secure as they hinge on an eventuality that defies logical possibility.\\
 "
--- This is a second double not elim
-example {P : Prop} : ¬¬¬¬P ↔ ¬¬P := ⟨
-  show ¬¬¬¬P → ¬¬P from λnnnp np ↦ nnnp λnnp ↦ nnp np,
-  show ¬¬P → ¬¬¬¬P from λnnp nnnp ↦ nnnp nnp
-⟩
-
-example {P : Prop} : ¬¬¬¬P ↔ ¬¬P := not_not_not
-
-example {P : Prop}(h: ¬¬¬¬¬¬¬P) : ¬P := by
-  have h₁ := not_not_not.mp h
-  have h₂ := not_not_not.mp h₁
-  exact not_not_not.mp h₂

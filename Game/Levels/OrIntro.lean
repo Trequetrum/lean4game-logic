@@ -8,7 +8,7 @@ import Game.Levels.OrIntro.L07
 import Game.Levels.OrIntro.L08
 
 World "OrIntro"
-Title "∨ Tutorial"
+Title "∨ Tutorial: The Kraken"
 
 Introduction "
 # The ∨ Tutorial World!

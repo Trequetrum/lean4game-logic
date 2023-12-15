@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "OrIntro"
 Level 2
 Title "Right Evidence"
 
-NewDefinition or_inr
+NewDefinition GameLogic.or_inr
 
 Introduction "
 # Or Introduction Right

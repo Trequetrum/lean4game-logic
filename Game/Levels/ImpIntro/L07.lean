@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "ImpIntro"
 Level 7
 Title "and_imp 2"

@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "NotIntro"
 Level 8
 Title "Negated Conjunction"

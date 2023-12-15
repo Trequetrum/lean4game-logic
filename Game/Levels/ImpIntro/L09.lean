@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "ImpIntro"
 Level 9
 Title "Uncertain Snacks"

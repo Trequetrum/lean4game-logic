@@ -1,10 +1,13 @@
 import Game.Metadata
 
+open GameLogic
+
 World "AndIntro"
 Level 3
 Title "The Have Tactic"
 
-NewDefinition Precedence
+NewDefinition GameLogic.Precedence
+NewTactic «have»
 
 Introduction "
 # Too Many Invites
@@ -43,8 +46,6 @@ ou: O ∧ U
 \\
 Finally, now you can place these two boxes — `ai` and `ou` — into a third box and submit your answer using the `exact` tactic.
 "
-
-NewTactic «have»
 
 /-- Three × and_intro. -/
 Statement (A I O U : Prop)(a : A)(i : I)(o : O)(u : U) : (A ∧ I) ∧ O ∧ U := by

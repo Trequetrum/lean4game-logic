@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "IffIntro"
 Level 1
 Title "Title"

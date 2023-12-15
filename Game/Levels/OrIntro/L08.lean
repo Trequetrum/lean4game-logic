@@ -1,22 +1,24 @@
 import Game.Metadata
 
+open GameLogic
+
 World "OrIntro"
 Level 8
 Title "The Implication"
 
 Introduction "
 # BOSS LEVEL
-If we summon the Kraken, then we shall assuredly perish. Sure that sounds bad, but soncider that if we summon the Kraken or have icecream, then we shall perish or (hear me out here) **have icecream!**.
+If we summon the Kraken, then we shall assuredly perish. While that might sound ominous, consider this: if we summon the Kraken or **have icecream**, then we shall **have icecream!** or we shall perish.
 # Proposition Key:
-- I — We have have icecream!
+- I — **We have have icecream!**
 - K — We summon the Kraken
 - P — We shall assuredly perish
 "
 
 /-- Implication of ∨ -/
-Statement (I K P : Prop)(h : K → P) : K ∨ I → P ∨ I := by
-  exact λpvr ↦ or_elim pvr (h ≫ or_inl) or_inr
+Statement (I K P : Prop)(h : K → P) : K ∨ I → I ∨ P := by
+  exact (or_elim · (h ≫ or_inr) or_inl)
 
 Conclusion "
-Concluded
+Okay, that was a bit easy for a boss level. Don't sweat it, just enjoy the icecream!
 "

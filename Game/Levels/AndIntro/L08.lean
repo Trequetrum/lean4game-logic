@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "AndIntro"
 Level 8
 Title "Rearranging Boxes"

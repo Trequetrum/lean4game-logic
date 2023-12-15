@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "AndIntro"
 Level 6
 Title "Mix and Match"

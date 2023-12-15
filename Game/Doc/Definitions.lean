@@ -1,8 +1,10 @@
 import GameServer.Commands
 
+namespace GameLogic
+
 def and_left {P Q : Prop} (h : P ∧ Q) : P := And.left h
 
-DefinitionDoc and_left as "∧-e left" "
+DefinitionDoc GameLogic.and_left as "∧ elim left" "
 # ∧ Elimination Left
 ### and_left : P ∧ Q -> P`
 
@@ -13,7 +15,7 @@ If `h` is a term with a type like `AP∧ Q`
 
 def and_right {P Q : Prop} (h : P ∧ Q) : Q := And.right h
 
-DefinitionDoc and_right as "∧-e right" "
+DefinitionDoc GameLogic.and_right as "∧ elim right" "
 # ∧ Elimination Right
 ### and_right : P ∧ Q -> Q`
 
@@ -24,7 +26,7 @@ If `h` is a term with a type like `P ∧ Q`
 
 def and_intro {P Q : Prop} (left : P) (right : Q) : P ∧ Q := And.intro left right
 
-DefinitionDoc and_intro as "∧ intro" "
+DefinitionDoc GameLogic.and_intro as "∧ intro" "
 # and_intro
 ### `and_intro : P -> Q -> P ∧ Q`
 `and_intro` is a function with two parameters. It takes two disparate pieces of evidence and combines them into a single piece of evidence. If `(e₁ : P)` and `(e₂ : Q)` are evidence, then
@@ -52,7 +54,7 @@ have h₇ := (⟨p,q⟩ : P ∧ Q)
 ```
 "
 
-DefinitionDoc FunElim as "→ elim" "
+DefinitionDoc GameLogic.FunElim as "→ elim" "
 # Function Application/Implication Elimination
 `P → Q` is propostion given to functions from evidence of `P` to evidence of `Q`.
 # Juxtaposition
@@ -86,7 +88,7 @@ exact (h₁ a)
 Takes `h₁` and applies `a` to it.
 "
 
-DefinitionDoc FunIntro as "→ intro" "
+DefinitionDoc GameLogic.FunIntro as "→ intro" "
 # `fun _ => _`
 You can create evidence for an implication by defining the appropriate function.
 - `have h₁ : P → P := fun p : P => p`
@@ -101,7 +103,7 @@ Generally, you don't need to repeat the types when they're obvious from the cont
 - `=>` can be written as `↦`
 "
 
-DefinitionDoc AsciiTable as "Symbol Table" "
+DefinitionDoc GameLogic.AsciiTable as "Symbol Table" "
 ### **Logic Constants & Operators**
 | $Name~~~$ | $Ascii~~~$ | $Unicode$ | $Unicode Cmd$ |
 | --- | :---: | :---: | --- |
@@ -136,7 +138,7 @@ fun h : P ∧ Q => and_intro (and_right h) (and_left h)
 | Subscript Numbers | ₁ ₂ ₃ ... | `\\1` `\\2` `\\3` ... |
 "
 
-DefinitionDoc Precedence as "Precedence" "
+DefinitionDoc GameLogic.Precedence as "Precedence" "
 # Remembering Algebra
 In math class, you may have learned an acronym like BEDMAS or PEMDAS to remember the precedence of operators in your math expressions:
 1. Brackets (or Parentheses)
@@ -152,6 +154,7 @@ Brackets group or disambiguate expressions. You can think of precedence rules as
 - non-associative: `P ↔ Q ↔ R` is an error
 # High to low Precedence
 Function application doesn't have an operator, it's just `function <space> argument`. It has max precedence and is left associative (meaning `and_intro p q` ≡ `(and_intro p) q`).
+### Propositional Operators
 | $Operator$ | $~~~Precedence$ | |
 | :---: | :---: | --- |
 | ¬ | max | |
@@ -159,8 +162,14 @@ Function application doesn't have an operator, it's just `function <space> argum
 | ∨ | 30 | right-associative |
 | → | 25 | right-associative |
 | ↔ | 20 | non-associative |
-| ∃ | _10_ | |
-| ∀ | _05_ | |
+| ∃ | __ | |
+| ∀ | __ | |
+### Expression Operators
+| $Operator$ | $~~~Precedence$ | |
+| :---: | :---: | --- |
+| ≫ | 85 | left-associative |
+| |> | min + 1 | right-associative |
+| <| | min | left-associative |
 ### Example:
 ```
 ¬P ∨ Q ∧ P → Q ↔ Q ∨ R ∨ ¬S
@@ -189,7 +198,7 @@ Here's a version where you can see it aligned
 
 def false_elim {P : Prop} (h : False) : P := h.rec
 
-DefinitionDoc false_elim as "false_elim" "
+DefinitionDoc GameLogic.false_elim as "False elim" "
 If
 ```
 -- Assumptions
@@ -204,7 +213,7 @@ will allow you to write any well formed proposition in place of `T`. This makes 
 
 def or_inl {P Q : Prop} (p : P) : Or P Q := Or.inl p
 
-DefinitionDoc or_inl as "or_inl" "
+DefinitionDoc GameLogic.or_inl as "∨ intro left" "
 # Or Introduction Left
 Turns evidence for the lefthand of an `∨` proposition into a disjunction. The context must supply what the righthand side of the disjunction is.
 ```
@@ -223,7 +232,7 @@ have h := show P ∨ Q from or_inl p
 
 def or_inr {P Q : Prop} (q : Q) : Or P Q := Or.inr q
 
-DefinitionDoc or_inr as "or_inr" "
+DefinitionDoc GameLogic.or_inr as "∨ intro right" "
 # Or Introduction Right
 Turns evidence for the righthand of an `∨` proposition into a disjunction. The context must supply what the lefthand side of the disjunction is.
 ```
@@ -247,7 +256,7 @@ def or_elim
   (right : Q → R) : R :=
     Or.elim h left right
 
-DefinitionDoc or_elim as "or_elim" "
+DefinitionDoc GameLogic.or_elim as "∨ elim" "
 # Or Elimination
 If you can conclude something from `A` and you can conclude the same thing from `B`, then if you know `A ∨ B` it won't matter which of the two happens as you can still guarentee something.
 
@@ -268,4 +277,26 @@ pr : P → R
 qr : Q → R
 have r : R := or_elim pvq pr qr
 ```
+"
+
+def iff_intro
+  {P Q : Prop}
+  (hpq: P → Q)
+  (hqp: Q → P) : P ↔ Q :=
+    Iff.intro hpq hqp
+
+DefinitionDoc GameLogic.iff_intro as "↔ intro" "
+  TODO 8888
+"
+
+def iff_mp {P Q : Prop} (h : P ↔ Q) : P → Q := h.mp
+
+DefinitionDoc GameLogic.iff_mp as "↔ elim mp" "
+  TODO 1234
+"
+
+def iff_mpr {P Q : Prop} (h : P ↔ Q) : Q → P := h.mpr
+
+DefinitionDoc GameLogic.iff_mpr as "↔ elim mpr" "
+  TODO 4321
 "

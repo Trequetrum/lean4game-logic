@@ -129,9 +129,7 @@ Info "
 
 This game is currently in its initial development phase, designed to be largely self-contained and accessible without requiring a programming or math background to navigate. Feedback about meeting that goal is welcome!
 
-While self-contained; in many ways, this game is targeted more at programmers than mathematicians. It doesn't use classical reasoning, sticking instead to constructive logic. The emphasis for most of the theorem proving is on writing proof terms — rather than using tactics. In fact, logic proof automation is such that if you use the tactic **`tauto`**, you can prove any propositional logic theorem.
-
-Constructive propositional logic is effectively decidable, in the sense that a finite constructive process applies uniformly to every propositional formula, either producing a proof of the formula or demonstrating that no such proof can exist. The fun is in thinking your way through a puzzle with the tools made available to you.
+While self-contained; in many ways, this game is targeted more at programmers than mathematicians. It doesn't use classical reasoning, sticking instead to constructive logic. The emphasis for most of the theorem proving is on writing proof terms — rather than using tactics.
 
 Please feel encouraged to visit the game's GitHub repository and initiate a discussion on any topic regarding this game. Just open a new issue or comment on an existing one.
 Github: [A Lean Intro to Logic](https://github.com/Trequetrum/lean4game-logic)

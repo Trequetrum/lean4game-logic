@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "AndIntro"
 Level 5
 Title "And Elimination 2"
 
-NewDefinition and_right
+NewDefinition GameLogic.and_right
 
 Introduction "
 # Another Unlock

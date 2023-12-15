@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "ImpIntro"
 Level 2
 Title "Identity"
 
-NewDefinition FunIntro
+NewDefinition GameLogic.FunIntro
 
 Introduction "
 # Is it Cake!?

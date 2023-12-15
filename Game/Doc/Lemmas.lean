@@ -1,8 +1,14 @@
 import GameServer.Commands
 
+namespace GameLogic
+
+def foo_bar(h : α) : α := h
+
+LemmaDoc GameLogic.foo_bar as "fb" in "∩" "TODO"
+
 def modus_ponens {P Q : Prop} (hpq: P → Q) (p: P) : Q := hpq p
 
-LemmaDoc modus_ponens as "modus_ponens" in "→" "
+LemmaDoc GameLogic.modus_ponens as "modus_ponens" in "→" "
 In this game, the deductive rule *modus_ponens* is just function application.
 ```
 intro h : A ∧ B
@@ -37,7 +43,7 @@ def and_comm {P Q : Prop}: P ∧ Q ↔ Q ∧ P :=
     λ⟨l,r⟩ ↦ ⟨r,l⟩
   ⟩
 
-LemmaDoc and_comm as "and_comm" in "↔" "
+LemmaDoc GameLogic.and_comm as "and_comm" in "↔" "
 # ∧ is commutative
 
 `and_comm` is evidence that `P ∧ Q ↔ Q ∧ P`
@@ -53,7 +59,7 @@ def or_comm {P Q : Prop}: P ∨ Q ↔ Q ∨ P :=
     (Or.elim · Or.inr Or.inl)
   ⟩
 
-LemmaDoc or_comm as "or_comm" in "↔" "
+LemmaDoc GameLogic.or_comm as "or_comm" in "↔" "
 # ∨ is commutative
 
 `or_comm` is evidence that `P ∨ Q ↔ Q ∨ P`
@@ -94,7 +100,7 @@ example {P Q R : Prop}: P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R := by
 
 def imp_trans {P Q R : Prop} (hpq : P → Q) (hqr : Q → R) (p : P): R := hqr (hpq p)
 
-LemmaDoc imp_trans as "imp_trans" in "→" "
+LemmaDoc GameLogic.imp_trans as "imp_trans" in "→" "
 # → is transitive
 `P → Q` and `Q → R` implies `P → R`
 ```
@@ -110,15 +116,14 @@ Of course, because of `and_comm`, you know you can flip this around too.
 For the math-inclined, because the expression for an implication is a function, you can also use function composition for the same purpose (`∘` is written as “`\\o`”). Just remember that `∘` has the parameters swapped from the way `imp_trans` is defined.
 "
 
-infixl:85 " ≫ " => λa b ↦ Function.comp b a -- type as \gg
-
+infixl:85 " ≫ " => λa b ↦ Function.comp b a  -- type as \gg
 
 def not_not_not {P : Prop}: ¬¬¬P ↔ ¬P := ⟨
   (λh p ↦ h (λnp ↦ np p)),
-  (λh np ↦ np h)
+  (λnp nnp ↦ nnp $ np)
 ⟩
 
-LemmaDoc not_not_not as "not_not_not" in "↔" "
+LemmaDoc GameLogic.not_not_not as "not_not_not" in "↔" "
 # Negation is stable
 A nice result of this theorem is that any more than 2 negations can be simplified down to 1 or 2 negations.
 ```
@@ -126,7 +131,9 @@ not_not_not : ¬¬¬P ↔ ¬P
 ```
 "
 
-LemmaDoc mt as "mt" in "→" "
+def mt {P Q : Prop} (h: P → Q) (nq: ¬Q) : ¬P := h ≫ nq
+
+LemmaDoc GameLogic.mt as "mt" in "→" "
 # Modus Tollens
 Denying the consequent. We've given this theorem an extra short name because it appears so often.
 
@@ -143,7 +150,7 @@ mt : (P → Q) → ¬Q → ¬P
 
 def identity {P : Prop}(p : P) : P := p
 
-LemmaDoc identity as "identity" in "→" "
+LemmaDoc GameLogic.identity as "identity" in "→" "
 # Propositional Identity
 This is the \"I think therefore I am\" of propositional logic. Like `True` it is a simple tautology whose truth requires no premises or assumptions — only reason alone.
 ```

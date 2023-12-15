@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "NotIntro"
 Level 6
 Title "Jason"
 
-NewLemma mt
+NewLemma GameLogic.mt
 
 Introduction "
 # The Jason Effect

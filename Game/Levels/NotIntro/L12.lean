@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "NotIntro"
 Level 12
 Title "¬Intro Boss"
 
-NewLemma not_not_not
+NewLemma GameLogic.not_not_not
 
 Introduction "
 # BOSS Level

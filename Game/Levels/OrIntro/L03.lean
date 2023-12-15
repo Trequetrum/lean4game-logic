@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "OrIntro"
 Level 3
 Title "Or Elimination"
 
-NewDefinition or_elim
+NewDefinition GameLogic.or_elim
 
 Introduction "
 # Party Games

@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "ImpIntro"
 Level 8
 Title "Distribute"

@@ -90,3 +90,54 @@ Goal:
 ¬P
 ```
 "
+
+TacticDoc rw "
+## Summary
+
+If `h` is a proof of an equality `X = Y`, then `rw [h]` will change
+all `X`s in the goal to `Y`s. It's the way to \"substitute in\".
+
+## Variants
+
+* `rw [← h]` (changes `Y`s to `X`s; get the back arrow by typing `\\left ` or `\\l`.)
+
+* `rw [h1, h2]` (a sequence of rewrites)
+
+* `rw [h] at h2` (changes `X`s to `Y`s in hypothesis `h2`)
+
+* `rw [h] at h1 h2 ⊢` (changes `X`s to `Y`s in two hypotheses and the goal;
+get the `⊢` symbol with `\\|-`.)
+
+* `repeat rw [add_zero]` will keep changing `? + 0` to `?`
+until there are no more matches for `? + 0`.
+
+* `nth_rewrite 2 [h]` will change only the second `X` in the goal to `Y`.
+"
+
+TacticDoc «repeat» "
+## Summary
+
+`repeat t` repeatedly applies the tactic `t`
+to the goal. You don't need to use this
+tactic, it just speeds things up sometimes.
+
+## Example
+
+`repeat rw [add_zero]` will turn the goal
+`a + 0 + (0 + (0 + 0)) = b + 0 + 0`
+into the goal
+`a = b`.
+"
+
+TacticDoc nth_rewrite "
+## Summary
+
+If `h : X = Y` and there are several `X`s in the goal, then
+`nth_rewrite 3 [h]` will just change the third `X` to a `Y`.
+
+## Example
+
+If the goal is `2 + 2 = 4` then `nth_rewrite 2 [two_eq_succ_one]`
+will change the goal to `2 + succ 1 = 4`. In contrast, `rw [two_eq_succ_one]`
+will change the goal to `succ 1 + succ 1 = 4`.
+"

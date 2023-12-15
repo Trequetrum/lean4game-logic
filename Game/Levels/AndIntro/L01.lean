@@ -1,12 +1,13 @@
-
 import Game.Metadata
+
+open GameLogic
 
 World "AndIntro"
 Level 1
 Title "Exactly! It's in the premise"
 
 NewTactic exact
-NewDefinition AsciiTable
+NewDefinition GameLogic.AsciiTable
 
 Introduction "
 # Introduction

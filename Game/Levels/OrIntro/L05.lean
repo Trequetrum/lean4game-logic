@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "OrIntro"
 Level 5
 Title "Carry On Effects"
@@ -18,5 +20,5 @@ Statement (C J R : Prop)(h₁ : C → J)(h₂ : C ∨ R) : J ∨ R := by
   exact or_elim h₂ (h₁ ≫ or_inl) or_inr
 
 Conclusion "
-Concluded
+Well done, you're getting good at this!
 "

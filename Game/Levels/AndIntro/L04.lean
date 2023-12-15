@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "AndIntro"
 Level 4
 Title "And Elimination"
 
-NewDefinition and_left
+NewDefinition GameLogic.and_left
 
 Introduction "
 # Using Only What Is Needed

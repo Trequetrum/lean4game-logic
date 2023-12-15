@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "AndIntro"
 Level 2
 Title "And Introduction"
 
-NewDefinition and_intro
+NewDefinition GameLogic.and_intro
 
 Introduction "
 # Sending Invitations in a Single Package
@@ -36,6 +38,7 @@ Use the `exact` tactic to exhibit evidence for a goal
 Statement (P S : Prop)(p: P)(s : S) : P ∧ S := by
   Hint (hidden := true) "exact and_intro p s"
   exact and_intro (left := p) (right := s)
+
 
 Conclusion "
 You've got evidence that Paul and Sarah are invited to the party.\\

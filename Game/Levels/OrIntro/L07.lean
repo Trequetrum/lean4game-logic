@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "OrIntro"
 Level 7
 Title "and distributes over or"
@@ -22,6 +24,18 @@ Statement (G H U : Prop)(h : G ∧ (H ∨ U)) : (G ∧ H) ∨ (G ∧ U) := by
     λx ↦ or_inr ⟨h.left, x⟩
   exact or_elim hvu ffh ffu
 
+example (G H U : Prop)(h : G ∧ (H ∨ U)) : (G ∧ H) ∨ (G ∧ U) := by
+  exact or_elim h.right
+    (and_intro h.left ≫ or_inl)
+    (and_intro h.left ≫ or_inr)
+
 Conclusion "
-Concluded
+This is a great example of how the infix `imp_trans` operator can streamline a level:
+
+---
+```lean
+exact or_elim h.right
+  (and_intro h.left ≫ or_inl)
+  (and_intro h.left ≫ or_inr)
+```
 "

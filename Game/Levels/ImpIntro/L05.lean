@@ -1,10 +1,12 @@
 import Game.Metadata
 
+open GameLogic
+
 World "ImpIntro"
 Level 5
 Title "Robbie Snacks"
 
-NewLemma imp_trans
+NewLemma GameLogic.imp_trans
 
 Introduction "
 # Is Robbie bringing something?

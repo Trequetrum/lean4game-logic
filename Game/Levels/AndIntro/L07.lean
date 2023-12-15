@@ -1,5 +1,7 @@
 import Game.Metadata
 
+open GameLogic
+
 World "AndIntro"
 Level 7
 Title "More Elimination"
