@@ -4,15 +4,15 @@ open GameLogic
 
 World "ImpIntro"
 Level 5
-Title "Robbie Snacks"
+Title "Riffin Snacks"
 
 NewLemma GameLogic.imp_trans
 
 Introduction "
-# Is Robbie bringing something?
-Robbie is an artsy, but rather eccentric friend of yours.\\
+# Is Riffin bringing something?
+Riffin is an artsy, but rather eccentric friend of yours.\\
 \\
-Ever since you asked Robbie to bring something to your party, he's been sending you rather cryptic emails. Initially, these emails seemed to have nothing to do with the party. However, after receiving the 5th email, you believe you might be able to use them to create evidence that Robbie is bringing something to the party.\\
+Ever since you asked Riffin to bring something to your party, he's been sending you rather cryptic emails. Initially, these emails seemed to have nothing to do with the party. However, after receiving the 5th email, you believe you might be able to use them to create evidence that Riffin is bringing something to the party.\\
 \\
 These are the emails you received:
 1. If you're planning a party then the quest has begun
@@ -28,9 +28,9 @@ You still have your todo list as evidence that you're planning a party. Will it 
 - `R` — The **R**oad to victory is long and winding
 - `S` — The **S**tarting gun has fired
 - `T` — It's **T**ime to get serious
-- `U` — Robbie is bringing a **U**nicorn snack
+- `U` — Riffin is bringing a **U**nicorn snack
 # Evidence
-Sometimes visuals can make a logical argument much easier to digest. Here is a diagram you've drawn depicting Robbie's notes so far.
+Sometimes visuals can make a logical argument much easier to digest. Here is a diagram you've drawn depicting Riffin's notes so far.
 $$
 \\begin{CD}
   P  @>{h₁}>> Q       @>{h₂}>> R \\\\
@@ -44,7 +44,7 @@ The Precedence definition page explains that function application is left-associ
 - `((((h₁ h₂) h₃) h₄) h₅)`
 "
 
-/-- Robbie is bringing a unicorn snack -/
+/-- Riffin is bringing a unicorn snack -/
 Statement (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
   exact (h₁ ≫ h₃ ≫ h₅) p
 
@@ -78,7 +78,7 @@ Conclusion "
 Amazing! He is bringing a snack and you have evidence to prove it too!
 
 ----
-Here are two solutions to Robbie's puzzle. Sometimes it's helpful to see the same puzzles solved in more than one way.
+Here are two solutions to Riffin's puzzle. Sometimes it's helpful to see the same puzzles solved in more than one way.
 ```
 have q := h₁ p
 have t := h₃ q

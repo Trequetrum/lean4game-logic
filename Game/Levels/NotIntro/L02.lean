@@ -6,14 +6,14 @@ World "NotIntro"
 Level 2
 Title "False implies anything"
 
-NewDefinition GameLogic.false_elim
+NewLemma GameLogic.false_elim
 
 Introduction "
-# Sarah's Punctuality
-Sarah is never on time. Despite her assurances that she'll grace the party with her timely presence, past experiences have proven otherwise. It's almost become a running joke, so much so that you playfully quip, \"Yeah, if you arrive on time, then I'll eat my boots.\"
+# Sybeth's Punctuality
+Sybeth is never on time. Despite her assurances that she'll grace the party with her timely presence, past experiences have proven otherwise. It's almost become a running joke, so much so that you playfully quip, \"Yeah, if you arrive on time, then I'll eat my boots.\"
 # Proposition Key:
 - `B` — You eat your boots
-- `S` — Sarah is on time
+- `S` — Sybeth is on time
 # `false_elim`
 You've unlocked the \"false implies anything\" function. `false_elim` will take evidence for `False` and produce evidence for **anything**.
 # A Tip

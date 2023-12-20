@@ -10,11 +10,11 @@ NewLemma GameLogic.and_comm
 
 Introduction "
 # A Chain of Reasoning
-You know Jason will be excited about a cake with sprinkles. Since Sarah has just started dating Jason and enjoys seeing him happy, it follows that Sarah will be excited about a cake with sprinkles.
+You know Alarfil will be excited about a cake with sprinkles. Since Sybeth has just started dating Alarfil and enjoys seeing them happy, it follows that Sybeth will be excited about a cake with sprinkles.
 # Proposition Key:
 - `C` — The **C**ake has sprinkles
-- `J` — **J**ason is happy
-- `S` — **S**arah is happy
+- `A` — **A**larfil is happy
+- `S` — **S**ybeth is happy
 
 # Transitivity Aside
 With numbers, if `a` is less than `b` and `b` is less than `c`, then you can deduce that `a` is less than `c`.
@@ -25,11 +25,11 @@ This is the transitive property of `<`. You should be able to show that this sam
 "
 
 /-- Show that → is transitive -/
-Statement (C J S: Prop) (h₁ : C → J) (h₂ : J → S) : C → S := by
+Statement (C A S: Prop) (h₁ : C → A) (h₂ : A → S) : C → S := by
   exact λ(c: C) ↦ h₂ (h₁ c)
 
 -- Example using infix application to drop a pair of brackets.
-example (C J S: Prop) (h₁ : C → J) (h₂ : J → S) : C → S := by
+example (C A S: Prop) (h₁ : C → A) (h₂ : A → S) : C → S := by
   exact λc ↦ h₂ <| h₁ c
 
 Conclusion "

@@ -6,6 +6,8 @@ World "NotIntro"
 Level 1
 Title "Not False"
 
+NewDefinition GameLogic.false_def
+
 Introduction "
 # Proof State
 The proof state in the level is as short as you've seen so far. There are no **Objects** or **Assumptions** listed.\\

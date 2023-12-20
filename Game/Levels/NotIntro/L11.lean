@@ -8,7 +8,7 @@ Title "not_not_not"
 
 Introduction "
 # Allergy: Triple Confusion
-Paul is allergic to avocado. You tell him you're not *not* **not** bringing avacado!!! Paul gives you a confused look, but after a moment of contemplation, he responds with, \"Ok, good to know.\"
+Pippin is allergic to avocado. You tell him you're not *not* **not** bringing avacado!!! Pippin gives you a confused look, but after a moment of contemplation, he responds with, \"Ok, good to know.\"
 # Proposition Key:
 - `A` — You're bringing avacado
 "

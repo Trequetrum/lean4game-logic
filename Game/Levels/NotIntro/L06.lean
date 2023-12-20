@@ -4,23 +4,25 @@ open GameLogic
 
 World "NotIntro"
 Level 6
-Title "Jason"
+Title "Alarfil"
 
-NewLemma GameLogic.mt
+NewLemma GameLogic.modus_tollens
 
 Introduction "
-# The Jason Effect
-You're delighted that Jason will be there.\\
+# The Alarfil Effect
+You're delighted that Alarfil will be there.\\
 \\
-Remarkably, even in moments when Jason lacks humor, he manages to be amusing! His comedic charm persists, regardless of circumstances.
+Remarkably, even in moments when Alarfil lacks humor, he manages to be amusing! His comedic charm persists, regardless of circumstances.
 # Proposition Key:
-- `J` — Jason is humorless
+- `A` — Alarfil is humorless
 "
 
-/-- Remember `h : J → J → False` -/
-Statement (J : Prop) (h: J → ¬J) : ¬J := by
-  exact λ(j : J) ↦ h j j
+/-- Remember `h : A → A → False` -/
+Statement (A : Prop) (h: A → ¬A) : ¬A := by
+  exact λ(a : A) ↦ h a a
 
 Conclusion "
-You're uncertain about the coherence of this, yet it surely must make sense. Let's proceed.
+This joke is a reach, I know, but my answer this this level kinda spells `ahaa` — `λa ↦ h a a`. \\
+\\
+Okay, okay. Let's proceed.
 "

@@ -6,7 +6,7 @@ World "OrIntro"
 Level 2
 Title "Right Evidence"
 
-NewDefinition GameLogic.or_inr
+NewLemma GameLogic.or_inr
 
 Introduction "
 # Or Introduction Right

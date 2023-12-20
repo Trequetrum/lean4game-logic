@@ -8,14 +8,14 @@ Title "Self Contradictory"
 
 Introduction "
 # Self Contradictory
-Jason claims Bert is coming and Alan claims Bert is not coming. They can't both be right.
+Alarfil claims Lippa is coming and Cyna claims Lippa is not coming. They can't both be right.
 # Proposition Key:
-- `B` — Bert is attending the party
+- `L` — **L**ippa is attending the party
 "
 
 /-- The law of non-self-contradiction -/
-Statement (B : Prop) : ¬(B ∧ ¬B) := by
-  exact λ(h : B ∧ ¬B) ↦ h.right h.left
+Statement (L : Prop) : ¬(L ∧ ¬L) := by
+  exact λ(h : L ∧ ¬L) ↦ h.right h.left
 
 Conclusion "
 Well Concluded!

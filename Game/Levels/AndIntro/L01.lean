@@ -7,7 +7,7 @@ Level 1
 Title "Exactly! It's in the premise"
 
 NewTactic exact
-NewDefinition GameLogic.AsciiTable
+NewDefinition GameLogic.AsciiTable GameLogic.and_def
 
 Introduction "
 # Introduction

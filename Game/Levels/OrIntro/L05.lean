@@ -6,6 +6,8 @@ World "OrIntro"
 Level 5
 Title "Carry On Effects"
 
+NewLemma GameLogic.or_comm
+
 Introduction "
 # Carry On Effects
 If the cake arrives, then everybody will rejoice. Either the cake arrives or you get a refund. Therefore, either everybody will rejoice or you get a refund! That's a win-win situation.

@@ -6,7 +6,8 @@ World "OrIntro"
 Level 1
 Title "Left Evidence"
 
-NewDefinition GameLogic.or_inl
+NewLemma GameLogic.or_inl
+NewDefinition GameLogic.or_def
 
 Introduction "
 # Or Introduction Left

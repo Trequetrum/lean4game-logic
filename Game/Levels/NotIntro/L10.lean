@@ -8,10 +8,10 @@ Title "Conjunction Implicaiton"
 
 Introduction "
 # Allergy #2
-We cannot have both Paul and avacado at the party. Which means that if Paul is attending, then there will not be any avacado.
+We cannot have both Pippin and avacado at the party. Which means that if Pippin is attending, then there will not be any avacado.
 # Proposition Key:
 - `A` — There's avacado at the party
-- `P` — Paul is attending the party
+- `P` — Pippin is attending the party
 "
 
 /-- Show P → ¬A. -/

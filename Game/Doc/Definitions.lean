@@ -2,39 +2,11 @@ import GameServer.Commands
 
 namespace GameLogic
 
-def and_left {P Q : Prop} (h : P ∧ Q) : P := And.left h
-
-DefinitionDoc GameLogic.and_left as "∧ elim left" "
-# ∧ Elimination Left
-### and_left : P ∧ Q -> P`
-
-If `h` is a term with a type like `AP∧ Q`
-
-`and_left h`, `h.left` or `h.1` are all expressions for denoting the left-hand side of the given evidence. In this case, the left side has a type of `P`.
-"
-
-def and_right {P Q : Prop} (h : P ∧ Q) : Q := And.right h
-
-DefinitionDoc GameLogic.and_right as "∧ elim right" "
-# ∧ Elimination Right
-### and_right : P ∧ Q -> Q`
-
-If `h` is a term with a type like `P ∧ Q`
-
-`and_right h`, `h.right` or `h.2` are all expressions for denoting the right-hand side of the given evidence. In this case, the left side has a type of `Q`.
-"
-
-def and_intro {P Q : Prop} (left : P) (right : Q) : P ∧ Q := And.intro left right
-
-DefinitionDoc GameLogic.and_intro as "∧ intro" "
-# and_intro
-### `and_intro : P -> Q -> P ∧ Q`
-`and_intro` is a function with two parameters. It takes two disparate pieces of evidence and combines them into a single piece of evidence. If `(e₁ : P)` and `(e₂ : Q)` are evidence, then
-```
-have h : P ∧ Q := and_intro e₁ e₂
-```
-## Auxilliary:
-Since this is done so often, here are a whole handfull of ways to combine evidence. They all build the same conjunction in the end, so you can use whichever suits you.
+DefinitionDoc GameLogic.and_def as "∧" "
+# Conjunction
+## Introduction
+An “And” can be introduced with the `and_intro` theorem. Conjunctions and biconditionals can both be constructed using the angle bracket notation as well.
+### Examples
 ```
 -- Assumptions
 p : P
@@ -43,15 +15,66 @@ q : Q
 -- Explicit Constructer, no annotations needed
 have h₁ := and_intro p q
 have h₂ := and_intro (left := p) (right := q)
--- Implicit Structure, annotations based on context
-have h₃ : P ∧ Q := {left := p, right := q}
-have h₄ := ({left := p, right := q} : P ∧ Q)
-have h₅ := {left := p, right := q : P ∧ Q}
 -- Implicit Constructuer, annotations based on context
 -- Type these angle brackets with “\\<” and “\\>”
 have h₆ : P ∧ Q := ⟨p,q⟩
 have h₇ := (⟨p,q⟩ : P ∧ Q)
 ```
+## Elimination
+An “And” like `h : P ∧ Q` can be reduced in two ways:
+1. Aquire evidence for `P` using `and_left h` or `h.left`
+2. Aquire evidence for `Q` using `and_right` or `h.right`
+"
+
+DefinitionDoc GameLogic.or_def as "∨" "
+# Disjunction
+## Introduction
+An “Or” like `h : P ∨ Q` can be introduced in two ways:
+1. If you have `p : P`, you can use `or_inl p`
+2. If you have `q : Q`, you can use `or_inr q`
+
+In either case, remember that the other type in your disjunction must be inferable in context or supplied as part of the expression. For example: `(or_inl p : P ∨ Q)`
+## Elimination
+An “Or” like `h : P ∨ Q` can be be eliminated if both P and Q imply the same proposition. In this example, P or Q implies R:
+```
+-- Assumptions
+pvq: P ∨ Q
+pr : P → R
+qr : Q → R
+-- Goal: R
+exact or_elim pvq pr qr
+```
+"
+
+DefinitionDoc GameLogic.false_def as "False" "
+# False
+This is a proposition for which there can never be any evidence. If your assumptions lead you to evidence for `False`, then your assumptions are inconsitent and you can use `false_elim` to deduce any proposition you like.
+"
+
+DefinitionDoc GameLogic.iff_def as "↔" "
+# Biconditional
+## Introduction
+An “If and only if” can be introduced with the `iff_intro` theorem. Biconditionals and conjunctions can both be constructed using the angle bracket notation as well.
+### Examples
+```
+-- Assumptions
+h₁ : P → Q
+h₂ : Q → P
+-- Each new term is evidence for P ↔ Q
+-- Explicit Constructer, no annotations needed
+have h₁ := iff_intro h₁ h₂
+have h₂ := iff_intro (mp := h₁) (mpr := h₂)
+-- Implicit Constructuer, annotations based on context
+-- Type these angle brackets with “\\<” and “\\>”
+have h₆ : P ↔ Q := ⟨h₁, h₂⟩
+have h₇ := (⟨h₁, h₂⟩ : P ↔ Q)
+```
+## Elimination
+An “If and only if” like `h : P ↔ Q` can be reduced in two ways:
+1. Aquire evidence for `P → Q` using `iff_mp h` or `h.mp`
+2. Aquire evidence for `Q → P` using `iff_mpr h` or `h.mpr`
+## Rewrite
+Biconditionals let you use the `rewrite` tactic to change goals or assumptions.
 "
 
 DefinitionDoc GameLogic.FunElim as "→ elim" "
@@ -60,7 +83,6 @@ DefinitionDoc GameLogic.FunElim as "→ elim" "
 # Juxtaposition
 Juxtaposition just means “to place next to each other,” which is what we'll do to give a parameter to a function.
 ### Example
-You should already be familiar with `and_intro`. It is a funtion that takes two parameters.
 ```
 -- Assumptions
 e₁ : P
@@ -72,7 +94,6 @@ P ∧ Q
 ```
 exact (and_intro e₁ e₂)
 ```
-Takes `and_intro`, first applies e₂, then second applies e₂.
 ### Example
 ```
 -- Assumptions
@@ -101,9 +122,12 @@ Generally, you don't need to repeat the types when they're obvious from the cont
 # Unicode:
 - `fun` can be written as `λ`
 - `=>` can be written as `↦`
+----
+- `have h₁ : P → P := λp ↦ p`
+- `have h₂ : P ∧ Q → P := λh ↦ h.left`
 "
 
-DefinitionDoc GameLogic.AsciiTable as "Symbol Table" "
+DefinitionDoc GameLogic.AsciiTable as "Unicode Table" "
 ### **Logic Constants & Operators**
 | $Name~~~$ | $Ascii~~~$ | $Unicode$ | $Unicode Cmd$ |
 | --- | :---: | :---: | --- |
@@ -136,6 +160,8 @@ fun h : P ∧ Q => and_intro (and_right h) (and_left h)
 | --- | :---: | --- |
 | Angle brackets | ⟨ ⟩ | `\\<` `\\>` `\\langle` `\\rangle` |
 | Subscript Numbers | ₁ ₂ ₃ ... | `\\1` `\\2` `\\3` ... |
+| Left Arrow | ← | `\\l` `\\leftarrow` `\\gets` `\\<-` |
+| Turnstyle | ⊢ | `\\│-` `\\entails` `\\vdash` `\\goal` |
 "
 
 DefinitionDoc GameLogic.Precedence as "Precedence" "
@@ -194,109 +220,4 @@ Here's a version where you can see it aligned
  ((¬P) ∨ (Q ∧ P)) → Q  ↔ (Q ∨ (R ∨ (¬S)))
 (((¬P) ∨ (Q ∧ P)) → Q) ↔ (Q ∨ (R ∨ (¬S)))
 ```
-"
-
-def false_elim {P : Prop} (h : False) : P := h.rec
-
-DefinitionDoc GameLogic.false_elim as "False elim" "
-If
-```
--- Assumptions
-h : False
-```
-then
-```
-have t : T := false_elim h
-```
-will allow you to write any well formed proposition in place of `T`. This makes `false_elim` the \"From `False`, anything goes\" function. **Ex falso quodlibet**.
-"
-
-def or_inl {P Q : Prop} (p : P) : Or P Q := Or.inl p
-
-DefinitionDoc GameLogic.or_inl as "∨ intro left" "
-# Or Introduction Left
-Turns evidence for the lefthand of an `∨` proposition into a disjunction. The context must supply what the righthand side of the disjunction is.
-```
--- Objects
-P Q : Prop
--- Assumptions
-p : P
-```
-allows:
-```
-have h : P ∨ Q := or_inl p
-have h := (or_inl p : P ∨ Q)
-have h := show P ∨ Q from or_inl p
-```
-"
-
-def or_inr {P Q : Prop} (q : Q) : Or P Q := Or.inr q
-
-DefinitionDoc GameLogic.or_inr as "∨ intro right" "
-# Or Introduction Right
-Turns evidence for the righthand of an `∨` proposition into a disjunction. The context must supply what the lefthand side of the disjunction is.
-```
--- Objects
-P Q : Prop
--- Assumptions
-q : Q
-```
-allows:
-```
-have h : P ∨ Q := or_inr q
-have h := (or_inl q : P ∨ Q)
-have h := show P ∨ Q from or_inl q
-```
-"
-
-def or_elim
-  {P Q R : Prop}
-  (h : P ∨ Q)
-  (left : P → R)
-  (right : Q → R) : R :=
-    Or.elim h left right
-
-DefinitionDoc GameLogic.or_elim as "∨ elim" "
-# Or Elimination
-If you can conclude something from `A` and you can conclude the same thing from `B`, then if you know `A ∨ B` it won't matter which of the two happens as you can still guarentee something.
-
-or_elim is also evidence:
-```
-or_elim : (P ∨ Q) → (P → R) → (Q → R) → R`
-```
-# Parameters
-`or_elim` has three parameters:
-1. takes evidence for a disjunction,
-2. evidence an implication on the left,
-3. evidence for an implication on the right.
-# Example
-`or_elim` is your first 3-paramater function.
-```
-pvq: P ∨ Q
-pr : P → R
-qr : Q → R
-have r : R := or_elim pvq pr qr
-```
-"
-
-def iff_intro
-  {P Q : Prop}
-  (hpq: P → Q)
-  (hqp: Q → P) : P ↔ Q :=
-    Iff.intro hpq hqp
-
-DefinitionDoc GameLogic.iff_intro as "↔ intro" "
-  TODO 8888
-"
-
-def iff_mp {P Q : Prop} (h : P ↔ Q) : P → Q := h.mp
-
-DefinitionDoc GameLogic.iff_mp as "↔ elim mp" "
-  TODO 1234
-"
-
-def iff_mpr {P Q : Prop} (h : P ↔ Q) : Q → P := h.mpr
-
-DefinitionDoc GameLogic.iff_mpr as "↔ elim mpr" "
-  TODO 4321
 "

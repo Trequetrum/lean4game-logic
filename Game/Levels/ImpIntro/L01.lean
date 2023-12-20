@@ -24,25 +24,12 @@ You use an implication the same way you've been using `and_intro`, `and_left`, a
 - have `b : B := h₁ a`
 
 You can read `h₁ a` as modus ponens. In fact, you've unlocked a theorem called modus_ponens that you could use here. Since modus ponens is implemented as function application, you can — and should — always just Juxtapose instead.
-# A retrospective
-You've already been using functions. When you wrote `and_intro p s` in **World 1, Level 2**, you gave the the function `and_intro` two parameters `p : P` and `s : S` and then it returned evidence for `P ∧ S`. \\
-\\
-In World 1, level 7 when you wrote:
-```
-have h₁ := and_left h
-have h₂ := and_right h₁
-have h₃ := and_left h₂
-have h₄ := and_left h₃
-have h₅ := and_right h₄
-exact h₅
--- or
-exact and_right (and_left (and_left (and_right (and_left h))))
--- or
-exact h.left.right.left.left.right
-```
-You were actually treating `and_left` as evidence of `P ∧ Q → P` and you were treating `and_right` as evidence of `P ∧ Q → Q`. Using the game's notation: `and_left : P ∧ Q → P` and `and_right : P ∧ Q → Q`
 # A note
-You'll often see assumptions given one or two letter names (`p`, `r`, `q`, `h₁`, `h₂`, `h₃`, etc). Assumptions are generally not long-lived. They are part of some expression, exhibit some implication, and then are discarded. Their names in this context don't need to be particularly memorable. Theorems — like those on the right side of the game screen — are not fundamentally different from assumptions, but they tend to have longer names because they will be available for all future levels. This level gives an assumption a longer name just for the sake of it.
+You'll often see assumptions given one or two letter names (`p`, `r`, `q`, `h₁`, `h₂`, `h₃`, etc). Assumptions are generally not long-lived. They are part of some expression, exhibit some implication, and then are discarded. Their names in this context don't need to be particularly memorable.\\
+\\
+Theorems — like those on the right side of the game screen — can be thought of as assumptions that are always available for every level (and therefore do not need to be listed under assumptions for any given level). They tend to have longer names because they will be available for all future levels.\\
+\\
+Name-length is not a hard and fast rule, just a common idiom. For a counter-example; this level gives the assumption `bakery_service` a longer name.
 
 # Reminder
 Exhibit evidence for the goal using the `exact` tactic.

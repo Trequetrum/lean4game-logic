@@ -8,7 +8,7 @@ Title "Modus Tollens"
 
 Introduction "
 # Modus Tollens
-If Bella comes to the party, she is certain to perform a bawdy song. You've assured Sarah that there will be no bawdy songs at the event. Sarah is disappointed to discover that Bella won't be joining.
+If Bella comes to the party, she is certain to perform a bawdy song. You've assured Sybeth that there will be no bawdy songs at the event. Sybeth is disappointed to discover that Bella won't be joining.
 # Proposition Key:
 - `B` — Bella is attending the party
 - `S` — A bawdy song will be sung

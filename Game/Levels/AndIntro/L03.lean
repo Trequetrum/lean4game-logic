@@ -11,17 +11,17 @@ NewTactic «have»
 
 Introduction "
 # Too Many Invites
-You have invites for Jason, Justin, Jaime, and Jordan who all live together. Unfortunately, boxes only have space for two items, but you've thought up a clever solution!
-1. You'll put Jason's and Jaime's invites in a box,
-2. You'll put Jordan's and Justin's invites in another box.
+You have invites for Alarfil, Ilyn, Orin, and Uriel who all live together. Unfortunately, boxes only have space for two items, but you've thought up a clever solution!
+1. You'll put Alarfil's and Ilyn's invites in a box,
+2. You'll put Orin's and Uriel's invites in another box.
 3. You'll put both boxes in a final box.
 ### Nested Boxes!
 Nesting boxes like this is a way to get around the “two items per box” rule. Ensure that everything is correctly labelled to guarantee each invite reaches the correct recipient.
 # Proposition Key:
-- A — J**a**son is invited to the party
-- I — Ja**i**me is invited to the party
-- O — J**o**rdan is invited to the party
-- U — J**u**stin is invited to the party
+- A — **A**larfil is invited to the party
+- I — **I**lyn is invited to the party
+- O — **O**rin is invited to the party
+- U — **U**riel is invited to the party
 
 
 # The `have` Tactic
@@ -59,10 +59,10 @@ Great! Another 4 invites sent out. You're getting the hang of this.
 
 ----
 ````
--- 1. Jason and Jaime: A ∧ I
+-- 1. Alarfil and Ilyn: A ∧ I
 have h₁ := and_intro a i
 
--- 2. Jordan and Justin: O ∧ U
+-- 2. Orin and Uriel: O ∧ U
 have h₂ := and_intro o u
 
 -- 3. both boxes in a final box

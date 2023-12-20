@@ -14,21 +14,21 @@ Using the `have` tactic, you can break this task down into digestible chunks. Th
 # Rearranging Boxes
 Finally, a bunch of your invites have returned with RSVPs. The mailman has delivered them in a big box. Make a list of the expected attendees so far.
 # Proposition Key:
-- A — J**a**son is coming to the party
-- I — Ja**i**me is coming to the party
-- L — A**l**an is coming to the party
-- O — J**o**rdan is coming to the party
-- P — **P**aul is coming to the party
-- S — **S**arah is coming to the party
-- U — J**u**stin is coming to the party
+- A — **A**larfil is coming to the party
+- C — **C**yna** is coming to the party
+- I — **I**lyn** is coming to the party
+- O — **O**rin** is coming to the party
+- P — **P**ippin** is coming to the party
+- S — **S**ybeth** is coming to the party
+- U — **U**riel** is coming to the party
 "
 
 /-- Take apart and build evidence -/
-Statement (A I L O P S U : Prop)(h: ((P ∧ S) ∧ A) ∧ ¬I ∧ (L ∧ ¬O) ∧ ¬U) : A ∧ L ∧ P ∧ S := by
+Statement (A C I O P S U : Prop)(h: ((P ∧ S) ∧ A) ∧ ¬I ∧ (C ∧ ¬O) ∧ ¬U) : A ∧ C ∧ P ∧ S := by
   have psa := h.left
-  have l := h.right.right.left.left
-  have lps := and_intro l psa.left
-  exact and_intro psa.right lps
+  have c := h.right.right.left.left
+  have fps := and_intro c psa.left
+  exact and_intro psa.right fps
 
 Conclusion "
 Amazing! You've mastered \"AND\".

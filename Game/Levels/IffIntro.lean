@@ -1,10 +1,15 @@
 import Game.Levels.IffIntro.L01
 import Game.Levels.IffIntro.L02
+import Game.Levels.IffIntro.L03
+import Game.Levels.IffIntro.L04
 
 World "IffIntro"
-Title "↔ Tutorial"
+Title "↔ Tutorial: Party Games"
 
 Introduction "
+# Party Games
+A soirée requires a diligent and clear-headed host if the guests are to have fun. It's your job to ensure everybody is having a good time. Let the games begin!
+
 # Propositional Equivalence
 ## Biconditional: If and only if
 The `↔` operator doesn't introduce anything new. `P ↔ Q` can be constructed whenever evidence for both `P → Q` and `Q → P` is available. In general, if `h₁` and `h₂` are evidence as follows:

@@ -5,6 +5,16 @@
 -- import Game.Doc.Definitions
 -- import Game.Doc.Tactics
 
+-- Paul ↦ Pippin
+-- Sarah ↦ Sybeth
+-- Jason ↦ Alarfil
+-- Jaime ↦ Ilyn
+-- Jordan ↦ Orin
+-- Justin ↦ Uriel
+-- Alan ↦ Fredu ↦ Cyna
+-- Robbie ↦ Riffin
+-- Bella ↦ Bella
+-- Bert ↦ Lippa
 
 theorem imp_imp_imp {a b c d : Prop} (h₀ : c → a) (h₁ : b → d) : (a → b) → (c → d) := (h₁ ∘ · ∘ h₀)
 

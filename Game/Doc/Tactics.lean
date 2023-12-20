@@ -94,24 +94,23 @@ Goal:
 TacticDoc rw "
 ## Summary
 
-If `h` is a proof of an equality `X = Y`, then `rw [h]` will change
-all `X`s in the goal to `Y`s. It's the way to \"substitute in\".
+If `h₁` is a proof of an equivalence `P ↔ Q`, then `rw [h₁]` will change
+all `P`s in the goal to `Q`s. It's the way to “substitute in”.
 
 ## Variants
 
-* `rw [← h]` (changes `Y`s to `X`s; get the back arrow by typing `\\left ` or `\\l`.)
+* `rw [← h₁]` — changes `Q`s to `P`s; get the back arrow by typing `\\left ` or `\\l`.
 
-* `rw [h1, h2]` (a sequence of rewrites)
+* `rw [h₁, h₂, h₃, h₄]` — a sequence of rewrites
 
-* `rw [h] at h2` (changes `X`s to `Y`s in hypothesis `h2`)
+* `rw [h₁] at h₂` — changes `P`s to `Q`s in hypothesis `h₂`
 
-* `rw [h] at h1 h2 ⊢` (changes `X`s to `Y`s in two hypotheses and the goal;
-get the `⊢` symbol with `\\|-`.)
+* `rw [h₁] at h₂ h₃ ⊢` — changes `X`s to `Y`s in two hypotheses and the goal;
+get the `⊢` symbol with `\\|-`.
 
-* `repeat rw [add_zero]` will keep changing `? + 0` to `?`
-until there are no more matches for `? + 0`.
+* `repeat rw [h₁]` — keep attempting to `rw` until there are no more matches. For example, if the goal is `¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬P` you can use `rw [not_not_not]` 9 times or just use `repeat rw [not_not_not]` once to get `¬P`
 
-* `nth_rewrite 2 [h]` will change only the second `X` in the goal to `Y`.
+* `nth_rewrite 2 [h₁]` — will change only the second `P` in the goal to `Q`.
 "
 
 TacticDoc «repeat» "
