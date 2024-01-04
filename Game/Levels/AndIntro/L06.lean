@@ -15,7 +15,7 @@ Recall when you placed the invites for Alarfil, Ilyn, Orin, and Uriel in separat
 - O — **O**rin is invited to the party
 - U — **U**riel is invited to the party
 ### Quick tip!
-You can type h₁ by entering \"h\\1\". There's symbol table for all the unicode shortcuts this game uses. It should be available under **Definitions** in your inventory.
+You can type h₁ by entering \"h\\1\". There's unicode table for all the unicode shortcuts this game uses. It should be available under **Definitions** in your inventory.
 "
 
 /-- and_intro, and_left, and_right -/

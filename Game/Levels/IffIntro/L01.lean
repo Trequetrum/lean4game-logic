@@ -8,7 +8,7 @@ Title "Iff_Intro"
 
 NewTactic rw
 NewHiddenTactic «repeat» nth_rewrite
-NewLemma GameLogic.iff_intro
+NewTheorem GameLogic.iff_intro
 NewDefinition GameLogic.iff_def
 
 Introduction "

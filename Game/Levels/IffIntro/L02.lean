@@ -6,7 +6,7 @@ World "IffIntro"
 Level 2
 Title "Conjuctive Iff"
 
-NewLemma
+NewTheorem
   GameLogic.iff_mp
   GameLogic.iff_mpr
 

@@ -91,3 +91,62 @@ theorem and_imp : (a ∧ b → c) ↔ (a → b → c) :=
   ⟨fun h ha hb => h ⟨ha, hb⟩, fun h ⟨ha, hb⟩ => h ha hb⟩
 
 @[simp] theorem not_and : ¬(a ∧ b) ↔ (a → ¬b) := and_imp
+
+namespace NatB
+
+inductive ℕb where
+  | One: ℕb
+  | T2: ℕb → ℕb
+  | P1: ℕb → ℕb
+
+inductive ℕ where
+  | Zero: ℕ
+  | Binary: ℕb → ℕ
+
+open ℕb
+
+def mkString : ℕb → String
+  | One => "1"
+  | T2 n => mkString n ++ "0"
+  | P1 n => mkString n ++ "1"
+
+instance : ToString ℕb where
+  toString: ℕb → String := mkString
+
+instance : ToString ℕ where
+  toString: ℕ → String
+    | ℕ.Zero => "0"
+    | ℕ.Binary n => s!"{n}"
+
+def mkNat' : ℕb → Nat
+  | One => 1
+  | T2 n => mkNat' n * 2
+  | P1 n => mkNat' n * 2 + 1
+
+def mkNat : ℕ → Nat
+  | ℕ.Zero => 0
+  | ℕ.Binary n => mkNat' n
+
+#eval mkNat $ ℕ.Binary $ ℕb.T2 $ ℕb.P1 $ ℕb.P1 ℕb.One
+
+def plusℕb: ℕb → ℕb → ℕb
+  | One, One => T2 One
+  | One, T2 y => sorry
+  | One, P1 y => sorry
+  | T2 x, y => sorry
+  | P1 x, y => sorry
+
+-- 1 + (2 * y)
+--  =
+def plus: ℕ → ℕ → ℕ
+  | ℕ.Zero, x => x
+  | x, ℕ.Zero => x
+  | ℕ.Binary x, ℕ.Binary y => match x, y with
+    | a, b => sorry
+
+def succ : ℕb → ℕb
+  | One => T2 One
+  | T2 n => P1 n
+  | P1 n => succ n
+
+end NatB

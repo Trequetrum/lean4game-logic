@@ -7,7 +7,7 @@ Level 1
 Title "Cake Delivery Service"
 
 NewDefinition GameLogic.FunElim
-NewLemma GameLogic.modus_ponens
+NewTheorem GameLogic.modus_ponens
 
 Introduction "
 # Let there be cake!

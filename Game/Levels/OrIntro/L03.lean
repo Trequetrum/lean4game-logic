@@ -6,7 +6,7 @@ World "OrIntro"
 Level 3
 Title "Or Elimination"
 
-NewLemma GameLogic.or_elim
+NewTheorem GameLogic.or_elim
 
 Introduction "
 # Party Games

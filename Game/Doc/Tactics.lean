@@ -1,6 +1,6 @@
 import GameServer.Commands
 
-TacticDoc exact "
+/--
 # Summary
 The `exact` tactic is a means through which you give the game your answer. Many levels can be done in multiple steps. You'll use the `exact` tactic when you're ready to create the final expression. It will be evaluated to see weather it matches the goal.
 
@@ -45,9 +45,10 @@ Goal:
 ```
 exact λp ↦ and_right h (and_left h p)
 ```
-"
+-/
+TacticDoc exact
 
-TacticDoc «have» "
+/--
 ## Summary
 `have` is used to add new assumptions to your proof state.
 
@@ -89,9 +90,10 @@ hpq : P → Q
 Goal:
 ¬P
 ```
-"
+-/
+TacticDoc «have»
 
-TacticDoc rw "
+/--
 ## Summary
 
 If `h₁` is a proof of an equivalence `P ↔ Q`, then `rw [h₁]` will change
@@ -111,9 +113,10 @@ get the `⊢` symbol with `\\|-`.
 * `repeat rw [h₁]` — keep attempting to `rw` until there are no more matches. For example, if the goal is `¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬P` you can use `rw [not_not_not]` 9 times or just use `repeat rw [not_not_not]` once to get `¬P`
 
 * `nth_rewrite 2 [h₁]` — will change only the second `P` in the goal to `Q`.
-"
+-/
+TacticDoc rw
 
-TacticDoc «repeat» "
+/--
 ## Summary
 
 `repeat t` repeatedly applies the tactic `t`
@@ -126,9 +129,10 @@ tactic, it just speeds things up sometimes.
 `a + 0 + (0 + (0 + 0)) = b + 0 + 0`
 into the goal
 `a = b`.
-"
+-/
+TacticDoc «repeat»
 
-TacticDoc nth_rewrite "
+/--
 ## Summary
 
 If `h : X = Y` and there are several `X`s in the goal, then
@@ -139,4 +143,5 @@ If `h : X = Y` and there are several `X`s in the goal, then
 If the goal is `2 + 2 = 4` then `nth_rewrite 2 [two_eq_succ_one]`
 will change the goal to `2 + succ 1 = 4`. In contrast, `rw [two_eq_succ_one]`
 will change the goal to `succ 1 + succ 1 = 4`.
-"
+-/
+TacticDoc nth_rewrite

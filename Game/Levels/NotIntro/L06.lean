@@ -6,7 +6,7 @@ World "NotIntro"
 Level 6
 Title "Alarfil"
 
-NewLemma GameLogic.modus_tollens
+NewTheorem GameLogic.modus_tollens
 
 Introduction "
 # The Alarfil Effect

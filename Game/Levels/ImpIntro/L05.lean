@@ -6,7 +6,7 @@ World "ImpIntro"
 Level 5
 Title "Riffin Snacks"
 
-NewLemma GameLogic.imp_trans
+NewTheorem GameLogic.imp_trans
 
 Introduction "
 # Is Riffin bringing something?

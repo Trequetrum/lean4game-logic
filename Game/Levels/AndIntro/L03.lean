@@ -25,10 +25,9 @@ Nesting boxes like this is a way to get around the “two items per box” rule.
 
 
 # The `have` Tactic
-You can complete this level with your knowledge from the previous level without using this new tactic. For example, any of these would work:
+You can complete this level with your knowledge from the previous level without using this new tactic. For example, either of these would work:
 ```
 exact and_intro (and_intro a i) (and_intro o u)
-exact {left := {left := a, right := i}, right := {left := o, right := u}}
 exact ⟨⟨a,i⟩,⟨o,u⟩⟩
 ```
 Instead of nesting this way, you can break the process down into steps using the `have` tactic. Enter “`have ai := and_intro a i`” to create your first box. After it's entered, it will appear under assumptions in the proof state. Now enter “`have ou := and_intro o u`” to create the second box.\\

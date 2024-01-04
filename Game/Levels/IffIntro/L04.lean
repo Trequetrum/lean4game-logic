@@ -6,7 +6,7 @@ World "IffIntro"
 Level 4
 Title "Rewriting"
 
-NewLemma
+NewTheorem
   GameLogic.and_assoc
   GameLogic.or_assoc
 

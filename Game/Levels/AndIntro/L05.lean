@@ -6,7 +6,7 @@ World "AndIntro"
 Level 5
 Title "And Elimination 2"
 
-NewLemma GameLogic.and_right
+NewTheorem GameLogic.and_right
 
 Introduction "
 # Another Unlock

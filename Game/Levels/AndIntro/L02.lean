@@ -6,7 +6,8 @@ World "AndIntro"
 Level 2
 Title "And Introduction"
 
-NewLemma GameLogic.and_intro
+NewTheorem GameLogic.and_intro
+NewDefinition GameLogic.and_def
 
 Introduction "
 # Sending Invitations in a Single Package
@@ -26,10 +27,17 @@ In this game, that means anything operating as evidence for `A ∧ B` will have 
 # Goal
 Use `p` and `s` to produce evidence that `P ∧ S`. Remember that you use evidence (generally lowercase letters), to deduce new propositions (generally uppercase letters)
 
-# A new definition
-This level has unlocked “∧ intro” under definitions. This has made the `and_intro` constructor available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\
+# Juxtapose!
+Throughout this game, most of the expressions you will learn are expressed with a name juxtaposed in front of some number of parameters. The form is something like `(name_a param1 param2)`\\
+\\
+In general, “params” can themsevles be the result of any expression as well. You'll often see nested expressions like `(name_a (name_b param1 param2) param2)` where `(name_b param1 param2)` is the first parameter to `name_a` in this example.
+
+# Using the `∧` Construtor
+This level has unlocked “`∧`” under definitions. This has made the `and_intro` constructor available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\
 \\
 The help-page has even more detail about creating conjunctions like this.
+
+
 # A reminder
 Use the `exact` tactic to exhibit evidence for a goal
 "

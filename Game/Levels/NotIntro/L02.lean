@@ -6,7 +6,7 @@ World "NotIntro"
 Level 2
 Title "False implies anything"
 
-NewLemma GameLogic.false_elim
+NewTheorem GameLogic.false_elim
 
 Introduction "
 # Sybeth's Punctuality

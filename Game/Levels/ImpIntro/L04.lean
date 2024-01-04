@@ -6,7 +6,7 @@ World "ImpIntro"
 Level 4
 Title "Chain Reasoning"
 
-NewLemma GameLogic.and_comm
+NewTheorem GameLogic.and_comm
 
 Introduction "
 # A Chain of Reasoning

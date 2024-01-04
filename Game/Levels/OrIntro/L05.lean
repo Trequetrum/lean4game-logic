@@ -6,7 +6,7 @@ World "OrIntro"
 Level 5
 Title "Carry On Effects"
 
-NewLemma GameLogic.or_comm
+NewTheorem GameLogic.or_comm
 
 Introduction "
 # Carry On Effects

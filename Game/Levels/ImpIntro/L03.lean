@@ -6,7 +6,7 @@ World "ImpIntro"
 Level 3
 Title "Cake Form Swap"
 
-NewLemma GameLogic.identity
+NewTheorem GameLogic.identity
 
 Introduction "
 # Trouble with the cake

@@ -6,7 +6,7 @@ World "AndIntro"
 Level 4
 Title "And Elimination"
 
-NewLemma GameLogic.and_left
+NewTheorem GameLogic.and_left
 
 Introduction "
 # Using Only What Is Needed

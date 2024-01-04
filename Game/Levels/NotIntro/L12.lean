@@ -6,7 +6,7 @@ World "NotIntro"
 Level 12
 Title "¬Intro Boss"
 
-NewLemma GameLogic.not_not_not
+NewTheorem GameLogic.not_not_not
 
 Introduction "
 # BOSS Level

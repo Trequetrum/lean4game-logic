@@ -2,7 +2,7 @@ import GameServer.Commands
 
 namespace GameLogic
 
-DefinitionDoc GameLogic.and_def as "∧" "
+/--
 # Conjunction
 ## Introduction
 An “And” can be introduced with the `and_intro` theorem. Conjunctions and biconditionals can both be constructed using the angle bracket notation as well.
@@ -24,9 +24,10 @@ have h₇ := (⟨p,q⟩ : P ∧ Q)
 An “And” like `h : P ∧ Q` can be reduced in two ways:
 1. Aquire evidence for `P` using `and_left h` or `h.left`
 2. Aquire evidence for `Q` using `and_right` or `h.right`
-"
+-/
+DefinitionDoc GameLogic.and_def as "∧"
 
-DefinitionDoc GameLogic.or_def as "∨" "
+/--
 # Disjunction
 ## Introduction
 An “Or” like `h : P ∨ Q` can be introduced in two ways:
@@ -44,14 +45,16 @@ qr : Q → R
 -- Goal: R
 exact or_elim pvq pr qr
 ```
-"
+-/
+DefinitionDoc GameLogic.or_def as "∨"
 
-DefinitionDoc GameLogic.false_def as "False" "
+/--
 # False
 This is a proposition for which there can never be any evidence. If your assumptions lead you to evidence for `False`, then your assumptions are inconsitent and you can use `false_elim` to deduce any proposition you like.
-"
+-/
+DefinitionDoc GameLogic.false_def as "False"
 
-DefinitionDoc GameLogic.iff_def as "↔" "
+/--
 # Biconditional
 ## Introduction
 An “If and only if” can be introduced with the `iff_intro` theorem. Biconditionals and conjunctions can both be constructed using the angle bracket notation as well.
@@ -75,9 +78,10 @@ An “If and only if” like `h : P ↔ Q` can be reduced in two ways:
 2. Aquire evidence for `Q → P` using `iff_mpr h` or `h.mpr`
 ## Rewrite
 Biconditionals let you use the `rewrite` tactic to change goals or assumptions.
-"
+-/
+DefinitionDoc GameLogic.iff_def as "↔"
 
-DefinitionDoc GameLogic.FunElim as "→ elim" "
+/--
 # Function Application/Implication Elimination
 `P → Q` is propostion given to functions from evidence of `P` to evidence of `Q`.
 # Juxtaposition
@@ -107,9 +111,10 @@ B
 exact (h₁ a)
 ```
 Takes `h₁` and applies `a` to it.
-"
+-/
+DefinitionDoc GameLogic.FunElim as "→ elim"
 
-DefinitionDoc GameLogic.FunIntro as "→ intro" "
+/--
 # `fun _ => _`
 You can create evidence for an implication by defining the appropriate function.
 - `have h₁ : P → P := fun p : P => p`
@@ -125,9 +130,10 @@ Generally, you don't need to repeat the types when they're obvious from the cont
 ----
 - `have h₁ : P → P := λp ↦ p`
 - `have h₂ : P ∧ Q → P := λh ↦ h.left`
-"
+-/
+DefinitionDoc GameLogic.FunIntro as "→ intro"
 
-DefinitionDoc GameLogic.AsciiTable as "Unicode Table" "
+/--
 ### **Logic Constants & Operators**
 | $Name~~~$ | $Ascii~~~$ | $Unicode$ | $Unicode Cmd$ |
 | --- | :---: | :---: | --- |
@@ -162,9 +168,10 @@ fun h : P ∧ Q => and_intro (and_right h) (and_left h)
 | Subscript Numbers | ₁ ₂ ₃ ... | `\\1` `\\2` `\\3` ... |
 | Left Arrow | ← | `\\l` `\\leftarrow` `\\gets` `\\<-` |
 | Turnstyle | ⊢ | `\\│-` `\\entails` `\\vdash` `\\goal` |
-"
+-/
+DefinitionDoc GameLogic.AsciiTable as "Unicode Table"
 
-DefinitionDoc GameLogic.Precedence as "Precedence" "
+/--
 # Remembering Algebra
 In math class, you may have learned an acronym like BEDMAS or PEMDAS to remember the precedence of operators in your math expressions:
 1. Brackets (or Parentheses)
@@ -220,4 +227,5 @@ Here's a version where you can see it aligned
  ((¬P) ∨ (Q ∧ P)) → Q  ↔ (Q ∨ (R ∨ (¬S)))
 (((¬P) ∨ (Q ∧ P)) → Q) ↔ (Q ∨ (R ∨ (¬S)))
 ```
-"
+-/
+DefinitionDoc GameLogic.Precedence as "Precedence"
