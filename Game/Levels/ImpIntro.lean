@@ -29,12 +29,4 @@ The concept behind an implication, such as `A → B`, is that there exists an ex
 Where this game abstracted the idea of `A ∧ B` into a tuple holding evidence for `A` and evidence for `B`. The way we store evidence like `A → B` is with a function that takes evidence for `A` and produces evidence for `B`.\\
 \\
 `h : A → B` reads `h` is evidence for `A → B`. While real-world analogues can be anything, the abstract machinery used in this game will always be a function.
-
-
-# An Aside for Programmers
-If you've done some programming, this might be interesting context. It won't be important for completing any levels.\\
-\\
-In the broader context of the Lean programming language, any function that returns evidence for a proposition, is itself also evidence for a proposition. We won't be building any other sort of function in this game.\\
-\\
-The function space constructor “`→`” is not overloaded. We won't get into the weeds; suffice it to say that the rules for implication in a proof system for natural deduction correspond exactly to the rules governing abstraction and application for functions.
 "
