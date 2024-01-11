@@ -44,9 +44,6 @@ To play this puzzler you'll need to learn some notation. Unlike learning how to 
 
 Below, you're provided with whirlwind tour of the notation at play as well as a bit of motivation for why the notation looks the way it does. This is all done through a single example. Many of the details will seem lacking; The concepts covered here will be addressed with more detail during the tutorial worlds of this game.
 
-# But first, a tip!
-This introduction as well as some of the tutorial levels can get a bit wordy. The three column panels — text on the left, game worlds in the middle, and your inventory on the right — can all be expanded or shrunk as necessary. Every screen is different, so do feel encouraged to re-size these panels.
-
 # Building some notation
 Consider the following argument stated in natural language:
 
