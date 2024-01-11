@@ -4,6 +4,7 @@ import Game.Levels.IffIntro.L03
 import Game.Levels.IffIntro.L04
 import Game.Levels.IffIntro.L05
 import Game.Levels.IffIntro.L06
+import Game.Levels.IffIntro.L07
 
 World "IffIntro"
 Title "↔ Tutorial: Party Games"

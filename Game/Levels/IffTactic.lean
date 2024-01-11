@@ -4,6 +4,7 @@ import Game.Levels.IffTactic.L03
 import Game.Levels.IffTactic.L04
 import Game.Levels.IffTactic.L05
 import Game.Levels.IffTactic.L06
+import Game.Levels.IffTactic.L07
 
 World "IffTactic"
 Title "Redux: ↔ World Tactics"

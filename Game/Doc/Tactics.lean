@@ -150,36 +150,92 @@ For example, if your goal is `P ∧ Q` then the `constructor` tactic will replac
 TacticDoc constructor
 
 /--
-TODO
+# Conjunction/Biconditional
+`cases` will deconstruct an `∧` or an `↔` into it's parts, removing the assumption and replacing it with two new assumptions.
+# Disjunction
+Used with an `∨` cases will split the main goal, replacing it with a goal for each of the two possibilities.
 -/
 TacticDoc cases
 
 /--
-TODO
+# It suffices to show
+To prove `Q` by `P → Q`, it suffices to show `P`.
+### More Generally
+To prove `Q` by `P₁ → P₂ → P₃ → ... → Q`, it suffices to show `P₁, P₂, P₃, ...`. One way to convince yourself this is true is to prove that `(P₁ → P₂ → Q) → (P₁ ∧ P₂ → Q)` and convince yourself there exists a procedure for any `(P₁ → P₂ → ... → Q) → (P₁ ∧ P₂ ∧ ... → Q)`
+### In Practice
+The `apply` tactic returns as many subgoals as the number of premises that have not been fixed by the Goal.
+### Example:
+If you have:
+```
+Assumptions:
+h : P → Q
+Goal : Q
+```
+then `apply h` will change your proof state to:
+```
+Assumptions:
+h : P → Q
+Goal : P
+```
 -/
 TacticDoc apply
 
 /--
-TODO
+# Sub-Proof
+If your Goal is an implication, this tactic introduces one or more hypotheses, optionally naming and/or pattern-matching them.
+
+The effect on a goal like `P → Q` is to add `P` as an assumption and change the Goal to `Q`. If the implication is already a part of a sub-proof, then once you show evidence for `Q`, the assumption `P` is discharged and can not be used for the rest of the proof.
+
+This is is the interactive way of defining a function using tactics. You can think of discharging an assumption as the same as parameters being limited in scope to the function's body/definition.
 -/
 TacticDoc intro
 
 /--
-TODO
+contradiction closes the current goal there are assumptions which are "trivially contradictory".
+
+### Example
+```
+Assumptions:
+h : False
+```
+### Example
+```
+Assumptions:
+h₁ : P
+h₂ : ¬P
+```
 -/
 TacticDoc contradiction
 
 /--
-TODO
+Change the goal to `False`. This is only helpful when there are assumptions which are in some way contradictory.
+### Example
+```
+Assumptions
+h : P ∧ ¬P
+Goal: Q
+```
+I cannot show evidence for `Q` directly, but because `False → Q` is trivially true (False implies anything), I can use the tactic `exfalso` which changes the Goal:
+```
+Assumptions
+h : P ∧ ¬P
+Goal: Q
+```
+After which `exact h.right r.left` meets the current goal.
+### Apply
+`exfalso` is the same as `apply false_elim`.
+∴ to show `Q` by `False → Q`, it suffices to show `False`.
 -/
 TacticDoc exfalso
 
 /--
-TODO
+# Show a Disjunction
+Evidence for `P ∨ Q` can be created in two ways. `left` changes the goal to `P` while `right` changes the goal to `Q`.
 -/
 TacticDoc left
 
 /--
-TODO
+# Show a Disjunction
+Evidence for `P ∨ Q` can be created in two ways. `left` changes the goal to `P` while `right` changes the goal to `Q`.
 -/
 TacticDoc right
