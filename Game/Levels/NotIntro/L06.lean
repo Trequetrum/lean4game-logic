@@ -7,6 +7,9 @@ Level 6
 Title "Alarfil"
 
 NewTheorem GameLogic.modus_tollens
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # The Alarfil Effect

@@ -7,6 +7,9 @@ Level 1
 Title "Not False"
 
 NewDefinition GameLogic.false_def
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Proof State

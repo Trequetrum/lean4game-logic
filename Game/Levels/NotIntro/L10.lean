@@ -6,6 +6,10 @@ World "NotIntro"
 Level 10
 Title "Conjunction Implicaiton"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Allergy #2
 We cannot have both Pippin and avacado at the party. Which means that if Pippin is attending, then there will not be any avacado.

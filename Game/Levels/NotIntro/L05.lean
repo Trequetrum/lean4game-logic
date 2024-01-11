@@ -6,6 +6,10 @@ World "NotIntro"
 Level 5
 Title "Modus Tollens"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Modus Tollens
 If Bella comes to the party, she is certain to perform a bawdy song. You've assured Sybeth that there will be no bawdy songs at the event. Sybeth is disappointed to discover that Bella won't be joining.
@@ -15,8 +19,8 @@ If Bella comes to the party, she is certain to perform a bawdy song. You've assu
 "
 
 /-- Modus Tollens. -/
-Statement (B S : Prop)(h₁ : B → S)(h₂ : ¬S) : ¬B := by
-  exact imp_trans h₁ h₂
+Statement (B S : Prop)(h1 : B → S)(h2 : ¬S) : ¬B := by
+  exact imp_trans h1 h2
 
 Conclusion "
 Congradulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the \"**→ Tutotial world, level 4**\" to show that implication is transitive.

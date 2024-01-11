@@ -6,6 +6,10 @@ World "NotIntro"
 Level 7
 Title "Negation"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # The Power of negation
 \"Is it possible that if this is the cake you bought, then it's gonna taste horrible?\"\\

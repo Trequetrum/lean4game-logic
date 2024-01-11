@@ -4,7 +4,7 @@ import Game.Doc.Definitions
 import Game.Doc.Tactics
 import Game.Doc.Lemmas
 
--- import Mathlib.Tactic
+import Mathlib.Tactic
 
 -- import Game.Tactic.Induction
 -- import Game.Tactic.Cases

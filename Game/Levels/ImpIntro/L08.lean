@@ -6,6 +6,10 @@ World "ImpIntro"
 Level 8
 Title "Distribute"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Go buy chips and dip!
 - If you go shopping, then you'll buy chips.
@@ -17,13 +21,12 @@ Introduction "
 - `S` — You go shopping
 "
 
-/-- → distributes over ∧ --/
-Statement (R S : Prop) (h : (S → C) ∧ (S → D)) : S → C ∧ D := by
+/-- → distributes over ∧ -/
+Statement (C D S : Prop) (h : (S → C) ∧ (S → D)) : S → C ∧ D := by
   exact λ(s : S) ↦ and_intro (h.left s) (h.right s)
 
--- Should this game try to teach destructuring? It's trying
--- to accomplish so much already.
-example (R S : Prop) (h : (S → C) ∧ (S → D)) : S → C ∧ D := by
+-- Should this game try to teach destructuring?
+example (C D S : Prop) (h : (S → C) ∧ (S → D)) : S → C ∧ D := by
   have ⟨l,r⟩ := h
   exact λs ↦ ⟨l s, r s⟩
 

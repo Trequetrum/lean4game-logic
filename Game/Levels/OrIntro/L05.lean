@@ -7,6 +7,9 @@ Level 5
 Title "Carry On Effects"
 
 NewTheorem GameLogic.or_comm
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Carry On Effects
@@ -18,8 +21,8 @@ R — You get a refund
 "
 
 /-- Implication across ∨ -/
-Statement (C J R : Prop)(h₁ : C → J)(h₂ : C ∨ R) : J ∨ R := by
-  exact or_elim h₂ (h₁ ≫ or_inl) or_inr
+Statement (C J R : Prop)(h1 : C → J)(h2 : C ∨ R) : J ∨ R := by
+  exact or_elim h2 (h1 ≫ or_inl) or_inr
 
 Conclusion "
 Well done, you're getting good at this!

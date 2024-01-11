@@ -5,16 +5,33 @@ import GameServer.Commands
 -- in this case). Each world consists of a finite number of levels, and levels
 -- are numbered 1,2,3,4... inside the level files.
 import Game.Levels.AndIntro
+import Game.Levels.AndTactic
 import Game.Levels.ImpIntro
+import Game.Levels.ImpTactic
 import Game.Levels.NotIntro
+import Game.Levels.NotTactic
 import Game.Levels.OrIntro
+import Game.Levels.OrTactic
 import Game.Levels.IffIntro
+import Game.Levels.IffTactic
 
 -- Here's where we show how to glue the worlds together
+-- Intro World Dependencies
 Dependency AndIntro → ImpIntro
 Dependency ImpIntro → NotIntro
 Dependency ImpIntro → OrIntro
 Dependency ImpIntro → IffIntro
+-- Intro—Tactic Dependencies
+Dependency AndIntro → AndTactic
+Dependency ImpIntro → ImpTactic
+Dependency OrIntro → OrTactic
+Dependency NotIntro → NotTactic
+Dependency IffIntro → IffTactic
+-- Tactic World Dependencies
+Dependency AndTactic → ImpTactic
+Dependency ImpTactic → OrTactic
+Dependency ImpTactic → NotTactic
+Dependency ImpTactic → IffTactic
 
 -- Here's what we'll put on the title screen
 Title "A Lean Intro to Logic"
@@ -157,7 +174,7 @@ Warning: In most browsers, deleting cookies will also clear the local storage
 Languages "English"
 CaptionShort "Lean intro to Logic"
 CaptionLong "Self-contained friendly introduction to constructive logic"
--- CoverImage "images/cover.png"
+CoverImage "images/logic0101.png"
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame

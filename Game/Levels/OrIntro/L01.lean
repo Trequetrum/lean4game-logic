@@ -8,6 +8,9 @@ Title "Left Evidence"
 
 NewTheorem GameLogic.or_inl
 NewDefinition GameLogic.or_def
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Or Introduction Left

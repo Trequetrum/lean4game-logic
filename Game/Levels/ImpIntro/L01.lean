@@ -8,6 +8,9 @@ Title "Cake Delivery Service"
 
 NewDefinition GameLogic.FunElim
 NewTheorem GameLogic.modus_ponens
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Let there be cake!

@@ -7,6 +7,9 @@ Level 5
 Title "Riffin Snacks"
 
 NewTheorem GameLogic.imp_trans
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Is Riffin bringing something?
@@ -45,8 +48,8 @@ The Precedence definition page explains that function application is left-associ
 "
 
 /-- Riffin is bringing a unicorn snack -/
-Statement (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
-  exact (h₁ ≫ h₃ ≫ h₅) p
+Statement (P Q R S T U: Prop) (p : P) (h1 : P → Q) (h2 : Q → R) (h3 : Q → T) (h4 : S → T) (h5 : T → U) : U := by
+  exact (h1 ≫ h3 ≫ h5) p
 
 -- One application at a time
 example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by

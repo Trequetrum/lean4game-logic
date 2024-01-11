@@ -6,6 +6,10 @@ World "ImpIntro"
 Level 9
 Title "Uncertain Snacks"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # BOSS LEVEL!!!
 # Uncertain Snacks
@@ -22,7 +26,7 @@ That's a bit convoluted, but you should be able to produce some evidence of this
 - `S` — Sybeth is bringing a snack
 "
 
-/-- Write the nessesary nested function(s)! --/
+/-- Write the nessesary nested function(s)! -/
 Statement (R S : Prop) : R → (S → R) ∧ (¬S → R) := by
   exact λ(r : R) ↦ and_intro (λ(_ : S) ↦ r) (λ(_ : ¬S) ↦ r)
 
@@ -51,3 +55,10 @@ exact λ r : R ↦ ⟨λ _ : S ↦ r, λ _ : ¬S ↦ r⟩
 exact λr ↦ ⟨λ_ ↦ r, λ_ ↦ r⟩
 ```
 "
+
+/-- Tactic Proof -/
+example (R S : Prop) : R → (S → R) ∧ (¬S → R) := by
+  intro r
+  constructor
+  intro; assumption
+  intro; assumption

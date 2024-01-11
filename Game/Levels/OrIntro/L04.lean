@@ -6,6 +6,10 @@ World "OrIntro"
 Level 4
 Title "Or is Commutative"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Either way.
 Chocolate chip oatmeal cookies, which ingredient goes first?

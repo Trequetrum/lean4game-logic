@@ -7,6 +7,9 @@ Level 4
 Title "Chain Reasoning"
 
 NewTheorem GameLogic.and_comm
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # A Chain of Reasoning
@@ -25,8 +28,8 @@ This is the transitive property of `<`. You should be able to show that this sam
 "
 
 /-- Show that → is transitive -/
-Statement (C A S: Prop) (h₁ : C → A) (h₂ : A → S) : C → S := by
-  exact λ(c: C) ↦ h₂ (h₁ c)
+Statement (C A S: Prop) (h1 : C → A) (h2 : A → S) : C → S := by
+  exact λ(c: C) ↦ h2 (h1 c)
 
 -- Example using infix application to drop a pair of brackets.
 example (C A S: Prop) (h₁ : C → A) (h₂ : A → S) : C → S := by

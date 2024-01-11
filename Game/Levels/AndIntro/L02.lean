@@ -8,8 +8,12 @@ Title "And Introduction"
 
 NewTheorem GameLogic.and_intro
 NewDefinition GameLogic.and_def
+OnlyTactic exact
 
 Introduction "
+# `∧`
+The hat symbol “ ∧ ” is how logicians denote a conjunction — a logical “and”. `A ∧ B` means “A and B”. It works the way you would intuitively expect. Like a lot of math operators (`+,-,÷,×`,and others), the `∧` symbol is an infix operator. This means it has a left side and a right side. Looking at `A ∧ B`, you can see that `A` is on the left and `B` is on the right.
+
 # Sending Invitations in a Single Package
 You have two letters, one extending an invitation to Pippin and the other to Sybeth. Since they share a residence, you'd like to consolidate their invites into a single package for shipping. The box you're using has space for two items, one on the left and one on the right.\\
 \\
@@ -17,9 +21,7 @@ You've labelled the box explicitly, specifying that Pippin's invitation is on th
 # Proposition Key:
 - P — “**P**ippin is invited to the party”
 - S — “**S**ybeth is invited to the party”
-# `∧`
-The hat symbol “ ∧ ” is how logicians denote a conjunction — a logical “and”. `A ∧ B` means “A and B”. It works the way you would intuitively expect. Like a lot of math operators (`+,-,÷,×`,and others), the `∧` symbol is an infix operator. This means it has a left side and a right side. Looking at `A ∧ B`, you can see that `A` is on the left and `B` is on the right.\\
-\\
+
 In this game, that means anything operating as evidence for `A ∧ B` will have a left part and a right part as well. The box described in the intro works this way.
 # Assumptions
 - `p : P` — Your invitation for Pippin is evidence that Pippin is invited to the party
@@ -27,16 +29,10 @@ In this game, that means anything operating as evidence for `A ∧ B` will have 
 # Goal
 Use `p` and `s` to produce evidence that `P ∧ S`. Remember that you use evidence (generally lowercase letters), to deduce new propositions (generally uppercase letters)
 
-# Juxtapose!
-Throughout this game, most of the expressions you will learn are expressed with a name juxtaposed in front of some number of parameters. The form is something like `(name_a param1 param2)`\\
-\\
-In general, “params” can themsevles be the result of any expression as well. You'll often see nested expressions like `(name_a (name_b param1 param2) param2)` where `(name_b param1 param2)` is the first parameter to `name_a` in this example.
-
 # Using the `∧` Construtor
 This level has unlocked “`∧`” under definitions. This has made the `and_intro` constructor available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\
 \\
-The help-page has even more detail about creating conjunctions like this.
-
+The help-page has even more detail about creating conjunctions like this (There's a common shorthand using angle-brackers `⟨` `⟩`).
 
 # A reminder
 Use the `exact` tactic to exhibit evidence for a goal
@@ -54,7 +50,6 @@ You've got evidence that Pippin and Sybeth are invited to the party.\\
 Here are some answers the game would have accepted:
 ```
 exact and_intro p s
-exact {left := p, right := s}
 exact ⟨p,s⟩
 ```
 "

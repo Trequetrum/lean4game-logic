@@ -118,17 +118,7 @@ TacticDoc rw
 
 /--
 ## Summary
-
-`repeat t` repeatedly applies the tactic `t`
-to the goal. You don't need to use this
-tactic, it just speeds things up sometimes.
-
-## Example
-
-`repeat rw [add_zero]` will turn the goal
-`a + 0 + (0 + (0 + 0)) = b + 0 + 0`
-into the goal
-`a = b`.
+`repeat t` repeatedly applies the tactic `t` to the goal. You don't need to use this tactic, it just speeds things up sometimes.
 -/
 TacticDoc «repeat»
 
@@ -145,3 +135,51 @@ will change the goal to `2 + succ 1 = 4`. In contrast, `rw [two_eq_succ_one]`
 will change the goal to `succ 1 + succ 1 = 4`.
 -/
 TacticDoc nth_rewrite
+
+/--
+assumption tries to solve the main goal by searching your the assumptions in your proof state for a hypothesis with a compatible proposition
+-/
+TacticDoc assumption
+
+/--
+# Constructor
+Whenever there's a clear way to create new evidence **that matches the goal**, the constructor tactic will pick that for you. This replaces the current goal with one or more goals that together complete the construction.
+
+For example, if your goal is `P ∧ Q` then the `constructor` tactic will replace that goal with two separate subgoals. First you'll need to show evidence for `P`, then you'll need to show evidence for `Q`.
+-/
+TacticDoc constructor
+
+/--
+TODO
+-/
+TacticDoc cases
+
+/--
+TODO
+-/
+TacticDoc apply
+
+/--
+TODO
+-/
+TacticDoc intro
+
+/--
+TODO
+-/
+TacticDoc contradiction
+
+/--
+TODO
+-/
+TacticDoc exfalso
+
+/--
+TODO
+-/
+TacticDoc left
+
+/--
+TODO
+-/
+TacticDoc right

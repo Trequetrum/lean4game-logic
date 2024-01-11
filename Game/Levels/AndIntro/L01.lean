@@ -8,23 +8,19 @@ Title "Exactly! It's in the premise"
 
 NewTactic exact
 NewDefinition GameLogic.AsciiTable
+OnlyTactic exact
 
 Introduction "
 # Introduction
-You've made a todo list, so you've begun to plan your party. Exhibit evidence that you're planning the party.
+You've made a todo list, so you've begun to plan your party.
 ## Proposition Key:
 `P` — You're **P**lanning a party
 ## Assumptions
 `todo_list : P` — Can be read as `todo_list` “is evidence for” `P`
 # The Exact Tactic
-The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the premises directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\
+The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the assumptions directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\
 \\
-It's entered like this:
-```
-Goal: P
-exact <<expression that evaluates to evidence for P>>
-```
-You can use the `exact` tactic to give `todo_list` as your answer.\\
+The expression looks like `exact e` were `e` is an expression the game will accept for the current Goal.\\
 \\
 ⋆Spoilers!⋆ If you enter “`exact todo_list`,” you will have completed this level.
 

@@ -7,6 +7,9 @@ Level 12
 Title "¬Intro Boss"
 
 NewTheorem GameLogic.not_not_not
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # BOSS Level
@@ -20,7 +23,10 @@ Introduction "
 
 /-- ¬¬\"You bought this cake" -/
 Statement (B C : Prop) (h : ¬(B → C)) : ¬¬B := by
-  exact λnb ↦ h (imp_trans nb false_elim)
+  exact λnb ↦ h (λb ↦ false_elim (nb b))
+
+example (B C : Prop) (h : ¬(B → C)) : ¬¬B := by
+  exact λnb ↦ h (nb ≫ false_elim)
 
 Conclusion "
 These unintuitive statements highlight the inherent challenge in contemplating the *potential* existence (or definite non-existance) of implications.

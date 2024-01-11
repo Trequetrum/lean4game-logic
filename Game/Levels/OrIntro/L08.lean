@@ -6,6 +6,10 @@ World "OrIntro"
 Level 8
 Title "The Implication"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # BOSS LEVEL
 If we summon the Kraken, then we shall assuredly perish. While that might sound ominous, consider this: if we summon the Kraken or **have icecream**, then we shall **have icecream!** or we shall perish.

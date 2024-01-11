@@ -7,6 +7,9 @@ Level 2
 Title "Identity"
 
 NewDefinition GameLogic.FunIntro
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Is it Cake!?

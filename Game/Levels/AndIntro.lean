@@ -24,4 +24,34 @@ The real-world analogues for evidence of `A ∧ B` might be a box with evidence 
 While real-world analogues can be anything, the abstract machinery used in this game will always be the same. In the case of the `∧` operator, the game stores the associated evidence in a tuple data structure.\\
 \\
 The details aren't important. Each level will be encoded for you into the symbols of a proof state. The puzzle, at its core, will be about symbol manipulation. Much of the text is there for added fun and flair.
+
+# **Aside**: Expressions
+If you're coming at this as a puzzle, part of the goal of the tutotial worlds is to teach you how to form expressions and to think about what they evaluate to. Consider how how these expressions all evaluate to the same number:
+```
+4 + 6
+(4) + 6
+(4) + (6)
+3 + 1 + 6
+3 + (1 + 6)
+4 + 4 + 2
+(4 * 2) + 2
+```
+and how some things which may look like expressions really are not:
+```
+4 6
+4 +
+4 (++) 6
+(4 +) 6
+```
+The expressions that this game is asking you to form are mostly in prefix form. In context, this means the operation is given a textual name instead of a symbol and the parameters are separated by spaces **after** the name. For example; the above expressions may look like:
+```
+add 4 6
+add (4) 6
+add (4) (6)
+add (add 3 1) 6
+add 3 (add 1 6)
+add (add 4 4) 2
+add (mul 4 2) 2
+```
+We're not using expressions to express numbers, but many of the concepts do carry over. Instead of numbers, we're working with logical inferences.
 "

@@ -7,6 +7,9 @@ Level 3
 Title "Or Elimination"
 
 NewTheorem GameLogic.or_elim
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Party Games
@@ -33,8 +36,8 @@ have r : R := or_elim pvq pr qr
 "
 
 /-- `or_elim h₃ ... ...` -/
-Statement (B C I : Prop)(h₁ : C → B)(h₂ : I → B)(h₃ : C ∨ I) : B := by
-  exact or_elim h₃ h₁ h₂
+Statement (B C I : Prop)(h1 : C → B)(h2 : I → B)(h3 : C ∨ I) : B := by
+  exact or_elim h3 h1 h2
 
 Conclusion "
 `or_elim` is your first 3-paramater function. The associated proposition is `or_elim : (P ∨ Q) → (P → R) → (Q → R) → R`

@@ -6,6 +6,10 @@ World "NotIntro"
 Level 9
 Title "Implies a Negation"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Allergy #1
 Owing to his allergy, if Pippin is present, there must be no avocado at the party. Which means that we cannot have both Pippin and avacado at the party

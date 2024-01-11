@@ -6,10 +6,11 @@ World "IffIntro"
 Level 1
 Title "Iff_Intro"
 
-NewTactic rw
-NewHiddenTactic «repeat» nth_rewrite
 NewTheorem GameLogic.iff_intro
 NewDefinition GameLogic.iff_def
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Coupled Conditionals
@@ -41,4 +42,6 @@ exact ⟨hsj, hjs⟩
 ```
 "
 
--- example (P Q : Prop): (P ∧ Q) ∨ (¬P ∧ ¬Q) → (P → Q) ∧ (Q → P) := by tauto
+/-- Tactic Proof -/
+example (J S : Prop) (hsj: S → J) (hjs: J → S) : S ↔ J := by
+  constructor <;> assumption

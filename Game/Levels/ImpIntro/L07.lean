@@ -6,6 +6,10 @@ World "ImpIntro"
 Level 7
 Title "and_imp 2"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Un-Curry
 If you've got chips, then if you've got dip, then you've got a popular party snack.\\
@@ -17,9 +21,12 @@ Therefore, if you've got chips and dip, then you've got a popular party snack!
 - `S` — You've got a popular party snack
 "
 
-/-- Conjunction interacting with implication --/
-Statement (P Q R: Prop) (h : P → Q → R) : P ∧ Q → R := by
-  exact λ(pq: P ∧ Q) ↦ h pq.left pq.right
+/-- Conjunction interacting with implication -/
+Statement (C D S: Prop) (h : C → D → S) : C ∧ D → S := by
+  exact λ(cd: C ∧ D) ↦ h cd.left cd.right
+
+example (C D S: Prop) (h : C → D → S) : C ∧ D → S := by
+  exact λ⟨c, d⟩ ↦ h c d
 
 Conclusion "
 Cool. Chips and Dip for sure!

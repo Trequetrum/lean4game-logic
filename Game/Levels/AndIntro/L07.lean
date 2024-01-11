@@ -6,6 +6,10 @@ World "AndIntro"
 Level 7
 Title "More Elimination"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # An Emergency!
 Stop with the invites! Coco, your cat is stuck up a tree.\\

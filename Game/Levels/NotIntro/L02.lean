@@ -7,6 +7,9 @@ Level 2
 Title "False implies anything"
 
 NewTheorem GameLogic.false_elim
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Sybeth's Punctuality

@@ -6,6 +6,10 @@ World "NotIntro"
 Level 8
 Title "Negated Conjunction"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Definitely Not
 Your cake order definitely has sprinkles, which means it's **not** missing sprinkles and loaded with chocolate chips

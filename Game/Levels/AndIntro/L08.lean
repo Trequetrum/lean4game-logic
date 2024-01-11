@@ -6,6 +6,10 @@ World "AndIntro"
 Level 8
 Title "Rearranging Boxes"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # BOSS LEVEL
 If you can finish this level, you've certainly mastered the `∧`. There's no deep logical tricks in this boss level, you've just got to know how to work at properly unnesting and then building the right Proposition.\\
@@ -27,8 +31,8 @@ Finally, a bunch of your invites have returned with RSVPs. The mailman has deliv
 Statement (A C I O P S U : Prop)(h: ((P ∧ S) ∧ A) ∧ ¬I ∧ (C ∧ ¬O) ∧ ¬U) : A ∧ C ∧ P ∧ S := by
   have psa := h.left
   have c := h.right.right.left.left
-  have fps := and_intro c psa.left
-  exact and_intro psa.right fps
+  have cps := and_intro c psa.left
+  exact and_intro psa.right cps
 
 Conclusion "
 Amazing! You've mastered \"AND\".
@@ -38,13 +42,13 @@ Amazing! You've mastered \"AND\".
 -- 3/4 of the things you need are one step away
 have psa := h.left
 
--- Evidence for L takes some digging
-have l := h.right.right.left.left
+-- Evidence for C takes some digging
+have c := h.right.right.left.left
 
--- build L ∧ P ∧ S
-have lps := and_intro l psa.left
+-- build C ∧ P ∧ S
+have cps := and_intro c psa.left
 
--- exibit A ∧ L ∧ P ∧ S
-exact and_intro psa.right lps
+-- exibit A ∧ C ∧ P ∧ S
+exact and_intro psa.right cps
 ```
 "

@@ -6,6 +6,10 @@ World "OrIntro"
 Level 7
 Title "and distributes over or"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # A distribution of cookies
 You can tell from the aroma that there are are gingersnap cookies. There's another smell there too. Could be shortbread cookies or sugar cookies.

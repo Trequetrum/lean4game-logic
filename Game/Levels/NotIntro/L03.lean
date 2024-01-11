@@ -6,6 +6,10 @@ World "NotIntro"
 Level 3
 Title "Double False!"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # The Ambiguous Celebration Response
 Your somewhat bothersome cousin just called and is asking if you're throwing your annual soirée this year. You don't want to outright lie, so you say \"I'm not not throwing the party.\"

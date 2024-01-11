@@ -7,6 +7,9 @@ Level 2
 Title "Right Evidence"
 
 NewTheorem GameLogic.or_inr
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Or Introduction Right

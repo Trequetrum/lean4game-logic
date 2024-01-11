@@ -6,6 +6,10 @@ World "OrIntro"
 Level 6
 Title "or distributes over and"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # A distribution of cookies
 You can tell the cookies are either gingersnap cookies or they're a mix of shortbread cookies and sugar cookies.

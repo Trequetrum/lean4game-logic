@@ -8,6 +8,9 @@ Title "The Have Tactic"
 
 NewDefinition GameLogic.Precedence
 NewTactic «have»
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Too Many Invites
@@ -23,7 +26,6 @@ Nesting boxes like this is a way to get around the “two items per box” rule.
 - O — **O**rin is invited to the party
 - U — **U**riel is invited to the party
 
-
 # The `have` Tactic
 You can complete this level with your knowledge from the previous level without using this new tactic. For example, either of these would work:
 ```
@@ -32,7 +34,7 @@ exact ⟨⟨a,i⟩,⟨o,u⟩⟩
 ```
 Instead of nesting this way, you can break the process down into steps using the `have` tactic. Enter “`have ai := and_intro a i`” to create your first box. After it's entered, it will appear under assumptions in the proof state. Now enter “`have ou := and_intro o u`” to create the second box.\\
 \\
-Your proof state should now have the following assumptions:
+If you followed this suggestion, your proof state should now have the following assumptions:
 ```
 Assumptions:
 a: A
@@ -50,21 +52,12 @@ Finally, now you can place these two boxes — `ai` and `ou` — into a third bo
 Statement (A I O U : Prop)(a : A)(i : I)(o : O)(u : U) : (A ∧ I) ∧ O ∧ U := by
   have ai := and_intro a i
   have ou := and_intro o u
+  Hint (hidden := true) "exact and_intro {ai} {ou}"
   exact and_intro ai ou
 
+example (A I O U : Prop)(a : A)(i : I)(o : O)(u : U) : (A ∧ I) ∧ O ∧ U := by
+  exact ⟨⟨a,i⟩,⟨o,u⟩⟩
 
 Conclusion "
 Great! Another 4 invites sent out. You're getting the hang of this.
-
-----
-````
--- 1. Alarfil and Ilyn: A ∧ I
-have h₁ := and_intro a i
-
--- 2. Orin and Uriel: O ∧ U
-have h₂ := and_intro o u
-
--- 3. both boxes in a final box
-exact and_intro h₁ h₂
-````
 "

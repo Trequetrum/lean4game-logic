@@ -6,6 +6,10 @@ World "NotIntro"
 Level 4
 Title "Self Contradictory"
 
+OnlyTactic
+  exact
+  «have»
+
 Introduction "
 # Self Contradictory
 Alarfil claims Lippa is coming and Cyna claims Lippa is not coming. They can't both be right.

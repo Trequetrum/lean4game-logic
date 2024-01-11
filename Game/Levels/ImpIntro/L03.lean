@@ -7,6 +7,9 @@ Level 3
 Title "Cake Form Swap"
 
 NewTheorem GameLogic.identity
+OnlyTactic
+  exact
+  «have»
 
 Introduction "
 # Trouble with the cake
@@ -18,7 +21,7 @@ If you assume an arbitrary cake that has icing and that has sprinkles, show that
 - `S` — The cake has **S**prinkles
 "
 
-/-- Show that ∧ is commutative --/
+/-- Show that ∧ is commutative -/
 Statement (I S: Prop) : I ∧ S → S ∧ I := by
   Hint (hidden := true) "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`"
   exact λ(h : I ∧ S) ↦ and_intro (and_right h) h.left
