@@ -14,25 +14,25 @@ This is an involved level. Tactics can be especially helpful in that much of the
 Statement (P Q R : Prop): (P ∧ Q ↔ R ∧ Q) ↔ Q → (P ↔ R) := by
   constructor
   intro ⟨pr, rp⟩
-  intro q
+  intro
   constructor
-  intro p
+  intro
   apply and_left
   apply pr
   constructor
   repeat assumption
-  intro r
+  intro
   apply and_left
   apply rp
   constructor
   repeat assumption
   intro qpr
   constructor
-  intro ⟨p,q⟩
+  intro ⟨_,q⟩
   rw [← qpr q]
   constructor
   repeat assumption
-  intro ⟨r,q⟩
+  intro ⟨_,q⟩
   rw [qpr q]
   constructor
   repeat assumption

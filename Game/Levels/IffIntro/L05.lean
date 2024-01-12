@@ -111,12 +111,3 @@ exact ⟨
 ```
 The thing to notice here is that this long-form solution needs both `h₁.mp` and `h₁.mpr`. Keep in mind that though it’s often tempting to try to use conditionals (`→`), rewrite **requires** a biconditional (`↔`) to work.
 "
-
-/-- Tactic Proof -/
-example
-  (A C L P : Prop)
-  (h1 : L ↔ P)
-  (h2 : ¬((A → C ∨ ¬P) ∧ (P ∨ A → ¬C) → (P → C)) ↔ A ∧ C ∧ ¬P)
-  : ¬((A → C ∨ ¬L) ∧ (L ∨ A → ¬C) → (L → C)) ↔ A ∧ C ∧ ¬L := by
-    rw [h1]
-    assumption

@@ -9,9 +9,6 @@ Title "IffBoss"
 OnlyTactic
   exact
   «have»
-  rw
-  «repeat»
-  nth_rewrite
 
 Introduction "
 # BOSS LEVEL

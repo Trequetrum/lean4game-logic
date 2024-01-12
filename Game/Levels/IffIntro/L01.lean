@@ -41,7 +41,3 @@ exact iff_intro hsj hjs
 exact ⟨hsj, hjs⟩
 ```
 "
-
-/-- Tactic Proof -/
-example (J S : Prop) (hsj: S → J) (hjs: J → S) : S ↔ J := by
-  constructor <;> assumption

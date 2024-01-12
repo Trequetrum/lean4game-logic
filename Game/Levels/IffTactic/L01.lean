@@ -6,42 +6,16 @@ World "IffTactic"
 Level 1
 Title "Iff_Intro"
 
-NewTheorem GameLogic.iff_intro
-NewDefinition GameLogic.iff_def
 OnlyTactic
-  exact
-  «have»
+  assumption
+  constructor
+  «repeat»
 
 Introduction "
-# Coupled Conditionals
-Sybeth and Alarfil are a couple. In effect, this means that if Sybeth is playing a party game, then Alarfil is playing too and vise versa. Therefore Sybeth is playing Charades if and only if Alarfil playing.
-# Proposition Key:
-- J — Alarfil is playing Charades
-- S — Sybeth is playing Charades
-# Unlocked `↔ intro`
-Assuming `e₁ : P → Q` and `e₂ : Q → P`, you can introduce a biconditional with `have h := iff_intro e₁ e₂`, though the anonymous constructor syntax works just like it does for conjunctions: `have h : P ↔ Q := ⟨e₁, e₂⟩`
+# Using Tactics
+The tactics available to you should provide a hint for what to do. You'll be using a tactic in a context you havn't tried before, but the result should make sense once you try it and see what happens.
 "
 
-/-- Statement -/
-Statement (J S : Prop) (hsj: S → J) (hjs: J → S) : S ↔ J := by
-  exact iff_intro hsj hjs
-
-example (J S : Prop) (hsj: S → J) (hjs: J → S) : S ↔ J := by
-  exact ⟨hsj, hjs⟩
-
-Conclusion "
-Onward and upward
-
-----
-```
-exact iff_intro hsj hjs
-```
----
-```
-exact ⟨hsj, hjs⟩
-```
-"
-
-/-- Tactic Proof -/
-example (J S : Prop) (hsj: S → J) (hjs: J → S) : S ↔ J := by
-  constructor <;> assumption
+Statement (P Q : Prop) (hsj: Q → P) (hjs: P → Q) : Q ↔ P := by
+  constructor
+  repeat assumption

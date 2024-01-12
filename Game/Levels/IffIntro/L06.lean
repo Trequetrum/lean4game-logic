@@ -70,8 +70,3 @@ exact or_assoc.mp ≫ h ≫ imp_trans and_assoc.mp
 
 ```
 "
-
-/-- Tactic Proof -/
-example (P Q R : Prop) (h : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R)) : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R) := by
-  rw [or_assoc, and_assoc]
-  assumption

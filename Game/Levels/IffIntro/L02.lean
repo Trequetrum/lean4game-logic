@@ -28,8 +28,3 @@ For a biconditional like `h : P ↔ Q`,
 /-- Statement -/
 Statement (B P : Prop) (h : B ↔ ¬P) : (B → ¬P) ∧ (¬P → B) := by
   exact and_intro (iff_mp h) (iff_mpr h)
-
-/-- Tactic Proof -/
-example (B P : Prop) (h : B ↔ ¬P) : (B → ¬P) ∧ (¬P → B) := by
-  cases h
-  constructor <;> assumption
