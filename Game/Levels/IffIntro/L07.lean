@@ -12,7 +12,9 @@ OnlyTactic
 
 Introduction "
 # BOSS LEVEL
-This is an involved level. It doesn't require you to do anything tricky, but there are a lot of moving parts and it is easy to lose track of what you're doing.
+This is an involved level. It doesn't require you to do anything tricky, but there are a lot of moving parts and it is easy to lose track of what you're doing.\\
+\\
+I recommend editor mode. Think about what this is asking you to prove and use `have` to give yourself any auxillary facts that don't exist under your theorems.
 "
 
 Statement (P Q R : Prop): (P ∧ Q ↔ R ∧ Q) ↔ Q → (P ↔ R) := by

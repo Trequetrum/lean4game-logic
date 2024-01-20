@@ -38,7 +38,7 @@ Title "A Lean Intro to Logic"
 Introduction
 "
 # An Introduction to Constructive Logic
-This is a game about evidence and propositions.
+This is a game about evidence [¹] and propositions.
 
 To play this puzzler you'll need to learn some notation. Unlike learning how to do a crossword or solve a Sudoku, the notation is a bit more involved. As the levels progress, you will — in effect — be learning a small part of a programming language. Just enough to prove (or construct evidence for) propositions and predicates.
 
@@ -133,6 +133,8 @@ Click on the first world — **Party Invites** — to get started.
 
 ----
 
+[¹] This game says “evidence” where other learning material may say “term”, “proof”, or neither (relying on context to differentate a proposition from it's proof). I use *evidence* for this game in an effort to make the flavor text seem less at odds with the formalization.\\
+\\
 [ˢʳᶜ]Logic example taken from [IEP](https://iep.utm.edu/propositional-logic-sentential-logic/#H5) entry: *Propositional Logic*.
 "
 
