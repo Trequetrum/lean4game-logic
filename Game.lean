@@ -133,7 +133,7 @@ Click on the first world — **Party Invites** — to get started.
 
 ----
 
-[¹] This game says “evidence” where other learning material may say “term”, “proof”, or neither (relying on context to differentate a proposition from it's proof). I use *evidence* for this game in an effort to make the flavor text seem less at odds with the formalization.\\
+[¹] This game says “evidence” where other learning material may say “term”, “proof”, or neither (relying on context to differentate a proposition from its proof). I use *evidence* for this game in an effort to make the flavor text seem less at odds with the formalization.\\
 \\
 [ˢʳᶜ]Logic example taken from [IEP](https://iep.utm.edu/propositional-logic-sentential-logic/#H5) entry: *Propositional Logic*.
 "
@@ -173,7 +173,7 @@ Warning: In most browsers, deleting cookies will also clear the local storage
 Languages "English"
 CaptionShort "Lean intro to Logic"
 CaptionLong "A mostly self-contained introduction to constructive logic using Lean. Learn how each propositional connective can be introduced and eliminated using both terms and tactics."
-CoverImage "images/logic0101.png"
+CoverImage "images/logic0101_v3.png"
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame
