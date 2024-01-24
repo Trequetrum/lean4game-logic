@@ -20,7 +20,7 @@ You've made a todo list, so you've begun to plan your party.
 # The Exact Tactic
 The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the assumptions directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\
 \\
-The expression looks like `exact e` were `e` is an expression the game will accept for the current Goal.\\
+The input will look like `exact e` were `e` is an expression the game will accept for the current Goal.\\
 \\
 ⋆Spoilers!⋆ If you enter “`exact todo_list`,” you will have completed this level.
 

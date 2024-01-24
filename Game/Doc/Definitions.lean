@@ -16,7 +16,7 @@ q : Q
 have h₁ := and_intro p q
 have h₂ := and_intro (left := p) (right := q)
 -- Implicit Constructuer, annotations based on context
--- Type these angle brackets with “\\<” and “\\>”
+-- Type these angle brackets with “\<” and “\>”
 have h₆ : P ∧ Q := ⟨p,q⟩
 have h₇ := (⟨p,q⟩ : P ∧ Q)
 ```
@@ -68,7 +68,7 @@ h₂ : Q → P
 have h₁ := iff_intro h₁ h₂
 have h₂ := iff_intro (mp := h₁) (mpr := h₂)
 -- Implicit Constructuer, annotations based on context
--- Type these angle brackets with “\\<” and “\\>”
+-- Type these angle brackets with “\<” and “\>”
 have h₆ : P ↔ Q := ⟨h₁, h₂⟩
 have h₇ := (⟨h₁, h₂⟩ : P ↔ Q)
 ```
@@ -139,16 +139,16 @@ DefinitionDoc GameLogic.FunIntro as "→ intro"
 | --- | :---: | :---: | --- |
 | True | `True` |  |  |
 | False | `False` |  |  |
-| Not | `Not` | ¬ | `\\n` `\\not` `\\neg` `\\lnot` |
-| And | `/\\` | ∧ | `\\and` `\\an` `\\wedge` |
-| Or | `\\/` | ∨ | `\\v` `\\or` `\\vee` |
-| Implies | `->` | → | `\\r` `\\imp` `\\\\->` `\\to` `\\r-` `\\rightarrow` |
-| Iff | `<->` | ↔ | `\\iff` `\\lr-` `\\lr` `\\<->` `\\leftrightarrow` |
-| For All | `foral` | ∀ | `\\all` `\\forall` |
-| Exists | `exists` | ∃ | `\\ex` `\\exists` |
+| Not | `Not` | ¬ | `\n` `\not` `\neg` `\lnot` |
+| And | `/\` | ∧ | `\and` `\an` `\wedge` |
+| Or | `\/` | ∨ | `\v` `\or` `\vee` |
+| Implies | `->` | → | `\r` `\imp` `\->` `\to` `\r-` `\rightarrow` |
+| Iff | `<->` | ↔ | `\iff` `\lr-` `\lr` `\<->` `\leftrightarrow` |
+| For All | `foral` | ∀ | `\all` `\forall` |
+| Exists | `exists` | ∃ | `\ex` `\exists` |
 
 ### **Anonymous Function**
-Example:\\
+Example:
 An anonymous function that swaps a conjunction
 ```
 -- Ascii
@@ -158,16 +158,16 @@ fun h : P ∧ Q => and_intro (and_right h) (and_left h)
 ```
 | $Ascii~~~$ | $Unicode~~~$ | $Unicode Cmd$ |
 | --- | :---: | --- |
-| `fun` | λ | `\\fun` `\\la` `\\lambda` `\\lamda` `\\lam` `\\Gl` |
-| `=>` | ↦ | `\\map` `\\mapsto` |
+| `fun` | λ | `\fun` `\la` `\lambda` `\lamda` `\lam` `\Gl` |
+| `=>` | ↦ | `\map` `\mapsto` |
 
 ### **Other Unicode**
 | $Name$ | $Unicode~~~$ | $Unicode Cmd$ |
 | --- | :---: | --- |
-| Angle brackets | ⟨ ⟩ | `\\<` `\\>` `\\langle` `\\rangle` |
-| Subscript Numbers | ₁ ₂ ₃ ... | `\\1` `\\2` `\\3` ... |
-| Left Arrow | ← | `\\l` `\\leftarrow` `\\gets` `\\<-` |
-| Turnstyle | ⊢ | `\\│-` `\\entails` `\\vdash` `\\goal` |
+| Angle brackets | ⟨ ⟩ | `\<` `\>` `\langle` `\rangle` |
+| Subscript Numbers | ₁ ₂ ₃ ... | `\1` `\2` `\3` ... |
+| Left Arrow | ← | `\l` `\leftarrow` `\gets` `\<-` |
+| Turnstyle | ⊢ | `\│-` `\entails` `\vdash` `\goal` |
 -/
 DefinitionDoc GameLogic.AsciiTable as "Unicode Table"
 

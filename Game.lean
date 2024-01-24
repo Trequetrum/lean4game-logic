@@ -175,5 +175,5 @@ CaptionShort "Lean intro to Logic"
 CaptionLong "A mostly self-contained introduction to constructive logic using Lean. Learn how each propositional connective can be introduced and eliminated using both terms and tactics."
 CoverImage "images/logic0101_v4.png"
 
-/-! Build the game. Show's warnings if it found a problem with your game. -/
+/-! Build the game. Shows warnings if it found a problem with your game. -/
 MakeGame

@@ -101,14 +101,14 @@ all `P`s in the goal to `Q`s. It's the way to “substitute in”.
 
 ## Variants
 
-* `rw [← h₁]` — changes `Q`s to `P`s; get the back arrow by typing `\\left ` or `\\l`.
+* `rw [← h₁]` — changes `Q`s to `P`s; get the back arrow by typing `\left ` or `\l`.
 
 * `rw [h₁, h₂, h₃, h₄]` — a sequence of rewrites
 
 * `rw [h₁] at h₂` — changes `P`s to `Q`s in hypothesis `h₂`
 
 * `rw [h₁] at h₂ h₃ ⊢` — changes `X`s to `Y`s in two hypotheses and the goal;
-get the `⊢` symbol with `\\|-`.
+get the `⊢` symbol with `\|-`.
 
 * `repeat rw [h₁]` — keep attempting to `rw` until there are no more matches. For example, if the goal is `¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬P` you can use `rw [not_not_not]` 9 times or just use `repeat rw [not_not_not]` once to get `¬P`
 

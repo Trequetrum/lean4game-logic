@@ -181,6 +181,10 @@ There is are infix operators for function application; they look like `|>` and `
 It's twin, `|>` chains such that `x |> f |> g` is interpreted as `g (f x)`.
 
 What makes the infix operators usefull is that they can often replace a pair of brackets `(...)` making expressions easier to read.
+
+----
+# Computer Science
+If you've done some programming before, you might recognise `Modus Ponens` as the identity function for implications. So `(modus_ponens and_left)` is extensionally equal to `and_left`. There's a conspiracy at work here!
 -/
 TheoremDoc GameLogic.modus_ponens as "modus_ponens" in "→"
 
@@ -196,15 +200,15 @@ def and_comm {P Q : Prop}: P ∧ Q ↔ Q ∧ P :=
 -/
 TheoremDoc GameLogic.and_comm as "and_comm" in "∧"
 
-def and_assoc {P Q R : Prop}: P ∧ Q ∧ R ↔ (P ∧ Q) ∧ R :=
-  ⟨ λ⟨p,q,r⟩ ↦ ⟨⟨p,q⟩,r⟩,
-    λ⟨⟨p,q⟩,r⟩ ↦ ⟨p,q,r⟩
+def and_assoc {P Q R : Prop}: (P ∧ Q) ∧ R ↔ P ∧ Q ∧ R :=
+  ⟨ λ⟨⟨p,q⟩,r⟩ ↦ ⟨p,q,r⟩,
+    λ⟨p,q,r⟩ ↦ ⟨⟨p,q⟩,r⟩
   ⟩
 
 /--
 # ∧ is Associative
 
-`and_assoc` is evidence that `P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R`
+`and_assoc` is evidence that `(P ∨ Q) ∨ R ↔ P ∨ Q ∨ R`
 -/
 TheoremDoc GameLogic.and_assoc as "and_assoc" in "∧"
 
@@ -221,13 +225,13 @@ def or_comm {P Q : Prop}: P ∨ Q ↔ Q ∨ P :=
 TheoremDoc GameLogic.or_comm as "or_comm" in "∨"
 
 -- or_assoc
-def or_assoc {P Q R : Prop}: P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R :=
+def or_assoc {P Q R : Prop}: (P ∨ Q) ∨ R ↔ P ∨ Q ∨ R :=
   have mp := (Or.elim ·
-    (Or.inl ∘ Or.inl)
-    (Or.elim · (Or.inl ∘ Or.inr) Or.inr))
-  have mpr := (Or.elim ·
     (Or.elim · Or.inl (Or.inr ∘ Or.inl))
     (Or.inr ∘ Or.inr))
+  have mpr := (Or.elim ·
+    (Or.inl ∘ Or.inl)
+    (Or.elim · (Or.inl ∘ Or.inr) Or.inr))
   ⟨mp,mpr⟩
 
 -- or_assoc expanded
@@ -273,9 +277,9 @@ Of course, because of `and_comm`, you know you can flip this around too.
 `Q → R` and `P → Q` implies `P → R` has a near-identical proof.
 
 ### Infix Operator:
-`imp_trans` has an infix operator. This looks like `≫` (which is written as “`\\gg`”).
+`imp_trans` has an infix operator. This looks like `≫` (which is written as “`\gg`”).
 
-For the math-inclined, because the expression for an implication is a function, you can also use function composition for the same purpose (`∘` is written as “`\\o`”). Just remember that `∘` has the parameters swapped from the way `imp_trans` is defined.
+For the math-inclined, because the expression for an implication is a function, you can also use function composition for the same purpose (`∘` is written as “`\o`”). Just remember that `∘` has the parameters swapped from the way `imp_trans` is defined.
 -/
 TheoremDoc GameLogic.imp_trans as "imp_trans" in "→"
 
@@ -301,15 +305,15 @@ def modus_tollens {P Q : Prop} (h: P → Q) (nq: ¬Q) : ¬P := h ≫ nq
 # Modus Tollens
 Denying the consequent.
 
-If P, then Q.\\
-Not Q.\\
+If P, then Q.\
+Not Q.\
 Therefore, not P.
 ```
 mt : (P → Q) → ¬Q → ¬P
 ```
 
 ### Infix Operator:
-`modus_tollens` is a specialized version of `imp_trans`, which makes it possible to use `≫` (which is written as “`\\gg`”) as an infix operator for `modus_tollens`.
+`modus_tollens` is a specialized version of `imp_trans`, which makes it possible to use `≫` (which is written as “`\gg`”) as an infix operator for `modus_tollens`.
 -/
 TheoremDoc GameLogic.modus_tollens as "modus_tollens" in "→"
 

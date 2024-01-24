@@ -32,25 +32,11 @@ Two new theorems have been unlocked for this level. We'll make you prove them la
 "
 
 /-- Exactly 2 rewrites -/
-Statement (P Q R : Prop) (h : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R)) : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R) := by
+Statement (P Q R : Prop) (h : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R)) : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R) := by
   rw [or_assoc, and_assoc]
   exact h
 
-example (P Q R : Prop) (h : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R)) : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R) := by
-  exact imp_trans
-    (λpvqvr ↦ h (or_elim pvqvr
-      (λp ↦ or_inl (or_inl p))
-      (λqvr ↦ or_elim qvr
-        (λq ↦ or_inl (or_inr q))
-        (λr ↦ or_inr r))
-    ))
-    λnpqr pqr ↦ npqr (
-      and_intro (
-        and_intro pqr.left pqr.right.left
-      ) pqr.right.right
-    )
-
-example (P Q R : Prop) (h : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R)) : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R) := by
+example (P Q R : Prop) (h : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R)) : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R) := by
   exact or_assoc.mp ≫ h ≫ imp_trans and_assoc.mp
 
 Conclusion "

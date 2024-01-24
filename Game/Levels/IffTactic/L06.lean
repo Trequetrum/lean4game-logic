@@ -16,7 +16,7 @@ Introduction "
 Even without the `rw` tactic, this can be solved in a few lines.
 "
 
-Statement (P Q R : Prop) (h : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R)) : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R) := by
+Statement (P Q R : Prop) (h : P ∨ Q ∨ R → ¬(P ∧ Q ∧ R)) : (P ∨ Q) ∨ R → ¬((P ∧ Q) ∧ R) := by
   intro _ _
   apply h
   apply or_assoc.mp

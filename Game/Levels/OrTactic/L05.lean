@@ -8,6 +8,7 @@ Title "Old Hat"
 
 NewTheorem GameLogic.or_comm
 OnlyTactic
+  cases
   assumption
   apply
   left

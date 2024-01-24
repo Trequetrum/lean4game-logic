@@ -22,7 +22,7 @@ You've labelled the box explicitly, specifying that Pippin's invitation is on th
 - P — “**P**ippin is invited to the party”
 - S — “**S**ybeth is invited to the party”
 
-In this game, that means anything operating as evidence for `A ∧ B` will have a left part and a right part as well. The box described in the intro works this way.
+Like the box described in the intro, any evidence for a conjunction like `A ∧ B` will have a left part and a right part.
 # Assumptions
 - `p : P` — Your invitation for Pippin is evidence that Pippin is invited to the party
 - `s : S` — Your invitation for Sybeth is evidence that Sybeth is invited to the party
@@ -30,9 +30,9 @@ In this game, that means anything operating as evidence for `A ∧ B` will have 
 Use `p` and `s` to produce evidence that `P ∧ S`. Remember that you use evidence (generally lowercase letters), to deduce new propositions (generally uppercase letters)
 
 # Using the `∧` Construtor
-This level has unlocked “`∧`” under definitions. This has made the `and_intro` constructor available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\
+This level has unlocked “`∧`” under definitions. This has made the `and_intro` theorem available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\
 \\
-The help-page has even more detail about creating conjunctions like this (There's a common shorthand using angle-brackers `⟨` `⟩`).
+The help-page has even more detail about creating conjunctions like this (There's a common shorthand using angle-brackers `⟨` `,` `⟩` ).
 
 # A reminder
 Use the `exact` tactic to exhibit evidence for a goal
