@@ -70,8 +70,7 @@ example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q 
 
 -- Use the infix operator for implication transitivity
 example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
-  have hpu := h₁ ≫ h₃ ≫ h₅
-  exact hpu p
+  exact (h₁ ≫ h₃ ≫ h₅) p
 
 -- Use swapped function application to create a linux-style pipe
 example (P Q R S T U: Prop) (p : P) (h₁ : P → Q) (h₂ : Q → R) (h₃ : Q → T) (h₄ : S → T) (h₅ : T → U) : U := by
@@ -100,8 +99,6 @@ exact hpu p
 ```
 or if you've seen the infix operator for `imp_trans`:
 ```
-have hpt := h₁ ≫ h₃
-have hpu := hpt ≫ h₅
-exact hpu p
+exact (h₁ ≫ h₃ ≫ h₅) p
 ```
 "

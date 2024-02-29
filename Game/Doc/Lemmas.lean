@@ -6,7 +6,7 @@ def and_left {P Q : Prop} (h : P ∧ Q) : P := And.left h
 
 /--
 # ∧ Elimination Left
-### and_left : P ∧ Q -> P`
+### `and_left : P ∧ Q -> P`
 
 If `h` is a term with a type like `AP∧ Q`
 
@@ -18,7 +18,7 @@ def and_right {P Q : Prop} (h : P ∧ Q) : Q := And.right h
 
 /--
 # ∧ Elimination Right
-### and_right : P ∧ Q -> Q`
+### `and_right : P ∧ Q -> Q`
 
 If `h` is a term with a type like `P ∧ Q`
 

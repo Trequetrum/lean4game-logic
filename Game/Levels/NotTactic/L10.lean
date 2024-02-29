@@ -10,6 +10,7 @@ OnlyTactic
   assumption
   intro
   apply
+  constructor
   «repeat»
 
 Introduction "

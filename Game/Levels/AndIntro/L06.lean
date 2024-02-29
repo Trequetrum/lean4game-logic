@@ -9,6 +9,7 @@ Title "Mix and Match"
 OnlyTactic
   exact
   «have»
+TheoremTab "∧"
 
 Introduction "
 # Mixed Up Conjunctions

@@ -10,6 +10,7 @@ NewTheorem GameLogic.and_right
 OnlyTactic
   exact
   «have»
+TheoremTab "∧"
 
 Introduction "
 # Another Unlock

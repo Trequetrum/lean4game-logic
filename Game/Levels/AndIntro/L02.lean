@@ -9,6 +9,7 @@ Title "And Introduction"
 NewTheorem GameLogic.and_intro
 NewDefinition GameLogic.and_def
 OnlyTactic exact
+TheoremTab "∧"
 
 Introduction "
 # `∧`

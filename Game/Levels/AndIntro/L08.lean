@@ -9,6 +9,7 @@ Title "Rearranging Boxes"
 OnlyTactic
   exact
   «have»
+TheoremTab "∧"
 
 Introduction "
 # BOSS LEVEL

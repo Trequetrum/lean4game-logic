@@ -15,6 +15,8 @@ OnlyTactic
 
 Introduction "
 # The Final “Redux: ¬ World Tactics” level
+
+`contradiction` is available this level, you can use it to shorten your answer a little bit.
 "
 
 Statement (B C : Prop) (h : ¬(B → C)) : ¬¬B := by

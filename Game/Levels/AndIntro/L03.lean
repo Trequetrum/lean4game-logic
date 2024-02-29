@@ -11,6 +11,7 @@ NewTactic «have»
 OnlyTactic
   exact
   «have»
+TheoremTab "∧"
 
 Introduction "
 # Too Many Invites

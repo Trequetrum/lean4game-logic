@@ -16,8 +16,8 @@ Chocolate chip oatmeal cookies, which ingredient goes first?
 1. Oatmeal or chocolate chips?
 2. Chocolate chips or oatmeal?
 # Proposition Key:
-C — Chocolate chips
-O — Oatmeal
+- C — Chocolate chips
+- O — Oatmeal
 
 This time they're not under assumptions, but you have the evidence in your inventory.
 - `or_inr : C → O ∨ C`

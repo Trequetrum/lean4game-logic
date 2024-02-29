@@ -9,6 +9,7 @@ Title "Exactly! It's in the premise"
 NewTactic exact
 NewDefinition GameLogic.AsciiTable
 OnlyTactic exact
+TheoremTab "∧"
 
 Introduction "
 # Introduction

@@ -21,7 +21,7 @@ What this level is showing is that you can think about `h` as a function with 2 
 \\
 Once your goal is `R`, you can `apply h`. This is like saying “in order to prove R, it suffices to prove `P` and prove `Q`”. You'll notice that `apply` automatically creates the two goals for you in such cases.\\
 \\
-**Aside:** When you've been using `constructor` to build conjunctions, this has been the same thing as if you had used `apply and_intro`. You can try that out next level if you so inclined.
+**Aside:** When you've been using `constructor` to build conjunctions, this has been the same thing as if you had used `apply and_intro`. You can try that out next level if you're so inclined.
 "
 
 /-- `(P → Q → R) → P ∧ Q → R` -/

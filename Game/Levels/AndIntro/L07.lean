@@ -9,6 +9,7 @@ Title "More Elimination"
 OnlyTactic
   exact
   «have»
+TheoremTab "∧"
 
 Introduction "
 # An Emergency!
@@ -23,7 +24,7 @@ Show evidence that the firefighters can get to Coco
 
 # `∧` associates to the right
 Check out the definition page for \"Precedence\" to learn a bit more.
-# Hint
+# Hint # 1
 If you hover your mouse over an operator in the proof state it will highlight the part of the expression that it operates **on**. Find the one that highlights the entire expression to see where the trunk of the tree is.\\
 \\
 Another approach is trial and error. Enter `have h₁ := h.right` to see `h₁: (L ∧ L) ∧ L` appear in your assumptions, which doesn't have `C` anywhere, indicating that this isn't the correct part of the tree. You can hit retry, then change that line to have `h₁ := h.left`. Then your assumptions will have `h₁: L ∧ ((L ∧ C) ∧ L) ∧ L ∧ L ∧ L`, which has the `C` somewhere.

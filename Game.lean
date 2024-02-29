@@ -42,7 +42,7 @@ This is a game about evidence [¹] and propositions.
 
 To play this puzzler you'll need to learn some notation. Unlike learning how to do a crossword or solve a Sudoku, the notation is a bit more involved. As the levels progress, you will — in effect — be learning a small part of a programming language. Just enough to prove (or construct evidence for) propositions and predicates.
 
-Below, you're provided with whirlwind tour of the notation at play as well as a bit of motivation for why the notation looks the way it does. This is all done through a single example. Many of the details will seem lacking; The concepts covered here will be addressed with more detail during the tutorial worlds of this game.
+Below, you're provided with a whirlwind tour of the notation at play as well as a bit of motivation for why the notation looks the way it does. This is all done through a single example. Many of the details will seem lacking; The concepts covered here will be addressed with more detail during the tutorial worlds of this game.
 
 # Building some notation
 Consider the following argument stated in natural language:

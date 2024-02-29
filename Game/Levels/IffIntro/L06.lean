@@ -25,10 +25,12 @@ It doesn't really matter how your friends are paired up, the same truth will hol
 - A — Alarfil is a member of the resistance
 - C — Cyna is a member of the resistance
 - L — Lippa is a member of the resistance
-## new theorems
+## New Theorems
 Two new theorems have been unlocked for this level. We'll make you prove them later — though I imagine they make a certain amount of intuitive sense regardless.
 1. `or_assoc : P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R`
 2. `and_assoc : P ∧ Q ∧ R ↔ (P ∧ Q) ∧ R`
+## A Challenge
+You'll likely see the way this can be solved using the `rw` tactic. In this case, there's a nice and short proof that doesn't use `rw`. If you want the extra challenge, see if you can see it.
 "
 
 /-- Exactly 2 rewrites -/
@@ -51,8 +53,8 @@ rw [or_assoc, and_assoc]
 exact h
 ```
 ----
+Without the `rw` tactic
 ```
 exact or_assoc.mp ≫ h ≫ imp_trans and_assoc.mp
-
 ```
 "

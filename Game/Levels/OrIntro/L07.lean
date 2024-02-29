@@ -29,17 +29,19 @@ Statement (G H U : Prop)(h : G ∧ (H ∨ U)) : (G ∧ H) ∨ (G ∧ U) := by
   exact or_elim hvu ffh ffu
 
 example (G H U : Prop)(h : G ∧ (H ∨ U)) : (G ∧ H) ∨ (G ∧ U) := by
+  have g := h.left
   exact or_elim h.right
-    (and_intro h.left ≫ or_inl)
-    (and_intro h.left ≫ or_inr)
+    (and_intro g ≫ or_inl)
+    (and_intro g ≫ or_inr)
 
 Conclusion "
 This is a great example of how the infix `imp_trans` operator can streamline a level:
 
 ---
 ```lean
+have g := h.left
 exact or_elim h.right
-  (and_intro h.left ≫ or_inl)
-  (and_intro h.left ≫ or_inr)
+  (and_intro g ≫ or_inl)
+  (and_intro g ≫ or_inr)
 ```
 "

@@ -19,7 +19,7 @@ OnlyTactic
 
 Introduction "
 # A Longer Level
-The `rw` tactic makes this level a cakewalk. For the redux version we're going to make this outright tedius, but this will show without a doubt that you've mastered simple proposiitonal proofs.\\
+The `rw` tactic makes this level a cakewalk. For the redux version we're going to make this outright tedius, but this will show without a doubt that you've mastered simple propositional proofs.\\
 \\
 I suggest you finish the other redux worlds before doing this level.\\
 \\

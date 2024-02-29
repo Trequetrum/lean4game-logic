@@ -23,6 +23,10 @@ If we summon the Kraken, then we shall assuredly perish. While that might sound 
 Statement (I K P : Prop)(h : K → P) : K ∨ I → I ∨ P := by
   exact (or_elim · (h ≫ or_inr) or_inl)
 
+example (I K P : Prop)(h : K → P) : K ∨ I → I ∨ P := by
+  have h₁ : K → I ∨ P := λk ↦ or_inr (h k)
+  exact λki ↦ or_elim ki h₁ or_inl
+
 Conclusion "
 Okay, that was a bit easy for a boss level. Don't sweat it, just enjoy the icecream!
 "
