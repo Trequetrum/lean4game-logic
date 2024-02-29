@@ -16,7 +16,7 @@ Introduction "
 "
 
 Statement (P Q R : Prop) (h1 : P ↔ R)(h2 : P → Q) : R → Q := by
-  intro r
+  intro
   apply h2
   apply h1.mpr
   assumption
