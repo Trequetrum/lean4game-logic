@@ -16,7 +16,7 @@ Title "Redux: ¬ World Tactics"
 
 Introduction "
 # Redux: ¬ World Tactics
-Welcome to the redux of the **→ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\
+Welcome to the redux of the **¬ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\
 \\
 This world introduces tactics that you can use in lieu of the expressions you've learned so far.
 "
