@@ -14,7 +14,7 @@ OnlyTactic
 
 Introduction "
 # Nothing New
-Just use what you know. Start with `intro` to give yourself an asusmption to work with
+Just use what you know. Start with `intro` to give yourself an assumption to work with
 "
 
 /-- Show that ∧ is commutative -/
