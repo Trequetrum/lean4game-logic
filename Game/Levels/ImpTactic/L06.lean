@@ -19,7 +19,7 @@ Introduction "
 # The `repeat` tactic combinator
 Sometimes you'll find you need to use the same tactic a few times in a row. Any tactic can be repeated (until it fails) using the `repeat`.\\
 \\
-In this level, it's very like that you'll be building a conjunction from two assumptions already available in your proof state. Once you make it that far, instead of writting
+In this level, it's very likely that you'll be building a conjunction from two assumptions already available in your proof state. Once you make it that far, instead of writing
 ```
 constructor
 assumption
