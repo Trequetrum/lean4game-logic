@@ -44,6 +44,10 @@ To play this puzzler you'll need to learn some notation. Unlike learning how to 
 
 Below, you're provided with a whirlwind tour of the notation at play as well as a bit of motivation for why the notation looks the way it does. This is all done through a single example. Many of the details will seem lacking; The concepts covered here will be addressed with more detail during the tutorial worlds of this game.
 
+# Redux
+
+Each tutorial world is accompanied by a **Redux World** with the same subtitle. These worlds are optional, don't have any flavor text, and challenge you to solve the exact same set of levels in a different way. These worlds probably do not belong in a puzzle game, but I found the exercise helpful in garnering a computer-sciencey intuition about the interplay between proof terms and tactics in Lean 4.
+
 # Building some notation
 Consider the following argument stated in natural language:
 

@@ -1,12 +1,24 @@
 msgid ""
-msgstr "Project-Id-Version: Game v4.6.0\n"
+msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue May 14 13:24:37 2024\n"
+"POT-Creation-Date: Tue May 14 14:58:02 2024\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit"
+
+#: GameServer.RpcHandlers
+msgid "level completed! 🎉"
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed with warnings… 🎭"
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "intermediate goal solved! 🎉"
+msgstr ""
 
 #: Game.Doc.Definitions
 msgid "# Conjunction\n"
@@ -22,7 +34,7 @@ msgid "# Conjunction\n"
 "have h₁ := and_intro p q\n"
 "have h₂ := and_intro (left := p) (right := q)\n"
 "-- Implicit Constructuer, annotations based on context\n"
-"-- Type these angle brackets with “\<” and “\>”\n"
+"-- Type these angle brackets with “\\<” and “\\>”\n"
 "have h₆ : P ∧ Q := ⟨p,q⟩\n"
 "have h₇ := (⟨p,q⟩ : P ∧ Q)\n"
 "```\n"
@@ -71,7 +83,7 @@ msgid "# Biconditional\n"
 "have h₁ := iff_intro h₁ h₂\n"
 "have h₂ := iff_intro (mp := h₁) (mpr := h₂)\n"
 "-- Implicit Constructuer, annotations based on context\n"
-"-- Type these angle brackets with “\<” and “\>”\n"
+"-- Type these angle brackets with “\\<” and “\\>”\n"
 "have h₆ : P ↔ Q := ⟨h₁, h₂⟩\n"
 "have h₇ := (⟨h₁, h₂⟩ : P ↔ Q)\n"
 "```\n"
@@ -139,13 +151,13 @@ msgid "### **Logic Constants & Operators**\n"
 "| --- | :---: | :---: | --- |\n"
 "| True | `True` |  |  |\n"
 "| False | `False` |  |  |\n"
-"| Not | `Not` | ¬ | `\n` `\not` `\neg` `\lnot` |\n"
-"| And | `/\` | ∧ | `\and` `\an` `\wedge` |\n"
-"| Or | `\/` | ∨ | `\v` `\or` `\vee` |\n"
-"| Implies | `->` | → | `\r` `\imp` `\->` `\to` `\r-` `\rightarrow` |\n"
-"| Iff | `<->` | ↔ | `\iff` `\lr-` `\lr` `\<->` `\leftrightarrow` |\n"
-"| For All | `foral` | ∀ | `\all` `\forall` |\n"
-"| Exists | `exists` | ∃ | `\ex` `\exists` |\n"
+"| Not | `Not` | ¬ | `\\n` `\\not` `\\neg` `\\lnot` |\n"
+"| And | `/\\` | ∧ | `\\and` `\\an` `\\wedge` |\n"
+"| Or | `\\/` | ∨ | `\\v` `\\or` `\\vee` |\n"
+"| Implies | `->` | → | `\\r` `\\imp` `\\->` `\\to` `\\r-` `\\rightarrow` |\n"
+"| Iff | `<->` | ↔ | `\\iff` `\\lr-` `\\lr` `\\<->` `\\leftrightarrow` |\n"
+"| For All | `foral` | ∀ | `\\all` `\\forall` |\n"
+"| Exists | `exists` | ∃ | `\\ex` `\\exists` |\n"
 "\n"
 "### **Anonymous Function**\n"
 "Example:\n"
@@ -158,16 +170,16 @@ msgid "### **Logic Constants & Operators**\n"
 "```\n"
 "| $Ascii~~~$ | $Unicode~~~$ | $Unicode Cmd$ |\n"
 "| --- | :---: | --- |\n"
-"| `fun` | λ | `\fun` `\la` `\lambda` `\lamda` `\lam` `\Gl` |\n"
-"| `=>` | ↦ | `\map` `\mapsto` |\n"
+"| `fun` | λ | `\\fun` `\\la` `\\lambda` `\\lamda` `\\lam` `\\Gl` |\n"
+"| `=>` | ↦ | `\\map` `\\mapsto` |\n"
 "\n"
 "### **Other Unicode**\n"
 "| $Name$ | $Unicode~~~$ | $Unicode Cmd$ |\n"
 "| --- | :---: | --- |\n"
-"| Angle brackets | ⟨ ⟩ | `\<` `\>` `\langle` `\rangle` |\n"
-"| Subscript Numbers | ₁ ₂ ₃ ... | `\1` `\2` `\3` ... |\n"
-"| Left Arrow | ← | `\l` `\leftarrow` `\gets` `\<-` |\n"
-"| Turnstyle | ⊢ | `\│-` `\entails` `\vdash` `\goal` |"
+"| Angle brackets | ⟨ ⟩ | `\\<` `\\>` `\\langle` `\\rangle` |\n"
+"| Subscript Numbers | ₁ ₂ ₃ ... | `\\1` `\\2` `\\3` ... |\n"
+"| Left Arrow | ← | `\\l` `\\leftarrow` `\\gets` `\\<-` |\n"
+"| Turnstyle | ⊢ | `\\│-` `\\entails` `\\vdash` `\\goal` |"
 msgstr ""
 
 #: Game.Doc.Definitions
@@ -327,14 +339,14 @@ msgid "## Summary\n"
 "\n"
 "## Variants\n"
 "\n"
-"* `rw [← h₁]` — changes `Q`s to `P`s; get the back arrow by typing `\left ` or `\l`.\n"
+"* `rw [← h₁]` — changes `Q`s to `P`s; get the back arrow by typing `\\left ` or `\\l`.\n"
 "\n"
 "* `rw [h₁, h₂, h₃, h₄]` — a sequence of rewrites\n"
 "\n"
 "* `rw [h₁] at h₂` — changes `P`s to `Q`s in hypothesis `h₂`\n"
 "\n"
 "* `rw [h₁] at h₂ h₃ ⊢` — changes `X`s to `Y`s in two hypotheses and the goal;\n"
-"get the `⊢` symbol with `\|-`.\n"
+"get the `⊢` symbol with `\\|-`.\n"
 "\n"
 "* `repeat rw [h₁]` — keep attempting to `rw` until there are no more matches. For example, if the goal is `¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬P` you can use `rw [not_not_not]` 9 times or just use `repeat rw [not_not_not]` once to get `¬P`\n"
 "\n"
@@ -409,7 +421,7 @@ msgid "# Sub-Proof\n"
 msgstr ""
 
 #: Game.Doc.Tactics
-msgid "contradiction closes the current goal there are assumptions which are "trivially contradictory".\n"
+msgid "contradiction closes the current goal there are assumptions which are \"trivially contradictory\".\n"
 "\n"
 "### Example\n"
 "```\n"
@@ -491,7 +503,7 @@ msgid "If\n"
 "```\n"
 "have t : T := false_elim h\n"
 "```\n"
-"will allow you to write any well formed proposition in place of `T`. This makes `false_elim` the \"From `False`, anything goes\" function. **Ex falso quodlibet**."
+"will allow you to write any well formed proposition in place of `T`. This makes `false_elim` the \\\"From `False`, anything goes\\\" function. **Ex falso quodlibet**."
 msgstr ""
 
 #: Game.Doc.Lemmas
@@ -526,7 +538,7 @@ msgid "# Or Introduction Right\n"
 "have h := (or_inl q : P ∨ Q)\n"
 "have h := show P ∨ Q from or_inl q\n"
 "```\n"
-"""
+"\""
 msgstr ""
 
 #: Game.Doc.Lemmas
@@ -553,15 +565,32 @@ msgid "# Or Elimination\n"
 msgstr ""
 
 #: Game.Doc.Lemmas
-msgid "TODO"
+msgid "# Propositional Equivalence\n"
+"`P ↔ Q` means that `P` and `Q` must have the same truth value. This is often said as “`P` if and only iff `Q`” or “`P` is logically equivalent to `Q`”.\n"
+"\n"
+"`iff_intro` is the way to prove a biconditional like `P ↔ Q`. It requires you to show evidence for both `P → Q` and `Q → P`."
 msgstr ""
 
 #: Game.Doc.Lemmas
-msgid "TODO"
+msgid "If you have an assumption like `h : P ↔ Q`, then\n"
+"```\n"
+"iff_mp h -- or\n"
+"h.mp     -- is evidence for P → Q\n"
+"\n"
+"iff_mpr h -- or\n"
+"h.mpr     -- is evidence for Q → P\n"
+"```"
 msgstr ""
 
 #: Game.Doc.Lemmas
-msgid "TODO"
+msgid "If you have an assumption like `h : P ↔ Q`, then\n"
+"```\n"
+"iff_mp h -- or\n"
+"h.mp     -- is evidence for P → Q\n"
+"\n"
+"iff_mpr h -- or\n"
+"h.mpr     -- is evidence for Q → P\n"
+"```"
 msgstr ""
 
 #: Game.Doc.Lemmas
@@ -633,9 +662,9 @@ msgid "# → is transitive\n"
 "`Q → R` and `P → Q` implies `P → R` has a near-identical proof.\n"
 "\n"
 "### Infix Operator:\n"
-"`imp_trans` has an infix operator. This looks like `≫` (which is written as “`\gg`”).\n"
+"`imp_trans` has an infix operator. This looks like `≫` (which is written as “`\\gg`”).\n"
 "\n"
-"For the math-inclined, because the expression for an implication is a function, you can also use function composition for the same purpose (`∘` is written as “`\o`”). Just remember that `∘` has the parameters swapped from the way `imp_trans` is defined."
+"For the math-inclined, because the expression for an implication is a function, you can also use function composition for the same purpose (`∘` is written as “`\\o`”). Just remember that `∘` has the parameters swapped from the way `imp_trans` is defined."
 msgstr ""
 
 #: Game.Doc.Lemmas
@@ -650,20 +679,20 @@ msgstr ""
 msgid "# Modus Tollens\n"
 "Denying the consequent.\n"
 "\n"
-"If P, then Q.\\n"
-"Not Q.\\n"
+"If P, then Q.\\\n"
+"Not Q.\\\n"
 "Therefore, not P.\n"
 "```\n"
 "mt : (P → Q) → ¬Q → ¬P\n"
 "```\n"
 "\n"
 "### Infix Operator:\n"
-"`modus_tollens` is a specialized version of `imp_trans`, which makes it possible to use `≫` (which is written as “`\gg`”) as an infix operator for `modus_tollens`."
+"`modus_tollens` is a specialized version of `imp_trans`, which makes it possible to use `≫` (which is written as “`\\gg`”) as an infix operator for `modus_tollens`."
 msgstr ""
 
 #: Game.Doc.Lemmas
 msgid "# Propositional Identity\n"
-"This is the \"I think therefore I am\" of propositional logic. Like `True` it is a simple tautology whose truth requires no premises or assumptions — only reason alone.\n"
+"This is the \\\"I think therefore I am\\\" of propositional logic. Like `True` it is a simple tautology whose truth requires no premises or assumptions — only reason alone.\n"
 "```\n"
 "identity : P → P\n"
 "```"
@@ -674,18 +703,17 @@ msgid "Exactly! It's in the premise"
 msgstr ""
 
 #: Game.Levels.AndIntro.L01
-msgid "\n"
-"# Introduction\n"
+msgid "# Introduction\n"
 "You've made a todo list, so you've begun to plan your party.\n"
 "## Proposition Key:\n"
 "`P` — You're **P**lanning a party\n"
 "## Assumptions\n"
 "`todo_list : P` — Can be read as `todo_list` “is evidence for” `P`\n"
 "# The Exact Tactic\n"
-"The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the assumptions directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\n"
-"\\n"
-"The input will look like `exact e` were `e` is an expression the game will accept for the current Goal.\\n"
-"\\n"
+"The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the assumptions directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\\n"
+"\\\n"
+"The input will look like `exact e` were `e` is an expression the game will accept for the current Goal.\\\n"
+"\\\n"
 "⋆Spoilers!⋆ If you enter “`exact todo_list`,” you will have completed this level.\n"
 "\n"
 "# Become Familiar with the User Interface!\n"
@@ -699,8 +727,7 @@ msgid "\n"
 "## 3. Goal:\n"
 "The goal is always a proposition that you want to exhibit some evidence for. In this level, one of your assumptions already contains evidence for the goal. That will certainly not always be the case.\n"
 "# Inventory\n"
-"On the right of the screen is your inventory of tactics, definitions, and theorems. Once unlocked, you can click them to read about what they do.\n"
-""
+"On the right of the screen is your inventory of tactics, definitions, and theorems. Once unlocked, you can click them to read about what they do."
 msgstr ""
 
 #: Game.Levels.AndIntro.L01
@@ -708,9 +735,7 @@ msgid "Exhibit evidence that you're planning a party."
 msgstr ""
 
 #: Game.Levels.AndIntro.L01
-msgid "\n"
-"Congratulations, not only have you started your todo list, you've learned how to exhibit the list as evidence that you've started planning the party.\n"
-""
+msgid "Congratulations, not only have you started your todo list, you've learned how to exhibit the list as evidence that you've started planning the party."
 msgstr ""
 
 #: Game.Levels.AndIntro.L02
@@ -718,13 +743,12 @@ msgid "And Introduction"
 msgstr ""
 
 #: Game.Levels.AndIntro.L02
-msgid "\n"
-"# `∧`\n"
+msgid "# `∧`\n"
 "The hat symbol “ ∧ ” is how logicians denote a conjunction — a logical “and”. `A ∧ B` means “A and B”. It works the way you would intuitively expect. Like a lot of math operators (`+,-,÷,×`,and others), the `∧` symbol is an infix operator. This means it has a left side and a right side. Looking at `A ∧ B`, you can see that `A` is on the left and `B` is on the right.\n"
 "\n"
 "# Sending Invitations in a Single Package\n"
-"You have two letters, one extending an invitation to Pippin and the other to Sybeth. Since they share a residence, you'd like to consolidate their invites into a single package for shipping. The box you're using has space for two items, one on the left and one on the right.\\n"
-"\\n"
+"You have two letters, one extending an invitation to Pippin and the other to Sybeth. Since they share a residence, you'd like to consolidate their invites into a single package for shipping. The box you're using has space for two items, one on the left and one on the right.\\\n"
+"\\\n"
 "You've labelled the box explicitly, specifying that Pippin's invitation is on the left and Sybeth's invitation is on the right. This ensures there's no confusion about the contents of the box. Upon opening it, they will easily locate their respective invites without the need to search the entire package.\n"
 "# Proposition Key:\n"
 "- P — “**P**ippin is invited to the party”\n"
@@ -738,13 +762,12 @@ msgid "\n"
 "Use `p` and `s` to produce evidence that `P ∧ S`. Remember that you use evidence (generally lowercase letters), to deduce new propositions (generally uppercase letters)\n"
 "\n"
 "# Using the `∧` Construtor\n"
-"This level has unlocked “`∧`” under definitions. This has made the `and_intro` theorem available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\n"
-"\\n"
+"This level has unlocked “`∧`” under definitions. This has made the `and_intro` theorem available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\\n"
+"\\\n"
 "The help-page has even more detail about creating conjunctions like this (There's a common shorthand using angle-brackers `⟨` `,` `⟩` ).\n"
 "\n"
 "# A reminder\n"
-"Use the `exact` tactic to exhibit evidence for a goal\n"
-""
+"Use the `exact` tactic to exhibit evidence for a goal"
 msgstr ""
 
 #: Game.Levels.AndIntro.L02
@@ -756,15 +779,13 @@ msgid "exact and_intro p s"
 msgstr ""
 
 #: Game.Levels.AndIntro.L02
-msgid "\n"
-"You've got evidence that Pippin and Sybeth are invited to the party.\\n"
-"\\n"
+msgid "You've got evidence that Pippin and Sybeth are invited to the party.\\\n"
+"\\\n"
 "Here are some answers the game would have accepted:\n"
 "```\n"
 "exact and_intro p s\n"
 "exact ⟨p,s⟩\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.AndIntro.L03
@@ -772,8 +793,7 @@ msgid "The Have Tactic"
 msgstr ""
 
 #: Game.Levels.AndIntro.L03
-msgid "\n"
-"# Too Many Invites\n"
+msgid "# Too Many Invites\n"
 "You have invites for Alarfil, Ilyn, Orin, and Uriel who all live together. Unfortunately, boxes only have space for two items, but you've thought up a clever solution!\n"
 "1. You'll put Alarfil's and Ilyn's invites in a box,\n"
 "2. You'll put Orin's and Uriel's invites in another box.\n"
@@ -792,8 +812,8 @@ msgid "\n"
 "exact and_intro (and_intro a i) (and_intro o u)\n"
 "exact ⟨⟨a,i⟩,⟨o,u⟩⟩\n"
 "```\n"
-"Instead of nesting this way, you can break the process down into steps using the `have` tactic. Enter “`have ai := and_intro a i`” to create your first box. After it's entered, it will appear under assumptions in the proof state. Now enter “`have ou := and_intro o u`” to create the second box.\\n"
-"\\n"
+"Instead of nesting this way, you can break the process down into steps using the `have` tactic. Enter “`have ai := and_intro a i`” to create your first box. After it's entered, it will appear under assumptions in the proof state. Now enter “`have ou := and_intro o u`” to create the second box.\\\n"
+"\\\n"
 "If you followed this suggestion, your proof state should now have the following assumptions:\n"
 "```\n"
 "Assumptions:\n"
@@ -804,9 +824,8 @@ msgid "\n"
 "ai: A ∧ I\n"
 "ou: O ∧ U\n"
 "```\n"
-"\\n"
-"Finally, now you can place these two boxes — `ai` and `ou` — into a third box and submit your answer using the `exact` tactic.\n"
-""
+"\\\n"
+"Finally, now you can place these two boxes — `ai` and `ou` — into a third box and submit your answer using the `exact` tactic."
 msgstr ""
 
 #: Game.Levels.AndIntro.L03
@@ -818,9 +837,7 @@ msgid "exact and_intro «{ai}» «{ou}»"
 msgstr ""
 
 #: Game.Levels.AndIntro.L03
-msgid "\n"
-"Great! Another 4 invites sent out. You're getting the hang of this.\n"
-""
+msgid "Great! Another 4 invites sent out. You're getting the hang of this."
 msgstr ""
 
 #: Game.Levels.AndIntro.L04
@@ -828,26 +845,24 @@ msgid "And Elimination"
 msgstr ""
 
 #: Game.Levels.AndIntro.L04
-msgid "\n"
-"# Using Only What Is Needed\n"
-"Sybeth has left a voicemail on your answering machine. In it she says “Hello, it's Sybeth, I'm calling to confirm that Pippin is coming to the party and I am also coming to the party! See you then!”\\n"
-"\\n"
+msgid "# Using Only What Is Needed\n"
+"Sybeth has left a voicemail on your answering machine. In it she says “Hello, it's Sybeth, I'm calling to confirm that Pippin is coming to the party and I am also coming to the party! See you then!”\\\n"
+"\\\n"
 "You'd like to convince Cyna to join the party. You know that Cyna is good friends with Pippin. Constructing evidence that Pippin is attending the party might just be the key to convincing Cyna to join as well.\n"
 "# Proposition Key:\n"
-"- P — "**P**ippin is coming to the party"\n"
-"- S — "**S**ybeth is coming to the party"\n"
+"- P — \"**P**ippin is coming to the party\"\n"
+"- S — \"**S**ybeth is coming to the party\"\n"
 "# Assumptions:\n"
 "- `vm : P ∧ S` — The voicemail (`vm`) is evidence that (`P ∧ S`) Pippin and Sybeth are coming to the party.\n"
 "# Convincing Cyna\n"
-"Cyna is close with Pippin, but you don't know much about his friendship with Sybeth. You want only a relevant part of the voicemail. Fortunately, you know that any evidence with an `∧` has a left part and a right part. You can use this knowledge to pull evidence out of `vm`.\\n"
-"\\n"
+"Cyna is close with Pippin, but you don't know much about his friendship with Sybeth. You want only a relevant part of the voicemail. Fortunately, you know that any evidence with an `∧` has a left part and a right part. You can use this knowledge to pull evidence out of `vm`.\\\n"
+"\\\n"
 "This can be done with either of these two methods:\n"
 "```\n"
 "have p := and_left vm\n"
 "have p := vm.left\n"
 "```\n"
-"Once you've done this, you're very close to level 1 again where the Goal is directly in your assumptions.\n"
-""
+"Once you've done this, you're very close to level 1 again where the Goal is directly in your assumptions."
 msgstr ""
 
 #: Game.Levels.AndIntro.L04
@@ -855,15 +870,13 @@ msgid "Exhibit evidence that Pippin is coming to the party."
 msgstr ""
 
 #: Game.Levels.AndIntro.L04
-msgid "\n"
-"You've got a proof that Pippin is coming to the party! Lets see if Cyna will attend as well.\n"
+msgid "You've got a proof that Pippin is coming to the party! Lets see if Cyna will attend as well.\n"
 "\n"
 "----\n"
 "A reminder that expressions work with the `have` and `exact` tactics in much the same way. You can also solve this level without `have`.\n"
 "```lean\n"
 "exact vm.left\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.AndIntro.L05
@@ -871,10 +884,8 @@ msgid "And Elimination 2"
 msgstr ""
 
 #: Game.Levels.AndIntro.L05
-msgid "\n"
-"# Another Unlock\n"
-"Can you figure this one out?\n"
-""
+msgid "# Another Unlock\n"
+"Can you figure this one out?"
 msgstr ""
 
 #: Game.Levels.AndIntro.L05
@@ -886,8 +897,7 @@ msgid "`exact h.right`"
 msgstr ""
 
 #: Game.Levels.AndIntro.L05
-msgid "\n"
-"Nice. Onward!\n"
+msgid "Nice. Onward!\n"
 "\n"
 "----\n"
 "```\n"
@@ -896,8 +906,7 @@ msgid "\n"
 "----\n"
 "```\n"
 "exact and_right h\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.AndIntro.L06
@@ -905,15 +914,13 @@ msgid "Mix and Match"
 msgstr ""
 
 #: Game.Levels.AndIntro.L06
-msgid "\n"
-"# Mixed Up Conjunctions\n"
+msgid "# Mixed Up Conjunctions\n"
 "Recall when you placed the invites for Alarfil, Ilyn, Orin, and Uriel in separate boxes. There was a mix-up in the arrangement. Can you fix it so that Alarfil and Uriel's invites are together?\n"
 "# Proposition Key:\n"
 "- A — **A**larfil is invited to the party\n"
 "- I — **I**lyn is invited to the party\n"
 "- O — **O**rin is invited to the party\n"
-"- U — **U**riel is invited to the party\n"
-""
+"- U — **U**riel is invited to the party"
 msgstr ""
 
 #: Game.Levels.AndIntro.L06
@@ -921,8 +928,7 @@ msgid "and_intro, and_left, and_right"
 msgstr ""
 
 #: Game.Levels.AndIntro.L06
-msgid "\n"
-"That's better, but you'd better send out those invites so you can get some responses!\n"
+msgid "That's better, but you'd better send out those invites so you can get some responses!\n"
 "\n"
 "----\n"
 "```\n"
@@ -941,8 +947,7 @@ msgid "\n"
 "---\n"
 "```\n"
 "exact ⟨h1.left, h2.right⟩\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.AndIntro.L07
@@ -950,10 +955,9 @@ msgid "More Elimination"
 msgstr ""
 
 #: Game.Levels.AndIntro.L07
-msgid "\n"
-"# An Emergency!\n"
-"Stop with the invites! Coco, your cat is stuck up a tree.\\n"
-"\\n"
+msgid "# An Emergency!\n"
+"Stop with the invites! Coco, your cat is stuck up a tree.\\\n"
+"\\\n"
 "The firefighters are here but they need your help figuring if they can get to the branch with Coco. They can see the entire tree and they know how to follow the branches by going left or right at each intersection. If they can do that, then they must be able to get to Coco.\n"
 "# Proposition Key:\n"
 "- C — The firefighters can get to Coco\n"
@@ -962,14 +966,13 @@ msgid "\n"
 "Show evidence that the firefighters can get to Coco\n"
 "\n"
 "# `∧` associates to the right\n"
-"Check out the definition page for "Precedence" to learn a bit more.\n"
+"Check out the definition page for \"Precedence\" to learn a bit more.\n"
 "# Hint # 1\n"
-"If you hover your mouse over an operator in the proof state it will highlight the part of the expression that it operates **on**. Find the one that highlights the entire expression to see where the trunk of the tree is.\\n"
-"\\n"
+"If you hover your mouse over an operator in the proof state it will highlight the part of the expression that it operates **on**. Find the one that highlights the entire expression to see where the trunk of the tree is.\\\n"
+"\\\n"
 "Another approach is trial and error. Enter `have h₁ := h.right` to see `h₁: (L ∧ L) ∧ L` appear in your assumptions, which doesn't have `C` anywhere, indicating that this isn't the correct part of the tree. You can hit retry, then change that line to have `h₁ := h.left`. Then your assumptions will have `h₁: L ∧ ((L ∧ C) ∧ L) ∧ L ∧ L ∧ L`, which has the `C` somewhere.\n"
 "# Hint # 2\n"
-"The |**Show more help!**| button below will display the expression for you. Beware, the boss level will not come with this option.\n"
-""
+"The |**Show more help!**| button below will display the expression for you. Beware, the boss level will not come with this option."
 msgstr ""
 
 #: Game.Levels.AndIntro.L07
@@ -981,8 +984,7 @@ msgid "h.left.right.left.left.right"
 msgstr ""
 
 #: Game.Levels.AndIntro.L07
-msgid "\n"
-"Amazing! You've helped save your cat!\n"
+msgid "Amazing! You've helped save your cat!\n"
 "\n"
 "----\n"
 "Here are three solutions, are you able to follow each of them?\n"
@@ -1001,8 +1003,7 @@ msgid "\n"
 "or\n"
 "```\n"
 "exact h.left.right.left.left.right\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.AndIntro.L08
@@ -1010,10 +1011,9 @@ msgid "Rearranging Boxes"
 msgstr ""
 
 #: Game.Levels.AndIntro.L08
-msgid "\n"
-"# BOSS LEVEL\n"
-"If you can finish this level, you've certainly mastered the `∧`. There's no deep logical tricks in this boss level, you've just got to know how to work at properly unnesting and then building the right Proposition.\\n"
-"\\n"
+msgid "# BOSS LEVEL\n"
+"If you can finish this level, you've certainly mastered the `∧`. There's no deep logical tricks in this boss level, you've just got to know how to work at properly unnesting and then building the right Proposition.\\\n"
+"\\\n"
 "Using the `have` tactic, you can break this task down into digestible chunks. The top right of the screen has a button that toggles between editor mode and typewriter mode. Editor mode is often a bit easier to work with as it allows you to enter multi-line expressions or edit earlier lines seamlessly. While in editor mode, the proof state will change depending on which line your caret is on.\n"
 "# Rearranging Boxes\n"
 "Finally, a bunch of your invites have returned with RSVPs. The mailman has delivered them in a big box. Make a list of the expected attendees so far.\n"
@@ -1024,8 +1024,7 @@ msgid "\n"
 "- O — **O**rin** is coming to the party\n"
 "- P — **P**ippin** is coming to the party\n"
 "- S — **S**ybeth** is coming to the party\n"
-"- U — **U**riel** is coming to the party\n"
-""
+"- U — **U**riel** is coming to the party"
 msgstr ""
 
 #: Game.Levels.AndIntro.L08
@@ -1033,8 +1032,7 @@ msgid "Take apart and build evidence"
 msgstr ""
 
 #: Game.Levels.AndIntro.L08
-msgid "\n"
-"Amazing! You've mastered "AND".\n"
+msgid "Amazing! You've mastered \"AND\".\n"
 "\n"
 "---\n"
 "```\n"
@@ -1049,8 +1047,7 @@ msgid "\n"
 "\n"
 "-- exibit A ∧ C ∧ P ∧ S\n"
 "exact and_intro psa.right cps\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.AndIntro
@@ -1058,18 +1055,17 @@ msgid "∧ Tutorial: Party Invites"
 msgstr ""
 
 #: Game.Levels.AndIntro
-msgid "\n"
-"# Let the festivities commence!\n"
-"You're hosting your yearly soirée, and it's time to start planning! Last year your planning went so poorly that nobody showed up. Not for lack of trying though, they just wound up at a number of bewildering addresses. The silver lining was that all your friends were safe from the fire when, accidentally, you burned down your entire apartment building.\\n"
-"\\n"
+msgid "# Let the festivities commence!\n"
+"You're hosting your yearly soirée, and it's time to start planning! Last year your planning went so poorly that nobody showed up. Not for lack of trying though, they just wound up at a number of bewildering addresses. The silver lining was that all your friends were safe from the fire when, accidentally, you burned down your entire apartment building.\\\n"
+"\\\n"
 "This year will be different‼ This year, if you want to be sure that there will be fancy cheeses, you had better have evidence that somebody is bringing the cheese platter.\n"
 "\n"
-"World 1: **Party Invites** is a tutorial world that is meant to introduce you to conjunction — the logical “and”. The symbol used to denote an “and” looks like “`∧`”. You'll learn to how to use evidence to create an `∧` and also how to get evidence out when it's been `∧`ed together.\\n"
-"\\n"
-"The real-world analogues for evidence of `A ∧ B` might be a box with evidence for `A` and evidence for `B`, an audio recording with both pieces of evidence, or a tree with evidence in its branches.\\n"
-"\\n"
-"While real-world analogues can be anything, the abstract machinery used in this game will always be the same. In the case of the `∧` operator, the game stores the associated evidence in a tuple data structure.\\n"
-"\\n"
+"World 1: **Party Invites** is a tutorial world that is meant to introduce you to conjunction — the logical “and”. The symbol used to denote an “and” looks like “`∧`”. You'll learn to how to use evidence to create an `∧` and also how to get evidence out when it's been `∧`ed together.\\\n"
+"\\\n"
+"The real-world analogues for evidence of `A ∧ B` might be a box with evidence for `A` and evidence for `B`, an audio recording with both pieces of evidence, or a tree with evidence in its branches.\\\n"
+"\\\n"
+"While real-world analogues can be anything, the abstract machinery used in this game will always be the same. In the case of the `∧` operator, the game stores the associated evidence in a tuple data structure.\\\n"
+"\\\n"
 "The details aren't important. Each level will be encoded for you into the symbols of a proof state. The puzzle, at its core, will be about symbol manipulation. Much of the text is there for added fun and flair.\n"
 "\n"
 "# **Aside**: Expressions\n"
@@ -1100,8 +1096,7 @@ msgid "\n"
 "add (add 4 4) 2\n"
 "add (mul 4 2) 2\n"
 "```\n"
-"We're not using expressions to express numbers, but many of the concepts do carry over. Instead of numbers, we're working with logical inferences.\n"
-""
+"We're not using expressions to express numbers, but many of the concepts do carry over. Instead of numbers, we're working with logical inferences."
 msgstr ""
 
 #: Game.Levels.AndTactic.L01
@@ -1109,10 +1104,8 @@ msgid "Assumption"
 msgstr ""
 
 #: Game.Levels.AndTactic.L01
-msgid "\n"
-"# `assumption`\n"
-"If the evidence you want is in your list of **Assumptions**, the `assumption` tactic will finish the level for you.\n"
-""
+msgid "# `assumption`\n"
+"If the evidence you want is in your list of **Assumptions**, the `assumption` tactic will finish the level for you."
 msgstr ""
 
 #: Game.Levels.AndTactic.L01
@@ -1124,12 +1117,10 @@ msgid "Constructor"
 msgstr ""
 
 #: Game.Levels.AndTactic.L02
-msgid "\n"
-"# Constructor\n"
-"Whenever there's a clear way to create new evidence **that matches the goal**, the constructor tactic will pick that for you. This replaces the current goal with one or more goals that together complete the construction.\\n"
-"\\n"
-"For this level, your goal is `P ∧ Q`. The `constructor` tactic will replace that goal with two separate subgoals. This is likely the first time you've seen two goals in your proof state. First you'll need to show evidence for `P`, then you'll need to show evidence for `Q`.\n"
-""
+msgid "# Constructor\n"
+"Whenever there's a clear way to create new evidence **that matches the goal**, the constructor tactic will pick that for you. This replaces the current goal with one or more goals that together complete the construction.\\\n"
+"\\\n"
+"For this level, your goal is `P ∧ Q`. The `constructor` tactic will replace that goal with two separate subgoals. This is likely the first time you've seen two goals in your proof state. First you'll need to show evidence for `P`, then you'll need to show evidence for `Q`."
 msgstr ""
 
 #: Game.Levels.AndTactic.L02
@@ -1141,10 +1132,8 @@ msgid "Practise Makes Perfect"
 msgstr ""
 
 #: Game.Levels.AndTactic.L03
-msgid "\n"
-"# Practise Makes Perfect\n"
-"You only have `assumption` and `constructor` available to you. Figure out the order you need to enter them in.\n"
-""
+msgid "# Practise Makes Perfect\n"
+"You only have `assumption` and `constructor` available to you. Figure out the order you need to enter them in."
 msgstr ""
 
 #: Game.Levels.AndTactic.L03
@@ -1156,12 +1145,10 @@ msgid "Cases for a Conjunction"
 msgstr ""
 
 #: Game.Levels.AndTactic.L04
-msgid "\n"
-"# `cases` for a Conjunction\n"
-"Here, we introduce the `cases` tactic in an unstructured context. `cases` takes a name from the local context and either splits it into multiple goals, or deconstructs it into its parts depending on the Proposition.\\n"
-"\\n"
-"In this level, `cases h` will replace `h` with its `left` and `right` parts. Try it out.\n"
-""
+msgid "# `cases` for a Conjunction\n"
+"Here, we introduce the `cases` tactic in an unstructured context. `cases` takes a name from the local context and either splits it into multiple goals, or deconstructs it into its parts depending on the Proposition.\\\n"
+"\\\n"
+"In this level, `cases h` will replace `h` with its `left` and `right` parts. Try it out."
 msgstr ""
 
 #: Game.Levels.AndTactic.L04
@@ -1173,10 +1160,8 @@ msgid "Rinse and Repeat"
 msgstr ""
 
 #: Game.Levels.AndTactic.L05
-msgid "\n"
-"# Rinse and Repeat\n"
-"When you were writing expressions before, lvl 4 needed `and_left` while level 5 needed `and_right`. Tactics can incorperate an arbitrary amount of automation. In this case, because assumption will do a search through your assumptions for you, your proof for this level can be 100% identical to the one you used last level.\n"
-""
+msgid "# Rinse and Repeat\n"
+"When you were writing expressions before, lvl 4 needed `and_left` while level 5 needed `and_right`. Tactics can incorperate an arbitrary amount of automation. In this case, because assumption will do a search through your assumptions for you, your proof for this level can be 100% identical to the one you used last level."
 msgstr ""
 
 #: Game.Levels.AndTactic.L05
@@ -1188,10 +1173,8 @@ msgid "Nothing New"
 msgstr ""
 
 #: Game.Levels.AndTactic.L06
-msgid "\n"
-"# Nothing New\n"
-"Just use what you've been taught.\n"
-""
+msgid "# Nothing New\n"
+"Just use what you've been taught."
 msgstr ""
 
 #: Game.Levels.AndTactic.L06
@@ -1203,10 +1186,8 @@ msgid "More Cases"
 msgstr ""
 
 #: Game.Levels.AndTactic.L07
-msgid "\n"
-"# So Many Cases\n"
-"Just keep picking the right hypothesis.\n"
-""
+msgid "# So Many Cases\n"
+"Just keep picking the right hypothesis."
 msgstr ""
 
 #: Game.Levels.AndTactic.L07
@@ -1218,12 +1199,10 @@ msgid "And Tactic Boss"
 msgstr ""
 
 #: Game.Levels.AndTactic.L08
-msgid "\n"
-"# BOSS LEVEL\n"
+msgid "# BOSS LEVEL\n"
 "The trick for this level is to pull out the relevant info from the assumption `h` before moving on, otherwise you'll need to re-do that work for each sub-goal.\n"
 "\n"
-"I use the `cases` tactic 5 times and for me, they're the first five tactics for this level.\n"
-""
+"I use the `cases` tactic 5 times and for me, they're the first five tactics for this level."
 msgstr ""
 
 #: Game.Levels.AndTactic.L08
@@ -1231,9 +1210,7 @@ msgid "Take apart and build evidence"
 msgstr ""
 
 #: Game.Levels.AndTactic.L08
-msgid "\n"
-"Amazing! You've beaten the `∧` world a second time and you've learned some extra tactics in the process.\n"
-""
+msgid "Amazing! You've beaten the `∧` world a second time and you've learned some extra tactics in the process."
 msgstr ""
 
 #: Game.Levels.AndTactic
@@ -1241,12 +1218,10 @@ msgid "Redux: ∧ World Tactics"
 msgstr ""
 
 #: Game.Levels.AndTactic
-msgid "\n"
-"# Redux: ∧ World Tactics\n"
-"Welcome to the redux of the **∧ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\n"
-"\\n"
-"This world introduces tactics that you can use in lieu of the expressions you've learned so far.\n"
-""
+msgid "# Redux: ∧ World Tactics\n"
+"Welcome to the redux of the **∧ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\n"
+"\\\n"
+"This world introduces tactics that you can use in lieu of the expressions you've learned so far."
 msgstr ""
 
 #: Game.Levels.ImpIntro.L01
@@ -1254,31 +1229,29 @@ msgid "Cake Delivery Service"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L01
-msgid "\n"
-"# Let there be cake!\n"
-"You've found an online bakery service. Their website details how the cake delivery service works.\\n"
-"\\n"
+msgid "# Let there be cake!\n"
+"You've found an online bakery service. Their website details how the cake delivery service works.\\\n"
+"\\\n"
 "If you send them evidence of payment, then you'll receive an email detailing when the cake will be delivered. The system is automated for you, so you can send it evidence of payment as often as you like and it'll always instantly return the same evidence that the cake will be delivered.\n"
 "# Proposition Key:\n"
 "- `P` — You've **P**aid for the cake\n"
 "- `C` — The **C**ake will be delivered\n"
-"# Implication " → "\n"
-"You use an implication the same way you've been using `and_intro`, `and_left`, and `and_right`. You write out the name of the implication and then write the name of the evidence required for the left side of the " → " next to it. Juxtaposition just means “to place next to each other,” which is what this is style of function application is called.\n"
+"# Implication \" → \"\n"
+"You use an implication the same way you've been using `and_intro`, `and_left`, and `and_right`. You write out the name of the implication and then write the name of the evidence required for the left side of the \" → \" next to it. Juxtaposition just means “to place next to each other,” which is what this is style of function application is called.\n"
 "- assumption `a : A`\n"
 "- assumption `h₁ : A → B`\n"
 "- have `b : B := h₁ a`\n"
 "\n"
 "You can read `h₁ a` as modus ponens. In fact, you've unlocked a theorem called modus_ponens that you could use here. Since modus ponens is implemented as function application, you can — and should — always just Juxtapose instead.\n"
 "# A note\n"
-"You'll often see assumptions given one or two letter names (`p`, `r`, `q`, `h₁`, `h₂`, `h₃`, etc). Assumptions are generally not long-lived. They are part of some expression, exhibit some implication, and then are discarded. Their names in this context don't need to be particularly memorable.\\n"
-"\\n"
-"Theorems — like those on the right side of the game screen — can be thought of as assumptions that are always available for every level (and therefore do not need to be listed under assumptions for any given level). They tend to have longer names because they will be available for all future levels.\\n"
-"\\n"
+"You'll often see assumptions given one or two letter names (`p`, `r`, `q`, `h₁`, `h₂`, `h₃`, etc). Assumptions are generally not long-lived. They are part of some expression, exhibit some implication, and then are discarded. Their names in this context don't need to be particularly memorable.\\\n"
+"\\\n"
+"Theorems — like those on the right side of the game screen — can be thought of as assumptions that are always available for every level (and therefore do not need to be listed under assumptions for any given level). They tend to have longer names because they will be available for all future levels.\\\n"
+"\\\n"
 "Name-length is not a hard and fast rule, just a common idiom. For a counter-example; this level gives the assumption `bakery_service` a longer name.\n"
 "\n"
 "# Reminder\n"
-"Exhibit evidence for the goal using the `exact` tactic.\n"
-""
+"Exhibit evidence for the goal using the `exact` tactic."
 msgstr ""
 
 #: Game.Levels.ImpIntro.L01
@@ -1286,8 +1259,7 @@ msgid "Exhibit evidence that cake will be delivered to the party"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L01
-msgid "\n"
-"Congratulations. You have evidence that your party will have cake!\n"
+msgid "Congratulations. You have evidence that your party will have cake!\n"
 "\n"
 "----\n"
 "1:\n"
@@ -1302,8 +1274,7 @@ msgid "\n"
 "3:\n"
 "```\n"
 "exact modus_ponens bakery_service p\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L02
@@ -1311,16 +1282,15 @@ msgid "Identity"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L02
-msgid "\n"
-"# Is it Cake!?\n"
+msgid "# Is it Cake!?\n"
 "There's a show on TV about cake. It asks bakers to distinguish between every-day objects and cakes. This seems silly, because a cake is a cake.\n"
 "# Proposition Key:\n"
 "- `C` — This object is a Cake\n"
 "# Implication “ → ”\n"
-"You'll notice that this time you don't have any assumptions. Fortunately, `C → C` is a tautology which means you can create an expression for the goal without any assumptions.\\n"
-"\\n"
-"In this game, when you need to show an implication, you write a function. Creating a function requires an assumption and an expression. The assumption is introduced with two parts: `(n : P)` where `n` is any name of your choosing and the `P` is a well formed proposition.\\n"
-"\\n"
+"You'll notice that this time you don't have any assumptions. Fortunately, `C → C` is a tautology which means you can create an expression for the goal without any assumptions.\\\n"
+"\\\n"
+"In this game, when you need to show an implication, you write a function. Creating a function requires an assumption and an expression. The assumption is introduced with two parts: `(n : P)` where `n` is any name of your choosing and the `P` is a well formed proposition.\\\n"
+"\\\n"
 "It looks like this:\n"
 "```\n"
 "fun <name> : <Prop> => <expr>\n"
@@ -1334,8 +1304,7 @@ msgid "\n"
 "-- Assuming h is evidence for C,\n"
 "-- write an expression for evidence of C\n"
 "exact λ h : C ↦ <expr>\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L02
@@ -1343,8 +1312,7 @@ msgid "Common! Cake is Cake"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L02
-msgid "\n"
-"Once you've gathered evidence confirming that the object is a cake, the game becomes straightforward. The show's appeal lies not in the simple truism that a cake is a cake but rather in the contestants' skill to compile credible evidence. Typically, the most compelling evidence is presented by the host when he cuts into the object, unveiling its contents.\n"
+msgid "Once you've gathered evidence confirming that the object is a cake, the game becomes straightforward. The show's appeal lies not in the simple truism that a cake is a cake but rather in the contestants' skill to compile credible evidence. Typically, the most compelling evidence is presented by the host when he cuts into the object, unveiling its contents.\n"
 "\n"
 "----\n"
 "# A Tip\n"
@@ -1353,8 +1321,7 @@ msgid "\n"
 "exact λ(h : C) ↦ h\n"
 "-- can be written\n"
 "exact λh ↦ h\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L03
@@ -1362,15 +1329,13 @@ msgid "Cake Form Swap"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L03
-msgid "\n"
-"# Trouble with the cake\n"
-"The baker from the bakery called, expressing confusion about your cake order. While he can bake a cake with icing and sprinkles, you've requested sprinkles and icing. You attempt to convey that every cake with sprinkles and icing is **also** at the same time a cake with icing and sprinkles. The baker doesn't believe you.\\n"
-"\\n"
+msgid "# Trouble with the cake\n"
+"The baker from the bakery called, expressing confusion about your cake order. While he can bake a cake with icing and sprinkles, you've requested sprinkles and icing. You attempt to convey that every cake with sprinkles and icing is **also** at the same time a cake with icing and sprinkles. The baker doesn't believe you.\\\n"
+"\\\n"
 "If you assume an arbitrary cake that has icing and that has sprinkles, show that you also have a cake that has sprinkles and has icing!\n"
 "# Proposition Key:\n"
 "- `I` — The cake has **I**cing\n"
-"- `S` — The cake has **S**prinkles\n"
-""
+"- `S` — The cake has **S**prinkles"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L03
@@ -1382,8 +1347,7 @@ msgid "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L03
-msgid "\n"
-"The bakery guy, upon reviewing your evidence, exclaims, "Amazing! I never knew this. With this added knowledge, I'll be able to bake your cake!"\n"
+msgid "The bakery guy, upon reviewing your evidence, exclaims, \"Amazing! I never knew this. With this added knowledge, I'll be able to bake your cake!\"\n"
 "\n"
 "----\n"
 "In this level, as your goal is `I ∧ S → S ∧ I`, the game automatically recognizes the evidence you're assuming. You don't need to explicitly write it out. Therefore, you can use the following alternatives:\n"
@@ -1392,8 +1356,7 @@ msgid "\n"
 "fun h => and_intro h.right h.left\n"
 "-- or with Unicode\n"
 "λh ↦ ⟨h.right, h.left⟩\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L04
@@ -1401,8 +1364,7 @@ msgid "Chain Reasoning"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L04
-msgid "\n"
-"# A Chain of Reasoning\n"
+msgid "# A Chain of Reasoning\n"
 "You know Alarfil will be excited about a cake with sprinkles. Since Sybeth has just started dating Alarfil and enjoys seeing them happy, it follows that Sybeth will be excited about a cake with sprinkles.\n"
 "# Proposition Key:\n"
 "- `C` — The **C**ake has sprinkles\n"
@@ -1412,14 +1374,13 @@ msgid "\n"
 "# Transitivity Aside\n"
 "With numbers, if `a` is less than `b` and `b` is less than `c`, then you can deduce that `a` is less than `c`.\n"
 "$$\n"
-"\cfrac{a < b\nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace  b < c}{a < c}\n"
+"\\cfrac{a < b\\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace  b < c}{a < c}\n"
 "$$\n"
-"This is the transitive property of `<`. You should be able to show that this same property holds for conditionals — "`→`". Solving this level shows the following:\n"
+"This is the transitive property of `<`. You should be able to show that this same property holds for conditionals — \"`→`\". Solving this level shows the following:\n"
 "$$\n"
-"\cfrac{C → A\nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace \nobreakspace  A → S}{C → S}\n"
+"\\cfrac{C → A\\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace  A → S}{C → S}\n"
 "$$\n"
-"This property is so commonly useful that there exists special notation for it. **Once unlocked**, `imp_trans` has an infix operator. This looks like ≫ (which is written as “\gg”). Example: `h1 ≫ h2`\n"
-""
+"This property is so commonly useful that there exists special notation for it. **Once unlocked**, `imp_trans` has an infix operator. This looks like ≫ (which is written as “\\gg”). Example: `h1 ≫ h2`"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L04
@@ -1427,15 +1388,13 @@ msgid "Show that → is transitive"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L04
-msgid "\n"
-"AH ha! Well done.\n"
+msgid "AH ha! Well done.\n"
 "\n"
 "----\n"
 "For the math-inclined, because the expression for an implication is a function, you can also use function composition.\n"
 "```\n"
 "exact h₂ ∘ h₁\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L05
@@ -1443,12 +1402,11 @@ msgid "Riffin Snacks"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L05
-msgid "\n"
-"# Is Riffin bringing something?\n"
-"Riffin is an artsy, but rather eccentric friend of yours.\\n"
-"\\n"
-"Ever since you asked Riffin to bring something to your party, he's been sending you rather cryptic emails. Initially, these emails seemed to have nothing to do with the party. However, after receiving the 5th email, you believe you might be able to use them to create evidence that Riffin is bringing something to the party.\\n"
-"\\n"
+msgid "# Is Riffin bringing something?\n"
+"Riffin is an artsy, but rather eccentric friend of yours.\\\n"
+"\\\n"
+"Ever since you asked Riffin to bring something to your party, he's been sending you rather cryptic emails. Initially, these emails seemed to have nothing to do with the party. However, after receiving the 5th email, you believe you might be able to use them to create evidence that Riffin is bringing something to the party.\\\n"
+"\\\n"
 "These are the emails you received:\n"
 "1. If you're planning a party then the quest has begun\n"
 "2. If the quest has begin then the road to victory is long and winding\n"
@@ -1467,17 +1425,16 @@ msgid "\n"
 "# Evidence\n"
 "Sometimes visuals can make a logical argument much easier to digest. Here is a diagram you've drawn depicting Riffin's notes so far.\n"
 "$$\n"
-"\begin{CD}\n"
-"  P  @>{h₁}>> Q       @>{h₂}>> R \\\n"
-"  @.         @VV{h₃}V           \\\n"
+"\\begin{CD}\n"
+"  P  @>{h₁}>> Q       @>{h₂}>> R \\\\\n"
+"  @.         @VV{h₃}V           \\\\\n"
 "  S  @>>{h₄}> T       @>>{h₅}> U\n"
-"\end{CD}\n"
+"\\end{CD}\n"
 "$$\n"
 "# Reminder\n"
 "The Precedence definition page explains that function application is left-associative. So these 2 are the same:\n"
 "- `h₁ h₂ h₃ h₄ h₅`\n"
-"- `((((h₁ h₂) h₃) h₄) h₅)`\n"
-""
+"- `((((h₁ h₂) h₃) h₄) h₅)`"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L05
@@ -1485,8 +1442,7 @@ msgid "Riffin is bringing a unicorn snack"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L05
-msgid "\n"
-"Amazing! He is bringing a snack and you have evidence to prove it too!\n"
+msgid "Amazing! He is bringing a snack and you have evidence to prove it too!\n"
 "\n"
 "----\n"
 "Here are two solutions to Riffin's puzzle. Sometimes it's helpful to see the same puzzles solved in more than one way.\n"
@@ -1509,8 +1465,7 @@ msgid "\n"
 "or if you've seen the infix operator for `imp_trans`:\n"
 "```\n"
 "exact (h₁ ≫ h₃ ≫ h₅) p\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L06
@@ -1518,16 +1473,14 @@ msgid "and_imp"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L06
-msgid "\n"
-"# Curry\n"
-"If you've got chips and dip, then you've got a popular party snack! This is undeniable.\\n"
-"\\n"
+msgid "# Curry\n"
+"If you've got chips and dip, then you've got a popular party snack! This is undeniable.\\\n"
+"\\\n"
 "Therefore if you've got chips, then if you've got dip, then you've got a popular party snack.\n"
 "# Proposition Key:\n"
 "- `C` — You've got chips\n"
 "- `D` — You've got Dip\n"
-"- `S` — You've got a popular party snack\n"
-""
+"- `S` — You've got a popular party snack"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L06
@@ -1535,8 +1488,7 @@ msgid "Conjunction interacting with implication"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L06
-msgid "\n"
-"Cool. Chips and Dip!\n"
+msgid "Cool. Chips and Dip!\n"
 "\n"
 "----\n"
 "# A Tip!\n"
@@ -1548,8 +1500,7 @@ msgid "\n"
 "-- Or because the propositions of p and\n"
 "-- q are clear from the goal:\n"
 "λp q ↦ h (and_intro p q)\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L07
@@ -1557,16 +1508,14 @@ msgid "and_imp 2"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L07
-msgid "\n"
-"# Un-Curry\n"
-"If you've got chips, then if you've got dip, then you've got a popular party snack.\\n"
-"\\n"
+msgid "# Un-Curry\n"
+"If you've got chips, then if you've got dip, then you've got a popular party snack.\\\n"
+"\\\n"
 "Therefore, if you've got chips and dip, then you've got a popular party snack!\n"
 "# Proposition Key:\n"
 "- `C` — You've got chips\n"
 "- `D` — You've got Dip\n"
-"- `S` — You've got a popular party snack\n"
-""
+"- `S` — You've got a popular party snack"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L07
@@ -1574,9 +1523,7 @@ msgid "Conjunction interacting with implication"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L07
-msgid "\n"
-"Cool. Chips and Dip for sure!\n"
-""
+msgid "Cool. Chips and Dip for sure!"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L08
@@ -1584,16 +1531,14 @@ msgid "Distribute"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L08
-msgid "\n"
-"# Go buy chips and dip!\n"
+msgid "# Go buy chips and dip!\n"
 "- If you go shopping, then you'll buy chips.\n"
 "- If you go shopping, then you'll buy dip.\n"
 "- ∴ If you go shopping, you'll buy chips and dip\n"
 "# Proposition Key:\n"
 "- `C` — You buy chips\n"
 "- `D` — You buy dip\n"
-"- `S` — You go shopping\n"
-""
+"- `S` — You go shopping"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L08
@@ -1601,9 +1546,7 @@ msgid "→ distributes over ∧"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L08
-msgid "\n"
-"You definitely have the knack of providing conditional arguements\n"
-""
+msgid "You definitely have the knack of providing conditional arguements"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L09
@@ -1611,11 +1554,10 @@ msgid "Uncertain Snacks"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L09
-msgid "\n"
-"# BOSS LEVEL!!!\n"
+msgid "# BOSS LEVEL!!!\n"
 "# Uncertain Snacks\n"
-"Sybeth wants to know whether Riffin will still bring a snack, regardless of whether she brings one herself or not.\\n"
-"\\n"
+"Sybeth wants to know whether Riffin will still bring a snack, regardless of whether she brings one herself or not.\\\n"
+"\\\n"
 "She's asked you for evidence that:\n"
 "- **If** Riffin is bringing a snack **then**\n"
 "  1. Her bringing a snack **implies** Riffin is bringing a snack\n"
@@ -1624,8 +1566,7 @@ msgid "\n"
 "That's a bit convoluted, but you should be able to produce some evidence of this!\n"
 "# Proposition Key:\n"
 "- `R` — Riffin is bringing a snack\n"
-"- `S` — Sybeth is bringing a snack\n"
-""
+"- `S` — Sybeth is bringing a snack"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L09
@@ -1633,9 +1574,8 @@ msgid "Write the nessesary nested function(s)!"
 msgstr ""
 
 #: Game.Levels.ImpIntro.L09
-msgid "\n"
-"You're very convincing, and now Sybeth can see that if Riffin is bringing a snack, he'll be bringing it regardless of what she does.\\n"
-"\\n"
+msgid "You're very convincing, and now Sybeth can see that if Riffin is bringing a snack, he'll be bringing it regardless of what she does.\\\n"
+"\\\n"
 "On to the next world!\n"
 "\n"
 "----\n"
@@ -1645,8 +1585,7 @@ msgid "\n"
 "exact λ r : R ↦ ⟨λ _ : S ↦ r, λ _ : ¬S ↦ r⟩\n"
 "-- which can be abbreviated\n"
 "exact λr ↦ ⟨λ_ ↦ r, λ_ ↦ r⟩\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpIntro
@@ -1654,26 +1593,24 @@ msgid "→ Tutorial: Party Snacks"
 msgstr ""
 
 #: Game.Levels.ImpIntro
-msgid "\n"
-"# Snacks!\n"
+msgid "# Snacks!\n"
 "What's a birthday party without chips and cake?\n"
 "# About Conditionals\n"
-"This world teaches you about conditional statements. In every day sentences, you'll see such statements expressed as “if [...], then [...]” logic — “If the sky is clear at night, then we will be able to see the stars.”.\\n"
-"\\n"
-"This game uses the implication arrow “ → ”. “If A, then B” is the same as “A implies B” or “`A → B`”.\\n"
-"\\n"
-"So far, we've been giving our evidence and propositions real-world analogues. Doing this is a bit less desirable with conditionals as real-world evidence is often based on our understanding and not some tangible object. For example; the evidence that “If it rained, then the driveway is wet” generally doesn't come in the form of peer-reviewed physics papers. You should be thinking of the flavour text for each level as an unrefined embellishment of the symbols you're actually concerned with.\\n"
-"\\n"
-"That said, at the level the favour text works on, what would constitute evidence for a conditional statement? Well, for example; “If we have gnocchi, butter, parmesan, and black pepper, then we can cook *gnocchi cacio e pepe*”. An example of evidence for such a conditional could be a recipe with cooking instructions. You can think of the recipe as an argument explaining that the given ingredients are sufficient to be able to cook the dish.\\n"
-"\\n"
-"Another example might be a safe's combination, as evidence that “I can find the hidden safe” → “I can steal the contents of the safe”. Perhaps a certification is evidence that “I won the contract” → “I will renovate the client's yard”.\\n"
-"\\n"
-"The concept behind an implication, such as `A → B`, is that there exists an explicit path starting from the truth of `A`, from which you can demonstrate the truth of `B`. \\n"
-"\\n"
-"Where this game abstracted the idea of `A ∧ B` into a tuple holding evidence for `A` and evidence for `B`. The way we store evidence like `A → B` is with a function that takes evidence for `A` and produces evidence for `B`.\\n"
-"\\n"
-"`h : A → B` reads `h` is evidence for `A → B`. While real-world analogues can be anything, the formalization used in this game will always be a function.\n"
-""
+"This world teaches you about conditional statements. In every day sentences, you'll see such statements expressed as “if [...], then [...]” logic — “If the sky is clear at night, then we will be able to see the stars.”.\\\n"
+"\\\n"
+"This game uses the implication arrow “ → ”. “If A, then B” is the same as “A implies B” or “`A → B`”.\\\n"
+"\\\n"
+"So far, we've been giving our evidence and propositions real-world analogues. Doing this is a bit less desirable with conditionals as real-world evidence is often based on our understanding and not some tangible object. For example; the evidence that “If it rained, then the driveway is wet” generally doesn't come in the form of peer-reviewed physics papers. You should be thinking of the flavour text for each level as an unrefined embellishment of the symbols you're actually concerned with.\\\n"
+"\\\n"
+"That said, at the level the favour text works on, what would constitute evidence for a conditional statement? Well, for example; “If we have gnocchi, butter, parmesan, and black pepper, then we can cook *gnocchi cacio e pepe*”. An example of evidence for such a conditional could be a recipe with cooking instructions. You can think of the recipe as an argument explaining that the given ingredients are sufficient to be able to cook the dish.\\\n"
+"\\\n"
+"Another example might be a safe's combination, as evidence that “I can find the hidden safe” → “I can steal the contents of the safe”. Perhaps a certification is evidence that “I won the contract” → “I will renovate the client's yard”.\\\n"
+"\\\n"
+"The concept behind an implication, such as `A → B`, is that there exists an explicit path starting from the truth of `A`, from which you can demonstrate the truth of `B`. \\\n"
+"\\\n"
+"Where this game abstracted the idea of `A ∧ B` into a tuple holding evidence for `A` and evidence for `B`. The way we store evidence like `A → B` is with a function that takes evidence for `A` and produces evidence for `B`.\\\n"
+"\\\n"
+"`h : A → B` reads `h` is evidence for `A → B`. While real-world analogues can be anything, the formalization used in this game will always be a function."
 msgstr ""
 
 #: Game.Levels.ImpTactic.L01
@@ -1681,12 +1618,10 @@ msgid "Apply"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L01
-msgid "\n"
-"# The `apply` Tactic\n"
-"This tactic can be a bit confusing as it allows you to reason backwards. In this level, `h` gives us a means to get from P to Q. We can reason backwards and say, that because you have the means to turn evidence for P into evidence for Q — it suffices to show evidence for P.\\n"
-"\\n"
-"If you write `apply h`, you'll see that this changes your goal from `Q` to `P`.\n"
-""
+msgid "# The `apply` Tactic\n"
+"This tactic can be a bit confusing as it allows you to reason backwards. In this level, `h` gives us a means to get from P to Q. We can reason backwards and say, that because you have the means to turn evidence for P into evidence for Q — it suffices to show evidence for P.\\\n"
+"\\\n"
+"If you write `apply h`, you'll see that this changes your goal from `Q` to `P`."
 msgstr ""
 
 #: Game.Levels.ImpTactic.L01
@@ -1698,12 +1633,10 @@ msgid "Identity"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L02
-msgid "\n"
-"# The `intro` Tactic\n"
-"The `intro` tactic lets you define a function interactively. It introduces one or more hypotheses, optionally naming them.\\n"
-"\\n"
-"In this level, `intro h` does two things. First, it adds an assumption `h : P` and second, it changes your goal from `P → P` to just `P`. In this sense, `intro h` is a bit like `λh ↦ `.\n"
-""
+msgid "# The `intro` Tactic\n"
+"The `intro` tactic lets you define a function interactively. It introduces one or more hypotheses, optionally naming them.\\\n"
+"\\\n"
+"In this level, `intro h` does two things. First, it adds an assumption `h : P` and second, it changes your goal from `P → P` to just `P`. In this sense, `intro h` is a bit like `λh ↦ `."
 msgstr ""
 
 #: Game.Levels.ImpTactic.L02
@@ -1715,10 +1648,8 @@ msgid "Swapping"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L03
-msgid "\n"
-"# Nothing New\n"
-"Just use what you know. Start with `intro` to give yourself an asusmption to work with\n"
-""
+msgid "# Nothing New\n"
+"Just use what you know. Start with `intro` to give yourself an assumption to work with"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L03
@@ -1730,10 +1661,8 @@ msgid "Apply Chain Reasoning"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L04
-msgid "\n"
-"# More practise\n"
-"This level will require `apply` again. Remember that it lets you reason backwards on the goal.\n"
-""
+msgid "# More practise\n"
+"This level will require `apply` again. Remember that it lets you reason backwards on the goal."
 msgstr ""
 
 #: Game.Levels.ImpTactic.L04
@@ -1745,16 +1674,14 @@ msgid "Apply Backwards"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L05
-msgid "\n"
-"# Follow the Graph Backwards\n"
+msgid "# Follow the Graph Backwards\n"
 "$$\n"
-"\begin{CD}\n"
-"  P  @>{h₁}>> Q       @>{h₂}>> R \\\n"
-"  @.         @VV{h₃}V           \\\n"
+"\\begin{CD}\n"
+"  P  @>{h₁}>> Q       @>{h₂}>> R \\\\\n"
+"  @.         @VV{h₃}V           \\\\\n"
 "  S  @>>{h₄}> T       @>>{h₅}> U\n"
-"\end{CD}\n"
-"$$\n"
-""
+"\\end{CD}\n"
+"$$"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L05
@@ -1766,11 +1693,10 @@ msgid "repeat combinator"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L06
-msgid "\n"
-"# The `repeat` tactic combinator\n"
-"Sometimes you'll find you need to use the same tactic a few times in a row. Any tactic can be repeated (until it fails) using the `repeat`.\\n"
-"\\n"
-"In this level, it's very like that you'll be building a conjunction from two assumptions already available in your proof state. Once you make it that far, instead of writting\n"
+msgid "# The `repeat` tactic combinator\n"
+"Sometimes you'll find you need to use the same tactic a few times in a row. Any tactic can be repeated (until it fails) using the `repeat`.\\\n"
+"\\\n"
+"In this level, it's very likely that you'll be building a conjunction from two assumptions already available in your proof state. Once you make it that far, instead of writing\n"
 "```\n"
 "constructor\n"
 "assumption\n"
@@ -1780,8 +1706,7 @@ msgid "\n"
 "```\n"
 "constructor\n"
 "repeat assumption\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L06
@@ -1793,16 +1718,14 @@ msgid "Another One"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L07
-msgid "\n"
-"# And Another One\n"
+msgid "# And Another One\n"
 "Reverse the implication you proved last level.\n"
 "# More about `apply`\n"
-"What this level is showing is that you can think about `h` as a function with 2 parameters instead of a function that returns a function. The `apply` tactic implicitly understands this point of view.\\n"
-"\\n"
-"Once your goal is `R`, you can `apply h`. This is like saying “in order to prove R, it suffices to prove `P` and prove `Q`”. You'll notice that `apply` automatically creates the two goals for you in such cases.\\n"
-"\\n"
-"**Aside:** When you've been using `constructor` to build conjunctions, this has been the same thing as if you had used `apply and_intro`. You can try that out next level if you're so inclined.\n"
-""
+"What this level is showing is that you can think about `h` as a function with 2 parameters instead of a function that returns a function. The `apply` tactic implicitly understands this point of view.\\\n"
+"\\\n"
+"Once your goal is `R`, you can `apply h`. This is like saying “in order to prove R, it suffices to prove `P` and prove `Q`”. You'll notice that `apply` automatically creates the two goals for you in such cases.\\\n"
+"\\\n"
+"**Aside:** When you've been using `constructor` to build conjunctions, this has been the same thing as if you had used `apply and_intro`. You can try that out next level if you're so inclined."
 msgstr ""
 
 #: Game.Levels.ImpTactic.L07
@@ -1814,9 +1737,7 @@ msgid "Distribute"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L08
-msgid "\n"
-"# Keep it up\n"
-""
+msgid "# Keep it up"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L08
@@ -1828,16 +1749,14 @@ msgid "Implication Tactic Boss"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L09
-msgid "\n"
-"# World's End\n"
+msgid "# World's End\n"
 "The home stretch, you can do it!\n"
 "\n"
 "# More tactic combinations\n"
 "You can combine two tactics into a single tactic using `{tac1; tac2}`. This may be helpful when combined with a tactic like `repeat`. As an example, there may come a time in this level where the following can save you a bit of typing:\n"
 "```\n"
 "repeat {intro; assumption}\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L09
@@ -1845,16 +1764,14 @@ msgid "`Q → (P → Q) ∧ (¬P → Q)`"
 msgstr ""
 
 #: Game.Levels.ImpTactic.L09
-msgid "\n"
-"This set of tactic-based levels is complete!\n"
+msgid "This set of tactic-based levels is complete!\n"
 "\n"
 "------\n"
 "```\n"
 "intro\n"
 "constructor\n"
 "repeat {intro; assumption}\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.ImpTactic
@@ -1862,12 +1779,10 @@ msgid "Redux: → World Tactics"
 msgstr ""
 
 #: Game.Levels.ImpTactic
-msgid "\n"
-"# Redux: → World Tactics\n"
-"Welcome to the redux of the **→ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\n"
-"\\n"
-"This world introduces tactics that you can use in lieu of the expressions you've learned so far.\n"
-""
+msgid "# Redux: → World Tactics\n"
+"Welcome to the redux of the **→ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\n"
+"\\\n"
+"This world introduces tactics that you can use in lieu of the expressions you've learned so far."
 msgstr ""
 
 #: Game.Levels.NotIntro.L01
@@ -1875,16 +1790,14 @@ msgid "Not False"
 msgstr ""
 
 #: Game.Levels.NotIntro.L01
-msgid "\n"
-"# Proof State\n"
-"The proof state in the level is as short as you've seen so far. There are no **Objects** or **Assumptions** listed.\\n"
-"\\n"
-"In other levels, you get a proposition key and in the proof state — under **Objects** — you'd see something like `P Q : Prop`. When you see `P` in a level, it's a variable standing in for whatever proposition is in the proposition key. The game freely re-uses these letters in other levels as they can stand in for anything.\\n"
-"\\n"
+msgid "# Proof State\n"
+"The proof state in the level is as short as you've seen so far. There are no **Objects** or **Assumptions** listed.\\\n"
+"\\\n"
+"In other levels, you get a proposition key and in the proof state — under **Objects** — you'd see something like `P Q : Prop`. When you see `P` in a level, it's a variable standing in for whatever proposition is in the proposition key. The game freely re-uses these letters in other levels as they can stand in for anything.\\\n"
+"\\\n"
 "You won't see `False` listed under objects, just as you won't see **Theorems** or **Definitions** listed under assumptions. This just means that `False` never changes from level to level. It's never a stand-in for anything else. It's a fully defined and always available proposition.\n"
 "## Not False\n"
-"Inuitively, it should be very simple to provide evidence for "not false". Since `¬P` is shorthand for `P → False`, you should think of `¬False` as shorthand for `False → False`. To drive home the fact that `False` is a proposition, this has the same proof as `P → P` (Which you solved in "**→ Tutorial, level 2**").\n"
-""
+"Inuitively, it should be very simple to provide evidence for \"not false\". Since `¬P` is shorthand for `P → False`, you should think of `¬False` as shorthand for `False → False`. To drive home the fact that `False` is a proposition, this has the same proof as `P → P` (Which you solved in \"**→ Tutorial, level 2**\")."
 msgstr ""
 
 #: Game.Levels.NotIntro.L01
@@ -1892,8 +1805,7 @@ msgid "`identity`"
 msgstr ""
 
 #: Game.Levels.NotIntro.L01
-msgid "\n"
-"You'll never **actually** find evidence for `False`, but evidence for `¬False` is a very simple tautology, as you would expect.\n"
+msgid "You'll never **actually** find evidence for `False`, but evidence for `¬False` is a very simple tautology, as you would expect.\n"
 "\n"
 "----\n"
 "Which Proof did you use?\n"
@@ -1901,8 +1813,7 @@ msgid "\n"
 "exact identity\n"
 "exact λ(f : False) ↦ f\n"
 "exact λf ↦ f\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.NotIntro.L02
@@ -1910,21 +1821,19 @@ msgid "False implies anything"
 msgstr ""
 
 #: Game.Levels.NotIntro.L02
-msgid "\n"
-"# Sybeth's Punctuality\n"
-"Sybeth is never on time. Despite her assurances that she'll grace the party with her timely presence, past experiences have proven otherwise. It's almost become a running joke, so much so that you playfully quip, "Yeah, if you arrive on time, then I'll eat my boots."\n"
+msgid "# Sybeth's Punctuality\n"
+"Sybeth is never on time. Despite her assurances that she'll grace the party with her timely presence, past experiences have proven otherwise. It's almost become a running joke, so much so that you playfully quip, \"Yeah, if you arrive on time, then I'll eat my boots.\"\n"
 "# Proposition Key:\n"
 "- `B` — You eat your boots\n"
 "- `S` — Sybeth is on time\n"
 "# `false_elim`\n"
-"You've unlocked the "false implies anything" function. `false_elim` will take evidence for `False` and produce evidence for **anything**.\n"
+"You've unlocked the \"false implies anything\" function. `false_elim` will take evidence for `False` and produce evidence for **anything**.\n"
 "# A Tip\n"
-"Remember you can think of `h : ¬S` as `h : S → False`.\\n"
-"\\n"
-"Once you've started with `λ(s : S) ↦ `, you'll then see that the expression `h s` evaluates to evidence for `False`. If ever you have evidence for `False`, you should aways immediatly consider using `false_elim` to create evidence for anything — which in this case will be `B`.\\n"
-"\\n"
-"There is no proof that "keeps going" once you've created evidence for `False`. Some proofs have multiple parts, so you may close off one line of reasing and move on to another, but there can be no meaningfull logic in any context where evidence for `False` is present.\n"
-""
+"Remember you can think of `h : ¬S` as `h : S → False`.\\\n"
+"\\\n"
+"Once you've started with `λ(s : S) ↦ `, you'll then see that the expression `h s` evaluates to evidence for `False`. If ever you have evidence for `False`, you should aways immediatly consider using `false_elim` to create evidence for anything — which in this case will be `B`.\\\n"
+"\\\n"
+"There is no proof that \"keeps going\" once you've created evidence for `False`. Some proofs have multiple parts, so you may close off one line of reasoning and move on to another, but there can be no meaningfull logic in any context where evidence for `False` is present."
 msgstr ""
 
 #: Game.Levels.NotIntro.L02
@@ -1936,8 +1845,7 @@ msgid "λs ↦ false_elim (h s)"
 msgstr ""
 
 #: Game.Levels.NotIntro.L02
-msgid "\n"
-"You've made use of the concept that "false implies anything".\n"
+msgid "You've made use of the concept that \"false implies anything\".\n"
 "\n"
 "----\n"
 "```\n"
@@ -1947,8 +1855,7 @@ msgid "\n"
 "Because the righthand side of `h` and the lefthand side of `false_elim` match, you can use `imp_trans` to combine these:\n"
 "```\n"
 "imp_trans h false_elim\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.NotIntro.L03
@@ -1956,12 +1863,10 @@ msgid "Double False!"
 msgstr ""
 
 #: Game.Levels.NotIntro.L03
-msgid "\n"
-"# The Ambiguous Celebration Response\n"
-"Your somewhat bothersome cousin just called and is asking if you're throwing your annual soirée this year. You don't want to outright lie, so you say "I'm not not throwing the party."\n"
+msgid "# The Ambiguous Celebration Response\n"
+"Your somewhat bothersome cousin just called and is asking if you're throwing your annual soirée this year. You don't want to outright lie, so you say \"I'm not not throwing the party.\"\n"
 "# Proposition Key:\n"
-"- `P` — You're throwing a party'\n"
-""
+"- `P` — You're throwing a party'"
 msgstr ""
 
 #: Game.Levels.NotIntro.L03
@@ -1969,9 +1874,7 @@ msgid "not not introduction."
 msgstr ""
 
 #: Game.Levels.NotIntro.L03
-msgid "\n"
-"You've made use of the concept that "false implies anything".\n"
-""
+msgid "You've made use of the concept that \"false implies anything\"."
 msgstr ""
 
 #: Game.Levels.NotIntro.L04
@@ -1979,12 +1882,10 @@ msgid "Self Contradictory"
 msgstr ""
 
 #: Game.Levels.NotIntro.L04
-msgid "\n"
-"# Self Contradictory\n"
+msgid "# Self Contradictory\n"
 "Alarfil claims Lippa is coming and Cyna claims Lippa is not coming. They can't both be right.\n"
 "# Proposition Key:\n"
-"- `L` — **L**ippa is attending the party\n"
-""
+"- `L` — **L**ippa is attending the party"
 msgstr ""
 
 #: Game.Levels.NotIntro.L04
@@ -1992,9 +1893,7 @@ msgid "The law of non-self-contradiction"
 msgstr ""
 
 #: Game.Levels.NotIntro.L04
-msgid "\n"
-"Well Concluded!\n"
-""
+msgid "Well Concluded!"
 msgstr ""
 
 #: Game.Levels.NotIntro.L05
@@ -2002,13 +1901,11 @@ msgid "Modus Tollens"
 msgstr ""
 
 #: Game.Levels.NotIntro.L05
-msgid "\n"
-"# Modus Tollens\n"
+msgid "# Modus Tollens\n"
 "If Bella comes to the party, she is certain to perform a bawdy song. You've assured Sybeth that there will be no bawdy songs at the event. Sybeth is disappointed to discover that Bella won't be joining.\n"
 "# Proposition Key:\n"
 "- `B` — Bella is attending the party\n"
-"- `S` — A bawdy song will be sung\n"
-""
+"- `S` — A bawdy song will be sung"
 msgstr ""
 
 #: Game.Levels.NotIntro.L05
@@ -2016,8 +1913,7 @@ msgid "Modus Tollens."
 msgstr ""
 
 #: Game.Levels.NotIntro.L05
-msgid "\n"
-"Congradulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the "**→ Tutotial world, level 4**" to show that implication is transitive.\n"
+msgid "Congradulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the \"**→ Tutotial world, level 4**\" to show that implication is transitive.\n"
 "\n"
 "---\n"
 "Thinking of `h₂` as `Q → False`, you can actually use your imp_trans theorem here.\n"
@@ -2030,8 +1926,7 @@ msgid "\n"
 "For the math-inclined, because the expression for an implication is a function, you can also use function composition.\n"
 "```\n"
 "exact h₂ ∘ h₁\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.NotIntro.L06
@@ -2039,14 +1934,12 @@ msgid "Alarfil"
 msgstr ""
 
 #: Game.Levels.NotIntro.L06
-msgid "\n"
-"# The Alarfil Effect\n"
-"You're delighted that Alarfil will be there.\\n"
-"\\n"
+msgid "# The Alarfil Effect\n"
+"You're delighted that Alarfil will be there.\\\n"
+"\\\n"
 "Remarkably, even in moments when Alarfil lacks humor, he manages to be amusing! His comedic charm persists, regardless of circumstances.\n"
 "# Proposition Key:\n"
-"- `A` — Alarfil is humorless\n"
-""
+"- `A` — Alarfil is humorless"
 msgstr ""
 
 #: Game.Levels.NotIntro.L06
@@ -2054,11 +1947,9 @@ msgid "Remember `h : A → A → False`"
 msgstr ""
 
 #: Game.Levels.NotIntro.L06
-msgid "\n"
-"This joke is a reach, I know, but my answer this this level kinda spells `ahaa` — `λa ↦ h a a`. \\n"
-"\\n"
-"Okay, okay. Let's proceed.\n"
-""
+msgid "This joke is a reach, I know, but my answer in this level kinda spells `ahaa` — `λa ↦ h a a`. \\\n"
+"\\\n"
+"Okay, okay. Let's proceed."
 msgstr ""
 
 #: Game.Levels.NotIntro.L07
@@ -2066,15 +1957,13 @@ msgid "Negation"
 msgstr ""
 
 #: Game.Levels.NotIntro.L07
-msgid "\n"
-"# The Power of negation\n"
-""Is it possible that if this is the cake you bought, then it's gonna taste horrible?"\\n"
-""I'm certain that's not possible."\\n"
-""Oh, so what you're saying is that you have evidence that the cake is delicious!"\n"
+msgid "# The Power of negation\n"
+"\"Is it possible that if this is the cake you bought, then it's gonna taste horrible?\"\\\n"
+"\"I'm certain that's not possible.\"\\\n"
+"\"Oh, so what you're saying is that you have evidence that the cake is delicious!\"\n"
 "# Proposition Key:\n"
 "- `B` — You bought this cake\n"
-"- `C` — The cake tastes horrible\n"
-""
+"- `C` — The cake tastes horrible"
 msgstr ""
 
 #: Game.Levels.NotIntro.L07
@@ -2082,9 +1971,7 @@ msgid "Nested `λ↦`s."
 msgstr ""
 
 #: Game.Levels.NotIntro.L07
-msgid "\n"
-"Phew, that makes perfect sense now.\n"
-""
+msgid "Phew, that makes perfect sense now."
 msgstr ""
 
 #: Game.Levels.NotIntro.L08
@@ -2092,13 +1979,11 @@ msgid "Negated Conjunction"
 msgstr ""
 
 #: Game.Levels.NotIntro.L08
-msgid "\n"
-"# Definitely Not\n"
+msgid "# Definitely Not\n"
 "Your cake order definitely has sprinkles, which means it's **not** missing sprinkles and loaded with chocolate chips\n"
 "# Proposition Key:\n"
 "- `C` — The cake is loaded with chocolate chips\n"
-"- `S` — The cake is topped with sprinkles\n"
-""
+"- `S` — The cake is topped with sprinkles"
 msgstr ""
 
 #: Game.Levels.NotIntro.L08
@@ -2106,9 +1991,7 @@ msgid "Negation into conjuction."
 msgstr ""
 
 #: Game.Levels.NotIntro.L08
-msgid "\n"
-"Might it possibly still be filled with chocolate chips? That sounds absolutely delightful!\n"
-""
+msgid "Might it possibly still be filled with chocolate chips? That sounds absolutely delightful!"
 msgstr ""
 
 #: Game.Levels.NotIntro.L09
@@ -2116,13 +1999,11 @@ msgid "Implies a Negation"
 msgstr ""
 
 #: Game.Levels.NotIntro.L09
-msgid "\n"
-"# Allergy #1\n"
+msgid "# Allergy #1\n"
 "Owing to his allergy, if Pippin is present, there must be no avocado at the party. Which means that we cannot have both Pippin and avacado at the party\n"
 "# Proposition Key:\n"
 "- `A` — There's avacado at the party\n"
-"- `P` — Pippin is attending the party\n"
-""
+"- `P` — Pippin is attending the party"
 msgstr ""
 
 #: Game.Levels.NotIntro.L09
@@ -2130,9 +2011,7 @@ msgid "Show ¬(P ∧ A)"
 msgstr ""
 
 #: Game.Levels.NotIntro.L09
-msgid "\n"
-"That's settled\n"
-""
+msgid "That's settled"
 msgstr ""
 
 #: Game.Levels.NotIntro.L10
@@ -2140,13 +2019,11 @@ msgid "Conjunction Implicaiton"
 msgstr ""
 
 #: Game.Levels.NotIntro.L10
-msgid "\n"
-"# Allergy #2\n"
+msgid "# Allergy #2\n"
 "We cannot have both Pippin and avacado at the party. Which means that if Pippin is attending, then there will not be any avacado.\n"
 "# Proposition Key:\n"
 "- `A` — There's avacado at the party\n"
-"- `P` — Pippin is attending the party\n"
-""
+"- `P` — Pippin is attending the party"
 msgstr ""
 
 #: Game.Levels.NotIntro.L10
@@ -2154,8 +2031,7 @@ msgid "Show P → ¬A."
 msgstr ""
 
 #: Game.Levels.NotIntro.L10
-msgid "\n"
-"That's settled... again!\n"
+msgid "That's settled... again!\n"
 "\n"
 "----\n"
 "Reminder that these are the same:\n"
@@ -2163,8 +2039,7 @@ msgid "\n"
 "λp ↦ λa ↦ h ⟨p,a⟩\n"
 "-- and\n"
 "λp a ↦ h ⟨p,a⟩\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.NotIntro.L11
@@ -2172,12 +2047,10 @@ msgid "not_not_not"
 msgstr ""
 
 #: Game.Levels.NotIntro.L11
-msgid "\n"
-"# Allergy: Triple Confusion\n"
-"Pippin is allergic to avocado. You tell him you're not *not* **not** bringing avacado!!! Pippin gives you a confused look, but after a moment of contemplation, he responds with, "Ok, good to know."\n"
+msgid "# Allergy: Triple Confusion\n"
+"Pippin is allergic to avocado. You tell him you're not *not* **not** bringing avacado!!! Pippin gives you a confused look, but after a moment of contemplation, he responds with, \"Ok, good to know.\"\n"
 "# Proposition Key:\n"
-"- `A` — You're bringing avacado\n"
-""
+"- `A` — You're bringing avacado"
 msgstr ""
 
 #: Game.Levels.NotIntro.L11
@@ -2185,9 +2058,7 @@ msgid "¬A is stable."
 msgstr ""
 
 #: Game.Levels.NotIntro.L11
-msgid "\n"
-"Well reasoned\n"
-""
+msgid "Well reasoned"
 msgstr ""
 
 #: Game.Levels.NotIntro.L12
@@ -2195,27 +2066,23 @@ msgid "¬Intro Boss"
 msgstr ""
 
 #: Game.Levels.NotIntro.L12
-msgid "\n"
-"# BOSS Level\n"
-""Is it possible that if this is the cake you bought, then it's gonna taste horrible?"\\n"
-""I'm certain that's not possible!"\\n"
-""Oh, so what you're saying is that you have evidence that this is not not the cake you bought."\n"
+msgid "# BOSS Level\n"
+"\"Is it possible that if this is the cake you bought, then it's gonna taste horrible?\"\\\n"
+"\"I'm certain that's not possible!\"\\\n"
+"\"Oh, so what you're saying is that you have evidence that this is not not the cake you bought.\"\n"
 "# Proposition Key:\n"
 "- `B` — You bought this cake\n"
-"- `C` — The cake tastes horrible\n"
-""
+"- `C` — The cake tastes horrible"
 msgstr ""
 
 #: Game.Levels.NotIntro.L12
-msgid "¬¬\"You bought this cake""
+msgid "¬¬\\\"You bought this cake\""
 msgstr ""
 
 #: Game.Levels.NotIntro.L12
-msgid "\n"
-"These unintuitive statements highlight the inherent challenge in contemplating the *potential* existence (or definite non-existance) of implications.\n"
+msgid "These unintuitive statements highlight the inherent challenge in contemplating the *potential* existence (or definite non-existance) of implications.\n"
 "\n"
-"That's a twist of logic, to be sure!\n"
-""
+"That's a twist of logic, to be sure!"
 msgstr ""
 
 #: Game.Levels.NotIntro
@@ -2223,24 +2090,22 @@ msgid "¬ Tutorial: Falsification"
 msgstr ""
 
 #: Game.Levels.NotIntro
-msgid "\n"
-"# In this world\n"
-"In this world, you'll be introduced to negation — which is written with the “`¬`” symbol.\\n"
-"\\n"
-"This operator is really just syntactic sugar. `¬P` means `P → False`. It seamlessly integrates into all the scenarios where implications are used. It's also constructed using functions (`λ...↦...`) just like any other implication.\\n"
-"\\n"
-"The new interesting element for this world is `False`. What is `False`? It's a proposition — part of the set of statements that can be either true or false. Importantly, however it's defined as a proposition which always happens to be false. By sheer force of definition — there can never exist any evidence supporting the veracity of `False`.\\n"
-"\\n"
-"Consider a real-world analogue like “Tom is an experienced beginner” or “Tom is a married bachelor”, neither can ever be true. For there to exist evidence of either, you need to throw out definitions of the words themselves.\\n"
-"\\n"
+msgid "# In this world\n"
+"In this world, you'll be introduced to negation — which is written with the “`¬`” symbol.\\\n"
+"\\\n"
+"This operator is really just syntactic sugar. `¬P` means `P → False`. It seamlessly integrates into all the scenarios where implications are used. It's also constructed using functions (`λ...↦...`) just like any other implication.\\\n"
+"\\\n"
+"The new interesting element for this world is `False`. What is `False`? It's a proposition — part of the set of statements that can be either true or false. Importantly, however it's defined as a proposition which always happens to be false. By sheer force of definition — there can never exist any evidence supporting the veracity of `False`.\\\n"
+"\\\n"
+"Consider a real-world analogue like “Tom is an experienced beginner” or “Tom is a married bachelor”, neither can ever be true. For there to exist evidence of either, you need to throw out definitions of the words themselves.\\\n"
+"\\\n"
 "An interesting corollary arises: from the premise of `False`, any proposition becomes permissible. If you're allowed to speak in gobbledygook, then you can say anything!\n"
 "### Garbage In, Garbage out\n"
-"Imagine you're signing a contract of utmost importance. The terms stipulate: “Once per day, you will be given a whole number greater than 0. If the number falls below 100, you must gracefully wave your left hand; if it exceeds 90, your right hand should elegantly sway. Lastly, if the number plunges below 0, you must transform into a cucumber.”\\n"
-"\\n"
-"On casual scrutiny, one might naively conclude that adhering to this contract may involve turning into a cucumber. While that may seem impossible, a subtle loophole exists. By astutely arguing that the contract will never demand the impossible act of becoming a cucumber, you can effectively assure your compliance.\\n"
-"\\n"
-"By signing the contract, you're agreeing that “If there appears a number that is both greater than 0 and less 0, then I will transform into a cucumber.” Your grandiose claims remain secure as they hinge on an eventuality that defies logical possibility.\n"
-""
+"Imagine you're signing a contract of utmost importance. The terms stipulate: “Once per day, you will be given a whole number greater than 0. If the number falls below 100, you must gracefully wave your left hand; if it exceeds 90, your right hand should elegantly sway. Lastly, if the number plunges below 0, you must transform into a cucumber.”\\\n"
+"\\\n"
+"On casual scrutiny, one might naively conclude that adhering to this contract may involve turning into a cucumber. While that may seem impossible, a subtle loophole exists. By astutely arguing that the contract will never demand the impossible act of becoming a cucumber, you can effectively assure your compliance.\\\n"
+"\\\n"
+"By signing the contract, you're agreeing that “If there appears a number that is both greater than 0 and less 0, then I will transform into a cucumber.” Your grandiose claims remain secure as they hinge on an eventuality that defies logical possibility."
 msgstr ""
 
 #: Game.Levels.NotTactic.L01
@@ -2248,11 +2113,9 @@ msgid "Not False"
 msgstr ""
 
 #: Game.Levels.NotTactic.L01
-msgid "\n"
-"Just like before, you need to keep in mind that `¬P` is defined as `P → False`.\\n"
-"\\n"
-"∴ `¬False` is actually asking for `False → False`\n"
-""
+msgid "Just like before, you need to keep in mind that `¬P` is defined as `P → False`.\\\n"
+"\\\n"
+"∴ `¬False` is actually asking for `False → False`"
 msgstr ""
 
 #: Game.Levels.NotTactic.L01
@@ -2264,14 +2127,12 @@ msgid "Contradiction"
 msgstr ""
 
 #: Game.Levels.NotTactic.L02
-msgid "\n"
-"# Contradiciton\n"
-"This level introduces a relatively powerful tactic. Contradiction is a finishing tactic that will look through your assumptions and discharge some of the more obvious contradictions in order to solve any goal.\\n"
-"\\n"
+msgid "# Contradiciton\n"
+"This level introduces a relatively powerful tactic. Contradiction is a finishing tactic that will look through your assumptions and discharge some of the more obvious contradictions in order to solve any goal.\\\n"
+"\\\n"
 "examples:\n"
 "  1. `h : False` says `h` is evidence for `False` which is a contradiction\n"
-"  2. `h₁ : P` and `h₂ : ¬P` says that P is true and not true at the same time. This is also a contradiction.\n"
-""
+"  2. `h₁ : P` and `h₂ : ¬P` says that P is true and not true at the same time. This is also a contradiction."
 msgstr ""
 
 #: Game.Levels.NotTactic.L02
@@ -2283,12 +2144,10 @@ msgid "Double False"
 msgstr ""
 
 #: Game.Levels.NotTactic.L03
-msgid "\n"
-"# exfalso\n"
-"`exfalso` is **Contradiction**'s younger brother. Using `exfalso` turns your goal to `False`. This is the same thing as using `apply false_elim`. Using the principle that “from nonsense, follows nonsense,” if you spot a constradiction in your assumptions, you can make progress by changing your goal to `False.`\\n"
-"\\n"
-"Remember that because `¬P` is the same as `P → False`, you can use the `apply` tactic on evidence for `¬P`\n"
-""
+msgid "# exfalso\n"
+"`exfalso` is **Contradiction**'s younger brother. Using `exfalso` turns your goal to `False`. This is the same thing as using `apply false_elim`. Using the principle that “from nonsense, follows nonsense,” if you spot a constradiction in your assumptions, you can make progress by changing your goal to `False.`\\\n"
+"\\\n"
+"Remember that because `¬P` is the same as `P → False`, you can use the `apply` tactic on evidence for `¬P`"
 msgstr ""
 
 #: Game.Levels.NotTactic.L03
@@ -2300,10 +2159,8 @@ msgid "Self Contradictory"
 msgstr ""
 
 #: Game.Levels.NotTactic.L04
-msgid "\n"
-"# Self Contradictory\n"
-"You start this level with the `intro` tactic. This will add an assumption to your proof state and change your goal to `False`.\n"
-""
+msgid "# Self Contradictory\n"
+"You start this level with the `intro` tactic. This will add an assumption to your proof state and change your goal to `False`."
 msgstr ""
 
 #: Game.Levels.NotTactic.L04
@@ -2315,10 +2172,8 @@ msgid "Modus Tollens"
 msgstr ""
 
 #: Game.Levels.NotTactic.L05
-msgid "\n"
-"# Modus Tollens\n"
-"By now you're getting used to using `intro` and `apply` on negated propositions. Keep it up!\n"
-""
+msgid "# Modus Tollens\n"
+"By now you're getting used to using `intro` and `apply` on negated propositions. Keep it up!"
 msgstr ""
 
 #: Game.Levels.NotTactic.L05
@@ -2330,14 +2185,12 @@ msgid "Self Contradictory 2"
 msgstr ""
 
 #: Game.Levels.NotTactic.L06
-msgid "\n"
-"# Another self-contradiction\n"
-"If you try to `apply h` right away, you'll be stuck. You'll have to try something else first.\\n"
-"\\n"
-"Once your goal is to show `False`, then `apply h` seems to do something funny. It asks you to show evidence for the same goal twice. If you try to apply `P → Q → R → S` to a Goal of `S`, then apply will make you prove each parameter separately — resulting is the three sub-goals of showing `P`, showing `Q`, and showing `R`.\\n"
-"\\n"
-"In this level, `apply h` is applying `P → P → False` to a goal of `False`, so it follows that you'll need to show evidence for `P` twice.\n"
-""
+msgid "# Another self-contradiction\n"
+"If you try to `apply h` right away, you'll be stuck. You'll have to try something else first.\\\n"
+"\\\n"
+"Once your goal is to show `False`, then `apply h` seems to do something funny. It asks you to show evidence for the same goal twice. If you try to apply `P → Q → R → S` to a Goal of `S`, then apply will make you prove each parameter separately — resulting is the three sub-goals of showing `P`, showing `Q`, and showing `R`.\\\n"
+"\\\n"
+"In this level, `apply h` is applying `P → P → False` to a goal of `False`, so it follows that you'll need to show evidence for `P` twice."
 msgstr ""
 
 #: Game.Levels.NotTactic.L06
@@ -2349,10 +2202,8 @@ msgid "Negation"
 msgstr ""
 
 #: Game.Levels.NotTactic.L07
-msgid "\n"
-"# Anonymous intro\n"
-"You've likely tried this already, but you can use `intro` without following it with any identifiers.\n"
-""
+msgid "# Anonymous intro\n"
+"You've likely tried this already, but you can use `intro` without following it with any identifiers."
 msgstr ""
 
 #: Game.Levels.NotTactic.L08
@@ -2360,10 +2211,8 @@ msgid "Negated Conjunction"
 msgstr ""
 
 #: Game.Levels.NotTactic.L08
-msgid "\n"
-"# Pattern matching tip\n"
-"You can solve this level using the knowledge you've aquired so far. If you've used a language with destructuring or pattern matching before, then you can introduce and pattern-match in one step with `intro ⟨nq, p⟩`. Doing so means you won't need the `cases` tactic for this level.\n"
-""
+msgid "# Pattern matching tip\n"
+"You can solve this level using the knowledge you've aquired so far. If you've used a language with destructuring or pattern matching before, then you can introduce and pattern-match in one step with `intro ⟨nq, p⟩`. Doing so means you won't need the `cases` tactic for this level."
 msgstr ""
 
 #: Game.Levels.NotTactic.L08
@@ -2375,9 +2224,7 @@ msgid "Implies a Negation"
 msgstr ""
 
 #: Game.Levels.NotTactic.L09
-msgid "\n"
-"# Enjoy ⌣\n"
-""
+msgid "# Enjoy ⌣"
 msgstr ""
 
 #: Game.Levels.NotTactic.L09
@@ -2385,9 +2232,7 @@ msgid "Show ¬(P ∧ A)"
 msgstr ""
 
 #: Game.Levels.NotTactic.L09
-msgid "\n"
-"Did you use `intro ⟨p, a⟩` this time?\n"
-""
+msgid "Did you use `intro ⟨p, a⟩` this time?"
 msgstr ""
 
 #: Game.Levels.NotTactic.L10
@@ -2395,8 +2240,7 @@ msgid "Conjunction Implicaiton"
 msgstr ""
 
 #: Game.Levels.NotTactic.L10
-msgid "\n"
-"# Intro\n"
+msgid "# Intro\n"
 "Remember how `λx y ↦ ...` is just shorthand for `λx ↦ λy ↦ ...`? Well, the `intro` tactic admits the same shorthand:\n"
 "```\n"
 "intro p q\n"
@@ -2405,8 +2249,7 @@ msgid "\n"
 "```\n"
 "intro p\n"
 "intro q\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.NotTactic.L10
@@ -2418,10 +2261,8 @@ msgid "not_not_not"
 msgstr ""
 
 #: Game.Levels.NotTactic.L11
-msgid "\n"
-"# False\n"
-"Once your goal is false, then you can `apply h`\n"
-""
+msgid "# False\n"
+"Once your goal is false, then you can `apply h`"
 msgstr ""
 
 #: Game.Levels.NotTactic.L11
@@ -2433,11 +2274,9 @@ msgid "Not Tactics Boss"
 msgstr ""
 
 #: Game.Levels.NotTactic.L12
-msgid "\n"
-"# The Final “Redux: ¬ World Tactics” level\n"
+msgid "# The Final “Redux: ¬ World Tactics” level\n"
 "\n"
-"`contradiction` is available this level, you can use it to shorten your answer a little bit.\n"
-""
+"`contradiction` is available this level, you can use it to shorten your answer a little bit."
 msgstr ""
 
 #: Game.Levels.NotTactic
@@ -2445,12 +2284,10 @@ msgid "Redux: ¬ World Tactics"
 msgstr ""
 
 #: Game.Levels.NotTactic
-msgid "\n"
-"# Redux: ¬ World Tactics\n"
-"Welcome to the redux of the **→ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\n"
-"\\n"
-"This world introduces tactics that you can use in lieu of the expressions you've learned so far.\n"
-""
+msgid "# Redux: ¬ World Tactics\n"
+"Welcome to the redux of the **¬ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\n"
+"\\\n"
+"This world introduces tactics that you can use in lieu of the expressions you've learned so far."
 msgstr ""
 
 #: Game.Levels.OrIntro.L01
@@ -2458,15 +2295,13 @@ msgid "Left Evidence"
 msgstr ""
 
 #: Game.Levels.OrIntro.L01
-msgid "\n"
-"# Or Introduction Left\n"
+msgid "# Or Introduction Left\n"
 "You know that skittles are super colourful. Which means that either skittles are super colourful or oranges are a vegetable.\n"
 "# Proposition Key:\n"
 "- `O` — Oranges are a vegetable\n"
 "- `S` — skittles are super colourful\n"
 "# New unlock\n"
-"You've just unlocked `or_inl`. It turns evidence for the lefthand of an `∨` proposition into a disjunction.\n"
-""
+"You've just unlocked `or_inl`. It turns evidence for the lefthand of an `∨` proposition into a disjunction."
 msgstr ""
 
 #: Game.Levels.OrIntro.L01
@@ -2474,9 +2309,7 @@ msgid "Or Introduction Left"
 msgstr ""
 
 #: Game.Levels.OrIntro.L01
-msgid "\n"
-"This says nothing about whether or not oranges are a vegetable. All we know is that at least one of `O` or `S` must be true.\n"
-""
+msgid "This says nothing about whether or not oranges are a vegetable. All we know is that at least one of `O` or `S` must be true."
 msgstr ""
 
 #: Game.Levels.OrIntro.L02
@@ -2484,15 +2317,13 @@ msgid "Right Evidence"
 msgstr ""
 
 #: Game.Levels.OrIntro.L02
-msgid "\n"
-"# Or Introduction Right\n"
+msgid "# Or Introduction Right\n"
 "You know that skittles are super colourful. Which means that either sprinkles are super colourful or skittles are super colourful.\n"
 "# Proposition Key:\n"
 "- `K` — sprinkles are super colourful\n"
 "- `S` — skittles are super colourful\n"
 "# New unlock\n"
-"You've just unlocked `or_inr`. It turns evidence for the righthand of an `∨` proposition into a disjunction.\n"
-""
+"You've just unlocked `or_inr`. It turns evidence for the righthand of an `∨` proposition into a disjunction."
 msgstr ""
 
 #: Game.Levels.OrIntro.L02
@@ -2500,13 +2331,11 @@ msgid "Or Introduction Right"
 msgstr ""
 
 #: Game.Levels.OrIntro.L02
-msgid "\n"
-"Almost a repeat of level 1. That was fast.\n"
+msgid "Almost a repeat of level 1. That was fast.\n"
 "\n"
 "You'll notice that last time you showed evidence for a proposition involving “Oranges are a vegetable” even though you probably know that oranges are a fruit and not a vegitable. This time you did the same for “sprinkles are super colourful,” which you probably know is true.\n"
 "\n"
-"What this demonstrates is that `∨` is an inclusive “or”, which means at least one of the propositions is true. It could be both or just one.\n"
-""
+"What this demonstrates is that `∨` is an inclusive “or”, which means at least one of the propositions is true. It could be both or just one."
 msgstr ""
 
 #: Game.Levels.OrIntro.L03
@@ -2514,8 +2343,7 @@ msgid "Or Elimination"
 msgstr ""
 
 #: Game.Levels.OrIntro.L03
-msgid "\n"
-"# Party Games\n"
+msgid "# Party Games\n"
 "Here's the deal. Ilyn and Cyna both said they're bringing board games and you're sure at least one of them is going to make it. So there's definitely board games at the party!\n"
 "# Proposition Key:\n"
 "- `B` — There will be boardgames at the party\n"
@@ -2535,8 +2363,7 @@ msgid "\n"
 "pr : P → R\n"
 "qr : Q → R\n"
 "have r : R := or_elim pvq pr qr\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.OrIntro.L03
@@ -2548,8 +2375,7 @@ msgid "Or is Commutative"
 msgstr ""
 
 #: Game.Levels.OrIntro.L04
-msgid "\n"
-"# Either way.\n"
+msgid "# Either way.\n"
 "Chocolate chip oatmeal cookies, which ingredient goes first?\n"
 "1. Oatmeal or chocolate chips?\n"
 "2. Chocolate chips or oatmeal?\n"
@@ -2559,23 +2385,20 @@ msgid "\n"
 "\n"
 "This time they're not under assumptions, but you have the evidence in your inventory.\n"
 "- `or_inr : C → O ∨ C`\n"
-"- `or_inl : O → O ∨ C`\n"
-""
+"- `or_inl : O → O ∨ C`"
 msgstr ""
 
 #: Game.Levels.OrIntro.L04
-msgid "Commutativity of "`∨`""
+msgid "Commutativity of \"`∨`\""
 msgstr ""
 
 #: Game.Levels.OrIntro.L04
-msgid "\n"
-"Well, done.\n"
+msgid "Well, done.\n"
 "\n"
 "---\n"
 "```\n"
 "exact or_elim h or_inr or_inl\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.OrIntro.L05
@@ -2583,14 +2406,12 @@ msgid "Carry On Effects"
 msgstr ""
 
 #: Game.Levels.OrIntro.L05
-msgid "\n"
-"# Carry On Effects\n"
+msgid "# Carry On Effects\n"
 "If the cake arrives, then everybody will rejoice. Either the cake arrives or you get a refund. Therefore, either everybody will rejoice or you get a refund! That's a win-win situation.\n"
 "# Proposition Key:\n"
 "- C — The cake arrives\n"
 "- J — Everybody is joyfull\n"
-"- R — You get a refund\n"
-""
+"- R — You get a refund"
 msgstr ""
 
 #: Game.Levels.OrIntro.L05
@@ -2598,9 +2419,7 @@ msgid "Implication across ∨"
 msgstr ""
 
 #: Game.Levels.OrIntro.L05
-msgid "\n"
-"Well done, you're getting good at this!\n"
-""
+msgid "Well done, you're getting good at this!"
 msgstr ""
 
 #: Game.Levels.OrIntro.L06
@@ -2608,14 +2427,12 @@ msgid "or distributes over and"
 msgstr ""
 
 #: Game.Levels.OrIntro.L06
-msgid "\n"
-"# A distribution of cookies\n"
+msgid "# A distribution of cookies\n"
 "You can tell the cookies are either gingersnap cookies or they're a mix of shortbread cookies and sugar cookies.\n"
 "# Proposition Key:\n"
 "- G — They are gingersnap cookies\n"
 "- H — They are shortbread cookies\n"
-"- U — They are sugar cookies\n"
-""
+"- U — They are sugar cookies"
 msgstr ""
 
 #: Game.Levels.OrIntro.L06
@@ -2623,8 +2440,7 @@ msgid "∨ over ∧"
 msgstr ""
 
 #: Game.Levels.OrIntro.L06
-msgid "\n"
-"As proof terms start getting bigger, it makes more sense to use Editor mode instead of typewritter mode.\n"
+msgid "As proof terms start getting bigger, it makes more sense to use Editor mode instead of typewritter mode.\n"
 "\n"
 "----\n"
 "```\n"
@@ -2644,8 +2460,7 @@ msgid "\n"
 "\n"
 "-- Finish it out with or_elim\n"
 "exact or_elim h fg fhu\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.OrIntro.L07
@@ -2653,14 +2468,12 @@ msgid "and distributes over or"
 msgstr ""
 
 #: Game.Levels.OrIntro.L07
-msgid "\n"
-"# A distribution of cookies\n"
+msgid "# A distribution of cookies\n"
 "You can tell from the aroma that there are are gingersnap cookies. There's another smell there too. Could be shortbread cookies or sugar cookies.\n"
 "# Proposition Key:\n"
 "- G — They are gingersnap cookies\n"
 "- H — They are shortbread cookies\n"
-"- U — They are sugar cookies\n"
-""
+"- U — They are sugar cookies"
 msgstr ""
 
 #: Game.Levels.OrIntro.L07
@@ -2668,8 +2481,7 @@ msgid "∧ over ∨"
 msgstr ""
 
 #: Game.Levels.OrIntro.L07
-msgid "\n"
-"This is a great example of how the infix `imp_trans` operator can streamline a level:\n"
+msgid "This is a great example of how the infix `imp_trans` operator can streamline a level:\n"
 "\n"
 "---\n"
 "```lean\n"
@@ -2677,8 +2489,7 @@ msgid "\n"
 "exact or_elim h.right\n"
 "  (and_intro g ≫ or_inl)\n"
 "  (and_intro g ≫ or_inr)\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.OrIntro.L08
@@ -2686,14 +2497,12 @@ msgid "The Implication"
 msgstr ""
 
 #: Game.Levels.OrIntro.L08
-msgid "\n"
-"# BOSS LEVEL\n"
+msgid "# BOSS LEVEL\n"
 "If we summon the Kraken, then we shall assuredly perish. While that might sound ominous, consider this: if we summon the Kraken or **have icecream**, then we shall **have icecream!** or we shall perish.\n"
 "# Proposition Key:\n"
 "- I — **We have have icecream!**\n"
 "- K — We summon the Kraken\n"
-"- P — We shall assuredly perish\n"
-""
+"- P — We shall assuredly perish"
 msgstr ""
 
 #: Game.Levels.OrIntro.L08
@@ -2701,9 +2510,7 @@ msgid "Implication of ∨"
 msgstr ""
 
 #: Game.Levels.OrIntro.L08
-msgid "\n"
-"Okay, that was a bit easy for a boss level. Don't sweat it, just enjoy the icecream!\n"
-""
+msgid "Okay, that was a bit easy for a boss level. Don't sweat it, just enjoy the icecream!"
 msgstr ""
 
 #: Game.Levels.OrIntro
@@ -2711,15 +2518,14 @@ msgid "∨ Tutorial: The Kraken"
 msgstr ""
 
 #: Game.Levels.OrIntro
-msgid "\n"
-"# The ∨ Tutorial World!\n"
+msgid "# The ∨ Tutorial World!\n"
 "This world introduces disjunction. In sentences, the connective “or” is commonly employed, while in logical formulas, the symbol “`∨`” takes the stage. By now, you’re likely developing an understanding of the dynamics of the relationship between evidence and propositions.\n"
 "1. Evidence for a conjunction `P ∧ Q` involves presenting a pair or tuple of evidence — one for `P` and another for `Q`.\n"
 "2. Evidence for an implication like `P → Q` is a function from evidence of `P` to evidence of `Q`.\n"
 "3. Evidence for a negation like `¬P` is a function from evidence of `P` to evidence of `False`.\n"
 "### 4. Evidence for a disjunction\n"
-"Evidence for `P ∨ Q` requires only evidence for either `P` or for `Q`. While simple at heart, this can lead to difficulties. Consider some expression that uses evidence for `P` to exhibit a proposition like `P ∨ Q` — because that expression requires only evidence for `P`, it could also be used for `P ∨ R`, or `P ∨ S`.\\n"
-"\\n"
+"Evidence for `P ∨ Q` requires only evidence for either `P` or for `Q`. While simple at heart, this can lead to difficulties. Consider some expression that uses evidence for `P` to exhibit a proposition like `P ∨ Q` — because that expression requires only evidence for `P`, it could also be used for `P ∨ R`, or `P ∨ S`.\\\n"
+"\\\n"
 "While the correct proposition can often be inferred, there are times when you may see an error like: “failed to infer declaration type” or “don't know how to synthesize implicit argument”. Generally, this means that the proposition you're trying to exhibit needs to be made clear from the context or needs to be supplied directly as part of the expression.\n"
 "```\n"
 "Objects:\n"
@@ -2753,8 +2559,7 @@ msgid "\n"
 "-- Nested `:` work as well...\n"
 "have pvq := (or_inl (p : P) : P ∨ Q)\n"
 "exact pvq\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.OrTactic.L01
@@ -2762,10 +2567,8 @@ msgid "Left Evidence"
 msgstr ""
 
 #: Game.Levels.OrTactic.L01
-msgid "\n"
-"# `left` tactic\n"
-"If your goal is a disjunction, `left` will change your goal to the left of that disjunction, ignoring the right.\n"
-""
+msgid "# `left` tactic\n"
+"If your goal is a disjunction, `left` will change your goal to the left of that disjunction, ignoring the right."
 msgstr ""
 
 #: Game.Levels.OrTactic.L01
@@ -2777,10 +2580,8 @@ msgid "Right Evidence"
 msgstr ""
 
 #: Game.Levels.OrTactic.L02
-msgid "\n"
-"# `right` tactic\n"
-"Can you guess how it works?\n"
-""
+msgid "# `right` tactic\n"
+"Can you guess how it works?"
 msgstr ""
 
 #: Game.Levels.OrTactic.L02
@@ -2792,10 +2593,8 @@ msgid "Or Elimination"
 msgstr ""
 
 #: Game.Levels.OrTactic.L03
-msgid "\n"
-"# A new way to use the `cases` tactic\n"
-"You've used cases so far as a means to take apart conjunctions like `P ∧ Q`. The same tactic works a bit differently on disjunctions. When you use `cases h3`, you'll need to show `P` assuming Q and show `P` assuming `R`. Then the game will conclude that `P` is the case regardless of which of the disjunctions are true.\n"
-""
+msgid "# A new way to use the `cases` tactic\n"
+"You've used cases so far as a means to take apart conjunctions like `P ∧ Q`. The same tactic works a bit differently on disjunctions. When you use `cases h3`, you'll need to show `P` assuming Q and show `P` assuming `R`. Then the game will conclude that `P` is the case regardless of which of the disjunctions are true."
 msgstr ""
 
 #: Game.Levels.OrTactic.L03
@@ -2807,10 +2606,8 @@ msgid "Or is Commutative"
 msgstr ""
 
 #: Game.Levels.OrTactic.L04
-msgid "\n"
-"# Cases again\n"
-"Similar to last level.\n"
-""
+msgid "# Cases again\n"
+"Similar to last level."
 msgstr ""
 
 #: Game.Levels.OrTactic.L04
@@ -2822,10 +2619,8 @@ msgid "Old Hat"
 msgstr ""
 
 #: Game.Levels.OrTactic.L05
-msgid "\n"
-"# Old Hat\n"
-"You've got this.\n"
-""
+msgid "# Old Hat\n"
+"You've got this."
 msgstr ""
 
 #: Game.Levels.OrTactic.L05
@@ -2837,9 +2632,7 @@ msgid "or distributes over and"
 msgstr ""
 
 #: Game.Levels.OrTactic.L06
-msgid "\n"
-"# Tactics All Day Long\n"
-""
+msgid "# Tactics All Day Long"
 msgstr ""
 
 #: Game.Levels.OrTactic.L06
@@ -2851,9 +2644,7 @@ msgid "and distributes over or"
 msgstr ""
 
 #: Game.Levels.OrTactic.L07
-msgid "\n"
-"# Tactics, Tactics, Tactics\n"
-""
+msgid "# Tactics, Tactics, Tactics"
 msgstr ""
 
 #: Game.Levels.OrTactic.L07
@@ -2865,10 +2656,8 @@ msgid "The Implication"
 msgstr ""
 
 #: Game.Levels.OrTactic.L08
-msgid "\n"
-"# Final `∨` Tactic Level\n"
-"This level uses most of the tactics you've learned so far.\n"
-""
+msgid "# Final `∨` Tactic Level\n"
+"This level uses most of the tactics you've learned so far."
 msgstr ""
 
 #: Game.Levels.OrTactic.L08
@@ -2880,12 +2669,10 @@ msgid "Redux: ∨ World Tactics"
 msgstr ""
 
 #: Game.Levels.OrTactic
-msgid "\n"
-"# Redux: ∨ World Tactics\n"
-"Welcome to the redux of the **∨ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\n"
-"\\n"
-"This world introduces tactics that you can use in lieu of the expressions you've learned so far.\n"
-""
+msgid "# Redux: ∨ World Tactics\n"
+"Welcome to the redux of the **∨ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\n"
+"\\\n"
+"This world introduces tactics that you can use in lieu of the expressions you've learned so far."
 msgstr ""
 
 #: Game.Levels.IffIntro.L01
@@ -2893,15 +2680,13 @@ msgid "Iff_Intro"
 msgstr ""
 
 #: Game.Levels.IffIntro.L01
-msgid "\n"
-"# Coupled Conditionals\n"
+msgid "# Coupled Conditionals\n"
 "Sybeth and Alarfil are a couple. In effect, this means that if Sybeth is playing a party game, then Alarfil is playing too and vise versa. Therefore Sybeth is playing Charades if and only if Alarfil playing.\n"
 "# Proposition Key:\n"
 "- J — Alarfil is playing Charades\n"
 "- S — Sybeth is playing Charades\n"
 "# Unlocked `↔ intro`\n"
-"Assuming `e₁ : P → Q` and `e₂ : Q → P`, you can introduce a biconditional with `have h := iff_intro e₁ e₂`, though the anonymous constructor syntax works just like it does for conjunctions: `have h : P ↔ Q := ⟨e₁, e₂⟩`\n"
-""
+"Assuming `e₁ : P → Q` and `e₂ : Q → P`, you can introduce a biconditional with `have h := iff_intro e₁ e₂`, though the anonymous constructor syntax works just like it does for conjunctions: `have h : P ↔ Q := ⟨e₁, e₂⟩`"
 msgstr ""
 
 #: Game.Levels.IffIntro.L01
@@ -2909,8 +2694,7 @@ msgid "Statement"
 msgstr ""
 
 #: Game.Levels.IffIntro.L01
-msgid "\n"
-"Onward and upward\n"
+msgid "Onward and upward\n"
 "\n"
 "----\n"
 "```\n"
@@ -2919,8 +2703,7 @@ msgid "\n"
 "---\n"
 "```\n"
 "exact ⟨hsj, hjs⟩\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.IffIntro.L02
@@ -2928,8 +2711,7 @@ msgid "Conjuctive Iff"
 msgstr ""
 
 #: Game.Levels.IffIntro.L02
-msgid "\n"
-"# Two sides to every coin\n"
+msgid "# Two sides to every coin\n"
 "You're flipping a coin to decide which team gets to guess first in *Salad Bowl*. Heads means blue team and tails means purple team. Even though you're on the purple team, you're secretly hoping it comes up heads.\n"
 "# Proposition Key:\n"
 "- B — Blue Team goes first\n"
@@ -2937,8 +2719,7 @@ msgid "\n"
 "# Unlocked `iff_mp` and `iff_mpr`\n"
 "For a biconditional like `h : P ↔ Q`,\n"
 "1. You can extract `P → Q` using `iff_mp h` or `h.mp`. `mp` here is short of modus ponens.\n"
-"2. You can extra `Q → P` using `iff_mpr h` or `h.mpr`. `mpr` here is short of modus ponens reversed.\n"
-""
+"2. You can extra `Q → P` using `iff_mpr h` or `h.mpr`. `mpr` here is short of modus ponens reversed."
 msgstr ""
 
 #: Game.Levels.IffIntro.L02
@@ -2950,10 +2731,8 @@ msgid "Iff_mp"
 msgstr ""
 
 #: Game.Levels.IffIntro.L03
-msgid "\n"
-"# Right-Hand Swap\n"
-"You'll need h1.mp in order to turn evidence for Q into evidence for R\n"
-""
+msgid "# Right-Hand Swap\n"
+"You'll need h1.mp in order to turn evidence for Q into evidence for R"
 msgstr ""
 
 #: Game.Levels.IffIntro.L03
@@ -2965,10 +2744,8 @@ msgid "Iff_Intro"
 msgstr ""
 
 #: Game.Levels.IffIntro.L04
-msgid "\n"
-"# Left-Hand Swap\n"
-"You'll need `h1.mpr` in order to turn evidence for R into evidence for P\n"
-""
+msgid "# Left-Hand Swap\n"
+"You'll need `h1.mpr` in order to turn evidence for R into evidence for P"
 msgstr ""
 
 #: Game.Levels.IffIntro.L04
@@ -2980,8 +2757,7 @@ msgid "Rewriting"
 msgstr ""
 
 #: Game.Levels.IffIntro.L05
-msgid "\n"
-"# Rewrite the goal\n"
+msgid "# Rewrite the goal\n"
 "## To an extreme\n"
 "You're playing a round of *The Resistance*. You've been diligently figuring out who is a member of the resistance and who is a spy. It's a bit complicated, but you've reasoned that the current state of affairs is possible if and only if Alarfil and Cyna are members of the resistance and Pippin is a spy. You also know from an earlier reveal that Pippin and Lippa must be on the same team. Therefore, the same argument applies to Lippa as well.\n"
 "# Proposition Key:\n"
@@ -2990,16 +2766,15 @@ msgid "\n"
 "- L — Lippa is a member of the resistance\n"
 "- P — Pippin is a member of the resistance\n"
 "# The `rw` tactic\n"
-"Depending on the order you've chosen to do the tutorial worlds, you may not yet be familiar with all the symbols in the current proof state. In fact, you may not even have unlocked the tools in your inventory necessary to complete this level. Don't worry, the rewrite tactic makes this level a breeze.\\n"
-"\\n"
+"Depending on the order you've chosen to do the tutorial worlds, you may not yet be familiar with all the symbols in the current proof state. In fact, you may not even have unlocked the tools in your inventory necessary to complete this level. Don't worry, the rewrite tactic makes this level a breeze.\\\n"
+"\\\n"
 "First, take a look at the proof state and notice that `h₂` and the Goal are extremely similar. In fact, if you replace every occurrence of `L` with `P`, then the two would be identical. That's where `rw` comes in.\n"
-"\\n"
-"If you have `hpq : P ↔ Q` then `rw [hpq]` will change all `P`s in the goal to `Q`s. It's the way to “substitute in”.\\n"
-"\\n"
-"The `rw` tactic is an automation tool. It does the rote work of taking apart an expression, looking for a matching sub-expression, swapping in the equivalent sub-expression and then constructing the new equivalent term from there.\\n"
-"\\n"
-"Try it out!\n"
-""
+"\\\n"
+"If you have `hpq : P ↔ Q` then `rw [hpq]` will change all `P`s in the goal to `Q`s. It's the way to “substitute in”.\\\n"
+"\\\n"
+"The `rw` tactic is an automation tool. It does the rote work of taking apart an expression, looking for a matching sub-expression, swapping in the equivalent sub-expression and then constructing the new equivalent term from there.\\\n"
+"\\\n"
+"Try it out!"
 msgstr ""
 
 #: Game.Levels.IffIntro.L05
@@ -3007,8 +2782,7 @@ msgid "Who is loyal, who is a spy?"
 msgstr ""
 
 #: Game.Levels.IffIntro.L05
-msgid "\n"
-"Oh, how nice! A fast solution to a complex problem.\n"
+msgid "Oh, how nice! A fast solution to a complex problem.\n"
 "\n"
 "----\n"
 "If you've read the inventory page for `rw`, you may have seen another solution too. You can use the backwards arrow “`←`” to change `P`s to `L`s instead of `L`s to `P`s. Also, you can change a hypothesis instead of the goal.\n"
@@ -3039,8 +2813,7 @@ msgid "\n"
 "  )\n"
 "⟩\n"
 "```\n"
-"The thing to notice here is that this long-form solution needs both `h₁.mp` and `h₁.mpr`. Keep in mind that though it’s often tempting to try to use conditionals (`→`), rewrite **requires** a biconditional (`↔`) to work.\n"
-""
+"The thing to notice here is that this long-form solution needs both `h₁.mp` and `h₁.mpr`. Keep in mind that though it’s often tempting to try to use conditionals (`→`), rewrite **requires** a biconditional (`↔`) to work."
 msgstr ""
 
 #: Game.Levels.IffIntro.L06
@@ -3048,10 +2821,9 @@ msgid "Rewriting"
 msgstr ""
 
 #: Game.Levels.IffIntro.L06
-msgid "\n"
-"# Keep rewriting!\n"
-"It's another round of the resistance! This time you know that if you could prove that Alarfil, Cyna, or Lippa are part of the resistance, then that would be good enough to show that least one of the other two are spies.\\n"
-"\\n"
+msgid "# Keep rewriting!\n"
+"It's another round of the resistance! This time you know that if you could prove that Alarfil, Cyna, or Lippa are part of the resistance, then that would be good enough to show that least one of the other two are spies.\\\n"
+"\\\n"
 "It doesn't really matter how your friends are paired up, the same truth will hold.\n"
 "# Proposition Key:\n"
 "- A — Alarfil is a member of the resistance\n"
@@ -3062,8 +2834,7 @@ msgid "\n"
 "1. `or_assoc : P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R`\n"
 "2. `and_assoc : P ∧ Q ∧ R ↔ (P ∧ Q) ∧ R`\n"
 "## A Challenge\n"
-"You'll likely see the way this can be solved using the `rw` tactic. In this case, there's a nice and short proof that doesn't use `rw`. If you want the extra challenge, see if you can see it.\n"
-""
+"You'll likely see the way this can be solved using the `rw` tactic. In this case, there's a nice and short proof that doesn't use `rw`. If you want the extra challenge, see if you can see it."
 msgstr ""
 
 #: Game.Levels.IffIntro.L06
@@ -3071,8 +2842,7 @@ msgid "Exactly 2 rewrites"
 msgstr ""
 
 #: Game.Levels.IffIntro.L06
-msgid "\n"
-"```\n"
+msgid "```\n"
 "rw [or_assoc]\n"
 "rw [and_assoc]\n"
 "exact h\n"
@@ -3086,8 +2856,7 @@ msgid "\n"
 "Without the `rw` tactic\n"
 "```\n"
 "exact or_assoc.mp ≫ h ≫ imp_trans and_assoc.mp\n"
-"```\n"
-""
+"```"
 msgstr ""
 
 #: Game.Levels.IffIntro.L07
@@ -3095,12 +2864,10 @@ msgid "IffBoss"
 msgstr ""
 
 #: Game.Levels.IffIntro.L07
-msgid "\n"
-"# BOSS LEVEL\n"
-"This is an involved level. It doesn't require you to do anything tricky, but there are a lot of moving parts and it is easy to lose track of what you're doing.\\n"
-"\\n"
-"I recommend editor mode. Think about what this is asking you to prove and use `have` to give yourself any auxillary facts that don't exist under your theorems.\n"
-""
+msgid "# BOSS LEVEL\n"
+"This is an involved level. It doesn't require you to do anything tricky, but there are a lot of moving parts and it is easy to lose track of what you're doing.\\\n"
+"\\\n"
+"I recommend editor mode. Think about what this is asking you to prove and use `have` to give yourself any auxillary facts that don't exist under your theorems."
 msgstr ""
 
 #: Game.Levels.IffIntro
@@ -3108,8 +2875,7 @@ msgid "↔ Tutorial: Party Games"
 msgstr ""
 
 #: Game.Levels.IffIntro
-msgid "\n"
-"# Party Games\n"
+msgid "# Party Games\n"
 "A soirée requires a diligent and clear-headed host if the guests are to have fun. It's your job to ensure everybody is having a good time. Let the games begin!\n"
 "\n"
 "# Propositional Equivalence\n"
@@ -3119,10 +2885,9 @@ msgid "\n"
 "h₁ : P ↔ Q\n"
 "h₂ : (P → Q) ∧ (Q → P)\n"
 "```\n"
-"Then `h₁` and `h₂` have roughly the same capabilities. Also, proof of either P or Q or ¬P or ¬Q, immediately translates to the same proof for the logically equivalent proposition. The following levels will explain the details.\\n"
-"\\n"
-"The main new idea introduced in this tutorial world is the `rw` tactic. The *rewrite* tactic offers a principled way to alter the current goal or available hypotheses of your current proof state.\n"
-""
+"Then `h₁` and `h₂` have roughly the same capabilities. Also, proof of either P or Q or ¬P or ¬Q, immediately translates to the same proof for the logically equivalent proposition. The following levels will explain the details.\\\n"
+"\\\n"
+"The main new idea introduced in this tutorial world is the `rw` tactic. The *rewrite* tactic offers a principled way to alter the current goal or available hypotheses of your current proof state."
 msgstr ""
 
 #: Game.Levels.IffTactic.L01
@@ -3130,10 +2895,8 @@ msgid "Iff_Intro"
 msgstr ""
 
 #: Game.Levels.IffTactic.L01
-msgid "\n"
-"# Using Tactics\n"
-"The tactics available to you should provide a hint for what to do. You'll be using a tactic in a context you havn't tried before, but the result should make sense once you try it and see what happens.\n"
-""
+msgid "# Using Tactics\n"
+"The tactics available to you should provide a hint for what to do. You'll be using a tactic in a context you haven't tried before, but the result should make sense once you try it and see what happens."
 msgstr ""
 
 #: Game.Levels.IffTactic.L02
@@ -3141,10 +2904,8 @@ msgid "Conjuctive Iff"
 msgstr ""
 
 #: Game.Levels.IffTactic.L02
-msgid "\n"
-"# Using Tactics\n"
-"Last level you learned that `constructor` works for biconditionals in the the same way it works for conjunction. This level demonstrates that `cases` works the way you may expect as well.\n"
-""
+msgid "# Using Tactics\n"
+"Last level you learned that `constructor` works for biconditionals in the the same way it works for conjunction. This level demonstrates that `cases` works the way you may expect as well."
 msgstr ""
 
 #: Game.Levels.IffTactic.L03
@@ -3152,9 +2913,7 @@ msgid "Iff_mp"
 msgstr ""
 
 #: Game.Levels.IffTactic.L03
-msgid "\n"
-"# Right-Hand Swap\n"
-""
+msgid "# Right-Hand Swap"
 msgstr ""
 
 #: Game.Levels.IffTactic.L04
@@ -3162,9 +2921,7 @@ msgid "Iff_Intro"
 msgstr ""
 
 #: Game.Levels.IffTactic.L04
-msgid "\n"
-"# Left-Hand Swap\n"
-""
+msgid "# Left-Hand Swap"
 msgstr ""
 
 #: Game.Levels.IffTactic.L05
@@ -3172,14 +2929,12 @@ msgid "Rewriting"
 msgstr ""
 
 #: Game.Levels.IffTactic.L05
-msgid "\n"
-"# A Longer Level\n"
-"The `rw` tactic makes this level a cakewalk. For the redux version we're going to make this outright tedius, but this will show without a doubt that you've mastered simple propositional proofs.\\n"
-"\\n"
-"I suggest you finish the other redux worlds before doing this level.\\n"
-"\\n"
-"We're not allowing `have`, `exact`, or `rw` for this level. It's certainly doable this way... good luck.\n"
-""
+msgid "# A Longer Level\n"
+"The `rw` tactic makes this level a cakewalk. For the redux version we're going to make this outright tedius, but this will show without a doubt that you've mastered simple propositional proofs.\\\n"
+"\\\n"
+"I suggest you finish the other redux worlds before doing this level.\\\n"
+"\\\n"
+"We're not allowing `have`, `exact`, or `rw` for this level. It's certainly doable this way... good luck."
 msgstr ""
 
 #: Game.Levels.IffTactic.L05
@@ -3191,10 +2946,8 @@ msgid "Rewriting"
 msgstr ""
 
 #: Game.Levels.IffTactic.L06
-msgid "\n"
-"# Remember to use `or_assoc` and `and_assoc`\n"
-"Even without the `rw` tactic, this can be solved in a few lines.\n"
-""
+msgid "# Remember to use `or_assoc` and `and_assoc`\n"
+"Even without the `rw` tactic, this can be solved in a few lines."
 msgstr ""
 
 #: Game.Levels.IffTactic.L07
@@ -3202,12 +2955,10 @@ msgid "IffBoss"
 msgstr ""
 
 #: Game.Levels.IffTactic.L07
-msgid "\n"
-"# BOSS LEVEL\n"
+msgid "# BOSS LEVEL\n"
 "This is an involved level. Tactics can be especially helpful in that much of the bookkeeping is done on your behalf. Good luck.\n"
 "\n"
-"There are no restrictions this level. Use everything you've learned.\n"
-""
+"There are no restrictions this level. Use everything you've learned."
 msgstr ""
 
 #: Game.Levels.IffTactic
@@ -3215,12 +2966,10 @@ msgid "Redux: ↔ World Tactics"
 msgstr ""
 
 #: Game.Levels.IffTactic
-msgid "\n"
-"# Redux: ↔ World Tactics\n"
-"Welcome to the redux of the **↔ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\n"
-"\\n"
-"This world introduces tactics that you can use in lieu of the expressions you've learned so far.\n"
-""
+msgid "# Redux: ↔ World Tactics\n"
+"Welcome to the redux of the **↔ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\n"
+"\\\n"
+"This world introduces tactics that you can use in lieu of the expressions you've learned so far."
 msgstr ""
 
 #: Game
@@ -3228,8 +2977,7 @@ msgid "A Lean Intro to Logic"
 msgstr ""
 
 #: Game
-msgid "\n"
-"# An Introduction to Constructive Logic\n"
+msgid "# An Introduction to Constructive Logic\n"
 "This is a game about evidence [¹] and propositions.\n"
 "\n"
 "To play this puzzler you'll need to learn some notation. Unlike learning how to do a crossword or solve a Sudoku, the notation is a bit more involved. As the levels progress, you will — in effect — be learning a small part of a programming language. Just enough to prove (or construct evidence for) propositions and predicates.\n"
@@ -3256,9 +3004,9 @@ msgid "\n"
 "\n"
 "If you take a moment to re-read them again, lines 5, 6, & 7 are all slightly different styles of logical deductions.\n"
 "\n"
-"- Line 5 is deducing the negation of the left-hand side of an "if ... then ..." statement. Just for references' sake, we'll give this style of reasoning a name: [**modus tollens**](https://en.wikipedia.org/wiki/Modus_tollens)\n"
-"- Line 6 is using the process of elimination on two options. This is the style of reasoning responsible for Sherlock Holmes' most famous quote — "When you have eliminated the impossible, whatever remains, however improbable, must be the truth". We'll give this a name too: [**modus tollendo ponens**](https://en.wikipedia.org/wiki/Modus_ponendo_tollens)\n"
-"- Line 7 is the conclusion and is applying the "if ... then ..." statement on line 3. We'll call this one [**modus ponens**](https://en.wikipedia.org/wiki/Modus_ponens).\n"
+"- Line 5 is deducing the negation of the left-hand side of an \"if ... then ...\" statement. Just for references' sake, we'll give this style of reasoning a name: [**modus tollens**](https://en.wikipedia.org/wiki/Modus_tollens)\n"
+"- Line 6 is using the process of elimination on two options. This is the style of reasoning responsible for Sherlock Holmes' most famous quote — \"When you have eliminated the impossible, whatever remains, however improbable, must be the truth\". We'll give this a name too: [**modus tollendo ponens**](https://en.wikipedia.org/wiki/Modus_ponendo_tollens)\n"
+"- Line 7 is the conclusion and is applying the \"if ... then ...\" statement on line 3. We'll call this one [**modus ponens**](https://en.wikipedia.org/wiki/Modus_ponens).\n"
 "\n"
 "We won't always be denoting these with Latin names, but the general process of being able to give some generically useful deductive reasoning a name is nice. It makes them easier to reference. During the course of this game some of your proofs will be given names and correspondingly unlocked in your inventory. Thus names are a way to avoid proving the same thing over and over again.\n"
 "\n"
@@ -3266,10 +3014,10 @@ msgid "\n"
 "If we separate out the 4 true/false statements required for our line of reasoning and introduce some connectives, we can see the exact same argument in a more concise form. The numbers 1 - 7 here are meant to match exactly with the natural language above.\n"
 "\n"
 "We're going to give our English connectives some symbols:\n"
-"- "and" — "∧"\n"
-"- "implies" — "→"\n"
-"- "not" — "¬"\n"
-"- "or" — "∨"\n"
+"- \"and\" — \"∧\"\n"
+"- \"implies\" — \"→\"\n"
+"- \"not\" — \"¬\"\n"
+"- \"or\" — \"∨\"\n"
 "\n"
 "and we'll give our propositions some symbols:\n"
 "- C — Cat fur was found at the scene\n"
@@ -3319,7 +3067,7 @@ msgid "\n"
 "\n"
 "To introduce new evidence — such as `h₅` — you need to write out an expression that the game can evaluate as evidence of the correct proposition. We'll introduce how to write these expressions throughout the tutorial worlds.\n"
 "\n"
-"`h₅` is evidence of `¬D` (that "Dog fur was not found at the scene of the crime.") and we know this by the expression `(modus_tollens h₂ h₄)`.\n"
+"`h₅` is evidence of `¬D` (that \"Dog fur was not found at the scene of the crime.\") and we know this by the expression `(modus_tollens h₂ h₄)`.\n"
 "\n"
 "# To start\n"
 "\n"
@@ -3329,15 +3077,13 @@ msgid "\n"
 "\n"
 "----\n"
 "\n"
-"[¹] This game says “evidence” where other learning material may say “term”, “proof”, or neither (relying on context to differentate a proposition from its proof). I use *evidence* for this game in an effort to make the flavor text seem less at odds with the formalization.\\n"
-"\\n"
-"[ˢʳᶜ]Logic example taken from [IEP](https://iep.utm.edu/propositional-logic-sentential-logic/#H5) entry: *Propositional Logic*.\n"
-""
+"[¹] This game says “evidence” where other learning material may say “term”, “proof”, or neither (relying on context to differentate a proposition from its proof). I use *evidence* for this game in an effort to make the flavor text seem less at odds with the formalization.\\\n"
+"\\\n"
+"[ˢʳᶜ]Logic example taken from [IEP](https://iep.utm.edu/propositional-logic-sentential-logic/#H5) entry: *Propositional Logic*."
 msgstr ""
 
 #: Game
-msgid "\n"
-"*Game version: 0.1.0*\n"
+msgid "*Game version: 0.1.0*\n"
 "\n"
 "# Discussion\n"
 "\n"
@@ -3354,7 +3100,7 @@ msgid "\n"
 "If you delete it, your progress will be lost!\n"
 "\n"
 "Warning: In most browsers, deleting cookies will also clear the local storage\n"
-"(or "local site data"). Make sure to download your game progress first!\n"
+"(or \"local site data\"). Make sure to download your game progress first!\n"
 "\n"
 "## Credits\n"
 "\n"
@@ -3364,8 +3110,7 @@ msgid "\n"
 "## Resources\n"
 "\n"
 "* The [Lean Zulip chat](https://leanprover.zulipchat.com/) forum\n"
-"* Github: [A Lean Intro to Logic](https://github.com/Trequetrum/lean4game-logic)\n"
-""
+"* Github: [A Lean Intro to Logic](https://github.com/Trequetrum/lean4game-logic)"
 msgstr ""
 
 #: Game

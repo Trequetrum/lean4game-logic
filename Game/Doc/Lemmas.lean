@@ -132,22 +132,44 @@ def iff_intro
   (mpr: Q → P) : P ↔ Q :=
     Iff.intro mp mpr
 
+example {P Q : Prop} (h : P ∧ Q ∨ ¬P ∧ ¬Q) : P ↔ Q :=
+  or_elim h
+    (λh₁ ↦ ⟨λ_ ↦ h₁.right, λ_ ↦ h₁.left⟩)
+    (λh₁ ↦ ⟨false_elim ∘ h₁.left, false_elim ∘ h₁.right⟩)
+
 /--
-TODO
+# Propositional Equivalence
+`P ↔ Q` means that `P` and `Q` must have the same truth value. This is often said as “`P` if and only iff `Q`” or “`P` is logically equivalent to `Q`”.
+
+`iff_intro` is the way to prove a biconditional like `P ↔ Q`. It requires you to show evidence for both `P → Q` and `Q → P`.
 -/
 TheoremDoc GameLogic.iff_intro as "iff_intro" in "↔"
 
 def iff_mp {P Q : Prop} (h : P ↔ Q) : P → Q := h.mp
 
 /--
-TODO
+If you have an assumption like `h : P ↔ Q`, then
+```
+iff_mp h -- or
+h.mp     -- is evidence for P → Q
+
+iff_mpr h -- or
+h.mpr     -- is evidence for Q → P
+```
 -/
 TheoremDoc GameLogic.iff_mp as "iff_mp" in "↔"
 
 def iff_mpr {P Q : Prop} (h : P ↔ Q) : Q → P := h.mpr
 
 /--
-TODO
+If you have an assumption like `h : P ↔ Q`, then
+```
+iff_mp h -- or
+h.mp     -- is evidence for P → Q
+
+iff_mpr h -- or
+h.mpr     -- is evidence for Q → P
+```
 -/
 TheoremDoc GameLogic.iff_mpr as "iff_mpr" in "↔"
 
