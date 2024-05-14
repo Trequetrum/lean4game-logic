@@ -25,7 +25,7 @@ Statement (A : Prop) (h: A → ¬A) : ¬A := by
   exact λ(a : A) ↦ h a a
 
 Conclusion "
-This joke is a reach, I know, but my answer this this level kinda spells `ahaa` — `λa ↦ h a a`. \\
+This joke is a reach, I know, but my answer in this level kinda spells `ahaa` — `λa ↦ h a a`. \\
 \\
 Okay, okay. Let's proceed.
 "
