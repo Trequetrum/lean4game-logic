@@ -19,7 +19,7 @@ You've made a todo list, so you've begun to plan your party.
 ## Assumptions
 `todo_list : P` — Can be read as “The `todo_list` is evidence that you're `P`lanning a party”
 # The Exact Tactic
-The Exact tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the assumptions directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\
+The `exact` tactic is — for now — the means through which you give the game your answer. It's your way of declaring that you're done. In this level, you're just going to be using one of the assumptions directly, but as you learn how to form expressions the `exact` tactic will accept those too.\\
 \\
 The input will look like `exact e` where `e` is an expression the game will accept for the current Goal.\\
 \\

@@ -43,7 +43,7 @@ and how some things which may look like expressions really are not:
 4 (++) 6
 (4 +) 6
 ```
-The expressions that this game is asking you to form are mostly in prefix form. In context, this means the operation is given a textual name instead of a symbol and the parameters are separated by spaces **after** the name. For example; the above expressions may look like:
+The expressions that this game is asking you to form are mostly in prefix form. In context, this means the operation is given a textual name instead of a symbol and the parameters are separated by spaces **after** the name. For example, the above expressions may look like:
 ```
 add 4 6
 add (4) 6

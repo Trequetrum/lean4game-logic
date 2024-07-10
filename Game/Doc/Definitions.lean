@@ -12,18 +12,18 @@ An “And” can be introduced with the `and_intro` theorem. Conjunctions and bi
 p : P
 q : Q
 -- Each new term is evidence for P ∧ Q
--- Explicit Constructer, no annotations needed
+-- Explicit Constructor, no annotations needed
 have h₁ := and_intro p q
 have h₂ := and_intro (left := p) (right := q)
--- Implicit Constructuer, annotations based on context
+-- Implicit Constructor, annotations based on context
 -- Type these angle brackets with “\<” and “\>”
 have h₆ : P ∧ Q := ⟨p,q⟩
 have h₇ := (⟨p,q⟩ : P ∧ Q)
 ```
 ## Elimination
 An “And” like `h : P ∧ Q` can be reduced in two ways:
-1. Aquire evidence for `P` using `and_left h` or `h.left`
-2. Aquire evidence for `Q` using `and_right` or `h.right`
+1. Acquire evidence for `P` using `and_left h` or `h.left`
+2. Acquire evidence for `Q` using `and_right` or `h.right`
 -/
 DefinitionDoc GameLogic.and_def as "∧"
 
@@ -64,18 +64,18 @@ An “If and only if” can be introduced with the `iff_intro` theorem. Bicondit
 h₁ : P → Q
 h₂ : Q → P
 -- Each new term is evidence for P ↔ Q
--- Explicit Constructer, no annotations needed
+-- Explicit Constructor, no annotations needed
 have h₁ := iff_intro h₁ h₂
 have h₂ := iff_intro (mp := h₁) (mpr := h₂)
--- Implicit Constructuer, annotations based on context
+-- Implicit Constructor, annotations based on context
 -- Type these angle brackets with “\<” and “\>”
 have h₆ : P ↔ Q := ⟨h₁, h₂⟩
 have h₇ := (⟨h₁, h₂⟩ : P ↔ Q)
 ```
 ## Elimination
 An “If and only if” like `h : P ↔ Q` can be reduced in two ways:
-1. Aquire evidence for `P → Q` using `iff_mp h` or `h.mp`
-2. Aquire evidence for `Q → P` using `iff_mpr h` or `h.mpr`
+1. Acquire evidence for `P → Q` using `iff_mp h` or `h.mp`
+2. Acquire evidence for `Q → P` using `iff_mpr h` or `h.mpr`
 ## Rewrite
 Biconditionals let you use the `rewrite` tactic to change goals or assumptions.
 -/

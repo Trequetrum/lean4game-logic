@@ -26,7 +26,7 @@ You use an implication the same way you've been using `and_intro`, `and_left`, a
 - assumption `h₁ : A → B`
 - have `b : B := h₁ a`
 
-You can read `h₁ a` as modus ponens. In fact, you've unlocked a theorem called modus_ponens that you could use here. Since modus ponens is implemented as function application, you can — and should — always just Juxtapose instead.
+You can read `h₁ a` as modus ponens. In fact, you've unlocked a theorem called `modus_ponens` that you could use here. Since modus ponens is implemented as function application, you can — and should — always just Juxtapose instead.
 # A note
 You'll often see assumptions given one or two letter names (`p`, `r`, `q`, `h₁`, `h₂`, `h₃`, etc). Assumptions are generally not long-lived. They are part of some expression, exhibit some implication, and then are discarded. Their names in this context don't need to be particularly memorable.\\
 \\

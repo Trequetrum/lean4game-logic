@@ -49,7 +49,7 @@ have c := h.right.right.left.left
 -- build C ∧ P ∧ S
 have cps := and_intro c psa.left
 
--- exibit A ∧ C ∧ P ∧ S
+-- exhibit A ∧ C ∧ P ∧ S
 exact and_intro psa.right cps
 ```
 "

@@ -14,7 +14,7 @@ OnlyTactic
 
 Introduction "
 # Pattern matching tip
-You can solve this level using the knowledge you've aquired so far. If you've used a language with destructuring or pattern matching before, then you can introduce and pattern-match in one step with `intro ⟨nq, p⟩`. Doing so means you won't need the `cases` tactic for this level.
+You can solve this level using the knowledge you've acquired so far. If you've used a language with destructuring or pattern matching before, then you can introduce and pattern-match in one step with `intro ⟨nq, p⟩`. Doing so means you won't need the `cases` tactic for this level.
 "
 
 /-- Negation into conjunction. -/
