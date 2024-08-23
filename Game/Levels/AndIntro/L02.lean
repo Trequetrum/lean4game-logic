@@ -30,7 +30,7 @@ Like the box described in the intro, any evidence for a conjunction like `A ∧ 
 # Goal
 Use `p` and `s` to produce evidence that `P ∧ S`. Remember that you use evidence (generally lowercase letters), to deduce new propositions (generally uppercase letters)
 
-# Using the `∧` Construtor
+# Using the `∧` Constructor
 This level has unlocked “`∧`” under definitions. This has made the `and_intro` theorem available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\
 \\
 The help page has even more detail about creating conjunctions like this (There's a common shorthand using angle-brackets `⟨` `,` `⟩` ).

@@ -19,6 +19,6 @@ The `intro` tactic lets you define a function interactively. It introduces one o
 In this level, `intro h` does two things. First, it adds an assumption `h : P` and second, it changes your goal from `P → P` to just `P`. In this sense, `intro h` is a bit like `λh ↦ `.
 "
 
-/-- Idenity via tactics -/
+/-- Identity via tactics -/
 Statement (P: Prop) : P → P := by
   intro; assumption

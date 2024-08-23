@@ -26,7 +26,7 @@ It looks like this:
 fun <name> : <Prop> => <expr>
 λ <name> : <Prop> ↦ <expr>
 ```
-Often, when you're writting a function, the game will already know what proposition it's expecting. In such cases, the `<Prop>` becomes an optional part of the function.
+Often, when you're writing a function, the game will already know what proposition it's expecting. In such cases, the `<Prop>` becomes an optional part of the function.
 
 # A hint
 Just fill in the `<expr>` below:

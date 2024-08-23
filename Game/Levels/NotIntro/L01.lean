@@ -19,7 +19,7 @@ In other levels, you get a proposition key and in the proof state — under **Ob
 \\
 You won't see `False` listed under objects, just as you won't see **Theorems** or **Definitions** listed under assumptions. This just means that `False` never changes from level to level. It's never a stand-in for anything else. It's a fully defined and always available proposition.
 ## Not False
-Inuitively, it should be very simple to provide evidence for \"not false\". Since `¬P` is shorthand for `P → False`, you should think of `¬False` as shorthand for `False → False`. To drive home the fact that `False` is a proposition, this has the same proof as `P → P` (Which you solved in \"**→ Tutorial, level 2**\").
+Intuitively, it should be very simple to provide evidence for \"not false\". Since `¬P` is shorthand for `P → False`, you should think of `¬False` as shorthand for `False → False`. To drive home the fact that `False` is a proposition, this has the same proof as `P → P` (Which you solved in \"**→ Tutorial, level 2**\").
 "
 
 /-- `identity` -/
