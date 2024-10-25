@@ -26,7 +26,7 @@ While real-world analogues can be anything, the abstract machinery used in this 
 The details aren't important. Each level will be encoded for you into the symbols of a proof state. The puzzle, at its core, will be about symbol manipulation. Much of the text is there for added fun and flair.
 
 # **Aside**: Expressions
-If you're coming at this as a puzzle, part of the goal of the tutotial worlds is to teach you how to form expressions and to think about what they evaluate to. Consider how how these expressions all evaluate to the same number:
+If you're coming at this as a puzzle, part of the goal of the tutorial worlds is to teach you how to form expressions and to think about what they evaluate to. Consider how how these expressions all evaluate to the same number:
 ```
 4 + 6
 (4) + 6

@@ -23,7 +23,7 @@ Statement (B S : Prop)(h1 : B → S)(h2 : ¬S) : ¬B := by
   exact imp_trans h1 h2
 
 Conclusion "
-Congratulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the \"**→ Tutotial world, level 4**\" to show that implication is transitive.
+Congratulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the \"**→ Tutorial world, level 4**\" to show that implication is transitive.
 
 ---
 Thinking of `h₂` as `Q → False`, you can actually use your imp_trans theorem here.
