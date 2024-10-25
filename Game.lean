@@ -65,7 +65,7 @@ Does this argument convince you? The validity of this argument can be made more 
 If you take a moment to re-read them again, lines 5, 6, & 7 are all slightly different styles of logical deductions.
 
 - Line 5 is deducing the negation of the left-hand side of an \"if ... then ...\" statement. Just for references' sake, we'll give this style of reasoning a name: [**modus tollens**](https://en.wikipedia.org/wiki/Modus_tollens)
-- Line 6 is using the process of elimination on two options. This is the style of reasoning responsible for Sherlock Holmes' most famous quote — \"When you have eliminated the impossible, whatever remains, however improbable, must be the truth\". We'll give this a name too: [**modus tollendo ponens**](https://en.wikipedia.org/wiki/Modus_ponendo_tollens)
+- Line 6 is using the process of elimination on two options. This is the style of reasoning responsible for Sherlock Holmes' most famous quote — \"When you have eliminated the impossible, whatever remains, however improbable, must be the truth\". We'll give this a name too: [**modus tollendo ponens**](https://en.wikipedia.org/wiki/Modus_tollendo_ponens)
 - Line 7 is the conclusion and is applying the \"if ... then ...\" statement on line 3. We'll call this one [**modus ponens**](https://en.wikipedia.org/wiki/Modus_ponens).
 
 We won't always be denoting these with Latin names, but the general process of being able to give some generically useful deductive reasoning a name is nice. It makes them easier to reference. During the course of this game some of your proofs will be given names and correspondingly unlocked in your inventory. Thus names are a way to avoid proving the same thing over and over again.
