@@ -4,7 +4,7 @@ open GameLogic
 
 World "IffIntro"
 Level 4
-Title "Iff_Intro"
+Title "Iff_mpr"
 
 OnlyTactic
   exact
