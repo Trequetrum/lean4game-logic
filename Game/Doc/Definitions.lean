@@ -12,10 +12,10 @@ An “And” can be introduced with the `and_intro` theorem. Conjunctions and bi
 p : P
 q : Q
 -- Each new term is evidence for P ∧ Q
--- Explicit Constructer, no annotations needed
+-- Explicit Constructor, no annotations needed
 have h₁ := and_intro p q
 have h₂ := and_intro (left := p) (right := q)
--- Implicit Constructuer, annotations based on context
+-- Implicit Constructor, annotations based on context
 -- Type these angle brackets with “\<” and “\>”
 have h₆ : P ∧ Q := ⟨p,q⟩
 have h₇ := (⟨p,q⟩ : P ∧ Q)
@@ -64,10 +64,10 @@ An “If and only if” can be introduced with the `iff_intro` theorem. Bicondit
 h₁ : P → Q
 h₂ : Q → P
 -- Each new term is evidence for P ↔ Q
--- Explicit Constructer, no annotations needed
+-- Explicit Constructor, no annotations needed
 have h₁ := iff_intro h₁ h₂
 have h₂ := iff_intro (mp := h₁) (mpr := h₂)
--- Implicit Constructuer, annotations based on context
+-- Implicit Constructor, annotations based on context
 -- Type these angle brackets with “\<” and “\>”
 have h₆ : P ↔ Q := ⟨h₁, h₂⟩
 have h₇ := (⟨h₁, h₂⟩ : P ↔ Q)
