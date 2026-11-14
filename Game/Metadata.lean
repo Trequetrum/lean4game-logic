@@ -1,4 +1,4 @@
-import GameServer.Commands
+import GameApi
 
 import Game.Doc.Definitions
 import Game.Doc.Tactics

@@ -1,5 +1,5 @@
 -- Here's the import to make Lean know about things called `Game`s
-import GameServer.Commands
+import GameApi
 
 -- Here are the imports defining many worlds for the game `Game` (the natural number game,
 -- in this case). Each world consists of a finite number of levels, and levels
