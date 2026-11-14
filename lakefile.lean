@@ -4,43 +4,59 @@ open Lake DSL
 -- Using this assumes that each dependency has a tag of the form `v4.X.0`.
 def leanVersion : String := s!"v{Lean.versionString}"
 
+/--
+Use the GameServer from a `leangame` folder lying next to the game on your local computer.
+Activated with `lake update -R -Kleangame.local --keep-toolchain`.
+-/
 def LocalGameServer : Dependency := {
   name := `GameServer
-  src := Source.path "../lean4game/server"
+  scope := "hhu-adam"
+  src? := DependencySrc.path "../leangame/server/lean"
+  version := .none
+  opts := ∅
 }
 
+/--
+For development of the game server itself, the GameServer dependency needs to come from within the repo.
+Activated with `lake update -R -Kleangame.testgame  --keep-toolchain`.
+-/
+def TestGameServer : Dependency := {
+  name := `GameServer
+  scope := "hhu-adam"
+  src? := DependencySrc.path "../server/lean"
+  version := .none
+  opts := ∅
+}
+
+/--
+Use the GameServer version from github.
+Deactivate local version with `lake update -R`.
+-/
 def RemoteGameServer : Dependency := {
   name := `GameServer
-  src := Source.git "https://github.com/leanprover-community/lean4game.git" leanVersion "server"
+  scope := "hhu-adam"
+  src? := DependencySrc.git "https://github.com/hhu-adam/GameServer.git" leanVersion .none
+  version := .git leanVersion
+  opts := ∅
 }
 
-/- Choose GameServer dependency depending on the environment variable `LEAN4GAME`. -/
+/-
+Choose GameServer dependency depending on whether `-Kleangame.local` or `-Kleangame.testgame` has been passed to `lake`.
+-/
 open Lean in
 #eval (do
-  let gameServerName := if get_config? lean4game.local |>.isSome then
-    ``LocalGameServer else ``RemoteGameServer
+  let gameServerName := if get_config? leangame.testgame |>.isSome then
+      ``TestGameServer
+    else if get_config? leangame.local |>.isSome then
+      ``LocalGameServer
+    else
+      ``RemoteGameServer
   modifyEnv (fun env => Lake.packageDepAttr.ext.addEntry env gameServerName)
   : Elab.Command.CommandElabM Unit)
 
-/-! # USER SECTION
+-- Game-specific dependencies (preserved during the GameSkeleton migration).
+require "leanprover-community" / mathlib @ git leanVersion
 
-Below are all the dependencies the game needs. Add or remove packages here as you need them.
-
-Note: If your package (like `mathlib` or `Std`) has tags of the form `v4.X.0` then
-you can use `require mathlib from git "[URL]" @ leanVersion`
- -/
-
-
-
-require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ leanVersion
-
-
-
-/-! # END USER SECTION -/
-
--- NOTE: We abuse the `trace.debug` option to toggle messages in VSCode on and
--- off when calling `lake build`. Ideally there would be a better way using `logInfo` and
--- an option like `lean4game.verbose`.
 package Game where
   moreLeanArgs := #[
     "-Dtactic.hygienic=false",

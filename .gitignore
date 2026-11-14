@@ -1,4 +1,5 @@
-build/
-lake-packages/
-.lake/
-**/.DS_Store
+.DS_Store
+
+# Lean
+**/.lake
+**/.i18n/**/*.mo
