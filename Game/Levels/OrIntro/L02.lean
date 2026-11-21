@@ -22,7 +22,7 @@ You've just unlocked `or_inr`. It turns evidence for the righthand of an `∨` p
 "
 
 /-- Or Introduction Right -/
-Statement (O S : Prop)(s : S) : K ∨ S := by
+Statement (K S : Prop)(s : S) : K ∨ S := by
   exact or_inr s
 
 Conclusion "
