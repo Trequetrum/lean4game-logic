@@ -54,19 +54,78 @@ open Lean in
   modifyEnv (fun env => Lake.packageDepAttr.ext.addEntry env gameServerName)
   : Elab.Command.CommandElabM Unit)
 
--- Game-specific dependencies (preserved during the GameSkeleton migration).
+/-!
+# USER DEPENDENCIES
+
+Add any further dependencies of your game below.
+
+Note: If your package (like `mathlib` or `Std`) has tags of the form `v4.X.0` then
+you can use
+
+```
+require "leanprover-community" / mathlib @ git leanVersion
+```
+ -/
+
 require "leanprover-community" / mathlib @ git leanVersion
 
-package Game where
-  moreLeanArgs := #[
-    "-Dtactic.hygienic=false",
-    "-Dlinter.unusedVariables.funArgs=false",
-    "-Dtrace.debug=false"]
-  moreServerOptions := #[
-    ⟨`tactic.hygienic, false⟩,
-    ⟨`linter.unusedVariables.funArgs, true⟩,
-    ⟨`trace.debug, true⟩]
-  weakLeanArgs := #[]
+/-!
+# PACKAGE CONFIGURATION
 
+Here you can set options used in your game. The player will use the same options as you'll
+have set here.
+
+NOTE: The `leanOptions` and `moreServerOptions` influence how the player preceives the game.
+For example, it is important to have `linter.all` set to `false` to prevent any linter
+warnings from showing up during playing.
+
+NOTE: We abuse the `trace.debug` option to toggle messages in VSCode on and
+off when calling `lake build`. Ideally there would be a better way using `logInfo` and
+an option like `leangame.verbose`.
+-/
+package Game where
+  /- Used in all cases. -/
+  leanOptions := #[
+    /- linter warnings might block the player. (IMPORTANT) -/
+    ⟨`linter.all, false⟩,
+    /- to display the values of let declarations, like `:= 42` (IMPORTANT)  -/
+    ⟨`pp.showLetValues, true⟩,
+    /- make all assumptions always accessible. -/
+    ⟨`tactic.hygienic, false⟩]
+  /- Used when calling `lake build`. -/
+  moreLeanArgs := #[
+    -- TODO: replace with `leangame.verbose`
+    "-Dtrace.debug=false"]
+  /- Used when opening a file in VSCode or when playing the game. -/
+  moreServerOptions := #[
+    -- TODO: replace with `leangame.verbose`
+    ⟨`trace.debug, true⟩]
+
+/-- Non-Lean build targets: if the content of `images/` or `.i18n/config.json` changed,
+then we need to force `lake` to rebuild instead of replay. -/
+target makeGameInputs pkg : Unit := do
+  let imagesDir := pkg.dir / "images"
+  let imagesJob ← if ← imagesDir.isDir then
+      inputDir imagesDir (text := false) (fun _ => true)
+    else
+      pure (Job.pure #[])
+
+  let i18nConfig := pkg.dir / ".i18n" / "config.json"
+  let configJob ← if ← i18nConfig.pathExists then
+      inputTextFile i18nConfig
+    else
+      pure (Job.pure i18nConfig)
+
+  return imagesJob.mix configJob
+
+/-- Note: changes to any target in `needs` cause the entire game to be rebuilt. -/
 @[default_target]
-lean_lib Game
+lean_lib Game where
+  needs := #[
+    /- The library `GameServer` is not imported by the game, but needed to run it. -/
+    `@GameServer/GameServer, -- built the GameServer library, too
+    `@/makeGameInputs] -- ensure non-Lean inputs are up to date
+
+-- @[test_driver]
+-- lean_lib test where
+--   globs := #[.submodules `Test]
