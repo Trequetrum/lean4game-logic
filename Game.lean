@@ -174,7 +174,7 @@ Warning: In most browsers, deleting cookies will also clear the local storage
 "
 
 /-! Information to be displayed on the servers landing page. -/
-Languages "English"
+Languages "en"
 CaptionShort "Lean intro to Logic"
 CaptionLong "A mostly self-contained introduction to constructive logic using Lean. Learn how each propositional connective can be introduced and eliminated using both terms and tactics."
 CoverImage "images/logic0101_v4.png"
